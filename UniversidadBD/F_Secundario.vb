@@ -1,9 +1,11 @@
 ﻿Public Class F_Secundario
+    Public Facultad As New Facultad()
     Private oConeccion As New Coneccion()
     Public Alumno As New Alumnos
     Private Profesor As New Profesores
     Private Otro As New Otros
     Private oConfiguracion As New Configuracion()
+    'CLICK PARA SIGUIENTE PANEL
     Private Sub BTN_A_MateriaSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_MateriaSiguiente.Click
         PNL_A_Materia.Visible = False
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Correlativa, TabControl1)
@@ -38,6 +40,21 @@
         Alumno.Apellido = TXT_A_ApellidoAlumno.Text
         Alumno.CUIL = TXT_A_CUILAlumno.Text
         Alumno.DNI = TXT_A_DNIAlumno.Text
-        oConeccion.InsertarAlumno("PERSONA")
+        Alumno.InsertarAlumno()
+    End Sub
+    Private Sub BTN_A_FacultadAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_FacultadAceptar.Click
+        Facultad.Codigo = TXT_A_CodigoFacultad.Text
+        Facultad.Descripcion = TXT_A_DescripcionFacultad.Text
+        Facultad.InsertarFacultad()
+        Me.Close()
+    End Sub
+    Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
+    End Sub
+    'COMBOBOX
+    Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
+        TXT_E_CodigoFacultad.Text = Facultad.Codigo
+        TXT_E_DescripcionFacultad.Text = Facultad.Descripcion
+
     End Sub
 End Class
