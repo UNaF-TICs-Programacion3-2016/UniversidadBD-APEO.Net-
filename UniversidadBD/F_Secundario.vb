@@ -11,8 +11,16 @@
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Correlativa, TabControl1)
     End Sub
     Private Sub BTN_A_AlumnoSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_A_AlumnoSiguiente.Click
+        Alumno.Nombre = TXT_A_NombreAlumno.Text
+        Alumno.Apellido = TXT_A_ApellidoAlumno.Text
+        Alumno.CUIL = TXT_A_CUILAlumno.Text
+        Alumno.DNI = TXT_A_DNIAlumno.Text
+        Alumno.FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
+        Alumno.NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
+        Alumno.InsertarAlumno()
         PNL_A_Alumno.Visible = False
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Alumno2, TabControl1)
+        Me.Close()
     End Sub
     Private Sub BTN_E_ProfesorSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_E_ProfesorSiguiente.Click
         PNL_E_Profesor.Visible = False
@@ -33,14 +41,6 @@
     Private Sub BTN_E_CursoSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_E_CursoSiguiente.Click
         PNL_E_Curso.Visible = False
         oConfiguracion.EstablecerConfiguracion(Me, PNL_E_Curso2, TabControl1)
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Alumno.Nombre = TXT_A_NombreAlumno.Text
-        Alumno.Apellido = TXT_A_ApellidoAlumno.Text
-        Alumno.CUIL = TXT_A_CUILAlumno.Text
-        Alumno.DNI = TXT_A_DNIAlumno.Text
-        Alumno.InsertarAlumno()
     End Sub
     Private Sub BTN_A_FacultadAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_FacultadAceptar.Click
         Facultad.Codigo = TXT_A_CodigoFacultad.Text

@@ -55,21 +55,27 @@ Public NotInheritable Class Alumnos
     End Property
     'INSERTAR ALUMNO
     Friend Sub InsertarAlumno()
+        Dim Tabla As String = "PERSONA"
         Try
-            Dim Tabla As String = "PERSONA"
+            InsertarPersona(Tabla)
+            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
-            Fila("PERSONA_NOMBRE") = F_Secundario.Alumno.Nombre
-            Fila("PERSONA_APELLIDO") = F_Secundario.Alumno.Apellido
-            Fila("PERSONA_CUIL") = F_Secundario.Alumno.CUIL
-            Fila("PERSONA_DNI") = F_Secundario.Alumno.DNI
+            Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
+            Dim IDPERSONA As String = Almacenamiento.Tables("PERSONA").Rows(Ultimo)("ID_PERSONA").ToString
+            Tabla = "ALUMNO"
+            InsertarSQL(Tabla)
+            Fila("ALUMNO_NUMERO_LEGAJO") = F_Secundario.Alumno.NumeroDeLegajo
+            Fila("ALUMNO_FECHA_INGRESO") = F_Secundario.Alumno.FechaDeIngreso
+            Fila("ALUMNO_RELA_PERSONA") = IDPERSONA
             Insert(Tabla)
-            Comando.CommandText = "Insert Into Persona VALUES(:idpersona,:nombre,:apellido,:cuil,:dni)"
-            Comando.Parameters.Add(New OracleParameter(":idpersona", OracleDbType.Int64, 10, "ID_PERSONA"))
-            Comando.Parameters.Add(New OracleParameter(":nombre", OracleDbType.Varchar2, 100, "PERSONA_NOMBRE"))
-            Comando.Parameters.Add(New OracleParameter(":apellido", OracleDbType.Varchar2, 100, "PERSONA_APELLIDO"))
-            Comando.Parameters.Add(New OracleParameter(":cuil", OracleDbType.Int64, 11, "PERSONA_CUIL"))
-            Comando.Parameters.Add(New OracleParameter(":dni", OracleDbType.Int64, 10, "PERSONA_DNI"))
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Alumno VALUES(:idalumno,:numerolegajo,:fechaingreso,:relapersona)"
+            Comando.Parameters.Add(New OracleParameter(":idalumno", OracleDbType.Int64, 10, "ID_ALUMNO"))
+            Comando.Parameters.Add(New OracleParameter(":numerolegajo", OracleDbType.Int64, 10, "ALUMNO_NUMERO_LEGAJO"))
+            Comando.Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date, 0, "ALUMNO_FECHA_INGRESO"))
+            Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "ALUMNO_RELA_PERSONA"))
             ActualizarSQL(Tabla)
+            'Almacenamiento.Tables(Tabla).Clear()
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)

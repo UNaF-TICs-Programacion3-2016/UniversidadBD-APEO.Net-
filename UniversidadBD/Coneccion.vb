@@ -1,11 +1,11 @@
 ﻿Imports Oracle.DataAccess.Client
 Public Class Coneccion
-    Private Conexion As New OracleConnection()
-    Private Comando As New OracleCommand()
-    Private Almacenamiento As New DataSet()
-    Private Fila As DataRow
-    Private Columna As DataColumn
-    Private Tabla As DataTable
+    Protected Conexion As New OracleConnection()
+    Protected Comando As New OracleCommand()
+    Protected Almacenamiento As New DataSet()
+    Protected Fila As DataRow
+    Protected Columna As DataColumn
+    Protected Tabla As DataTable
     Sub New()
         Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=balditofc42;"
     End Sub
