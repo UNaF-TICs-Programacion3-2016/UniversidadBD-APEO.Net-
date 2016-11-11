@@ -47,6 +47,29 @@ Partial Class F_Secundario
         Me.BTN_A_ExamenFinalCancelar = New System.Windows.Forms.Button()
         Me.Label164 = New System.Windows.Forms.Label()
         Me.BTN_A_ExamenFinalAceptar = New System.Windows.Forms.Button()
+        Me.PNL_A_Materia = New System.Windows.Forms.Panel()
+        Me.CBX_A_OptativaMateria = New System.Windows.Forms.CheckBox()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.RDB_A_CorrelativaMateria = New System.Windows.Forms.RadioButton()
+        Me.RDB_A_NormalMateria = New System.Windows.Forms.RadioButton()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.CMB_A_SeleccionarCarreraMateria = New System.Windows.Forms.ComboBox()
+        Me.BTN_A_MateriaCancelar = New System.Windows.Forms.Button()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TXT_A_CodigoMateria = New System.Windows.Forms.TextBox()
+        Me.BTN_A_MateriaSiguiente = New System.Windows.Forms.Button()
+        Me.TXT_A_DescripcionMateria = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.PNL_A_Correlativa = New System.Windows.Forms.Panel()
+        Me.CMB_A_CorrelativaOptativa = New System.Windows.Forms.ComboBox()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.CLB_A_CorrelativasMaterias = New System.Windows.Forms.CheckedListBox()
+        Me.BTN_A_CorrelativaVolver = New System.Windows.Forms.Button()
+        Me.BTN_A_CorrelativaCancelar = New System.Windows.Forms.Button()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.BTN_A_CorrelativaAceptar = New System.Windows.Forms.Button()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.PNL_A_Aula = New System.Windows.Forms.Panel()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -179,15 +202,6 @@ Partial Class F_Secundario
         Me.BTN_A_CursoCancelar = New System.Windows.Forms.Button()
         Me.Label127 = New System.Windows.Forms.Label()
         Me.BTN_A_CursoSiguiente = New System.Windows.Forms.Button()
-        Me.PNL_A_Correlativa = New System.Windows.Forms.Panel()
-        Me.CMB_A_CorrelativaOptativa = New System.Windows.Forms.ComboBox()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.CLB_A_CorrelativasMaterias = New System.Windows.Forms.CheckedListBox()
-        Me.BTN_A_CorrelativaVolver = New System.Windows.Forms.Button()
-        Me.BTN_A_CorrelativaCancelar = New System.Windows.Forms.Button()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.BTN_A_CorrelativaAceptar = New System.Windows.Forms.Button()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.PNL_A_Otro = New System.Windows.Forms.Panel()
         Me.CMB_A_FacultadOtro = New System.Windows.Forms.ComboBox()
         Me.Label99 = New System.Windows.Forms.Label()
@@ -485,25 +499,13 @@ Partial Class F_Secundario
         Me.BTN_S_MateriaCancelar = New System.Windows.Forms.Button()
         Me.Label126 = New System.Windows.Forms.Label()
         Me.BTN_S_MateriaBorrar = New System.Windows.Forms.Button()
-        Me.PNL_A_Materia = New System.Windows.Forms.Panel()
-        Me.CBX_A_OptativaMateria = New System.Windows.Forms.CheckBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.RDB_A_CorrelativaMateria = New System.Windows.Forms.RadioButton()
-        Me.RDB_A_NormalMateria = New System.Windows.Forms.RadioButton()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.CMB_A_SeleccionarCarreraMateria = New System.Windows.Forms.ComboBox()
-        Me.BTN_A_MateriaCancelar = New System.Windows.Forms.Button()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.TXT_A_CodigoMateria = New System.Windows.Forms.TextBox()
-        Me.BTN_A_MateriaSiguiente = New System.Windows.Forms.Button()
-        Me.TXT_A_DescripcionMateria = New System.Windows.Forms.TextBox()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.PNL_A_ExamenFinal.SuspendLayout()
         CType(Me.NUD_A_NParcialExamenFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NUD_A_LlamadoExamenFinal, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PNL_A_Materia.SuspendLayout()
+        Me.PNL_A_Correlativa.SuspendLayout()
         Me.PNL_A_Aula.SuspendLayout()
         Me.PNL_A_Profesor.SuspendLayout()
         Me.PNL_A_ProfesorMaterias.SuspendLayout()
@@ -515,7 +517,6 @@ Partial Class F_Secundario
         Me.PNL_A_Curso2.SuspendLayout()
         Me.PNL_A_Curso.SuspendLayout()
         CType(Me.NUD_A_ComisionCurso, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PNL_A_Correlativa.SuspendLayout()
         Me.PNL_A_Otro.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.PNL_E_ExamenFinal.SuspendLayout()
@@ -544,7 +545,6 @@ Partial Class F_Secundario
         Me.PNL_S_Profesor.SuspendLayout()
         Me.PNL_S_Carrera.SuspendLayout()
         Me.PNL_S_Materia.SuspendLayout()
-        Me.PNL_A_Materia.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -561,7 +561,6 @@ Partial Class F_Secundario
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.PNL_A_ExamenFinal)
-        Me.TabPage1.Controls.Add(Me.PNL_A_Materia)
         Me.TabPage1.Controls.Add(Me.PNL_A_Correlativa)
         Me.TabPage1.Controls.Add(Me.PNL_A_Aula)
         Me.TabPage1.Controls.Add(Me.PNL_A_Profesor)
@@ -817,6 +816,248 @@ Partial Class F_Secundario
         Me.BTN_A_ExamenFinalAceptar.TabIndex = 7
         Me.BTN_A_ExamenFinalAceptar.Text = "Aceptar"
         Me.BTN_A_ExamenFinalAceptar.UseVisualStyleBackColor = True
+        '
+        'PNL_A_Materia
+        '
+        Me.PNL_A_Materia.Controls.Add(Me.CBX_A_OptativaMateria)
+        Me.PNL_A_Materia.Controls.Add(Me.Label30)
+        Me.PNL_A_Materia.Controls.Add(Me.RDB_A_CorrelativaMateria)
+        Me.PNL_A_Materia.Controls.Add(Me.RDB_A_NormalMateria)
+        Me.PNL_A_Materia.Controls.Add(Me.Label24)
+        Me.PNL_A_Materia.Controls.Add(Me.CMB_A_SeleccionarCarreraMateria)
+        Me.PNL_A_Materia.Controls.Add(Me.BTN_A_MateriaCancelar)
+        Me.PNL_A_Materia.Controls.Add(Me.Label26)
+        Me.PNL_A_Materia.Controls.Add(Me.TXT_A_CodigoMateria)
+        Me.PNL_A_Materia.Controls.Add(Me.BTN_A_MateriaSiguiente)
+        Me.PNL_A_Materia.Controls.Add(Me.TXT_A_DescripcionMateria)
+        Me.PNL_A_Materia.Controls.Add(Me.Label28)
+        Me.PNL_A_Materia.Controls.Add(Me.Label29)
+        Me.PNL_A_Materia.Location = New System.Drawing.Point(622, 28)
+        Me.PNL_A_Materia.Name = "PNL_A_Materia"
+        Me.PNL_A_Materia.Size = New System.Drawing.Size(506, 388)
+        Me.PNL_A_Materia.TabIndex = 16
+        Me.PNL_A_Materia.Visible = False
+        '
+        'CBX_A_OptativaMateria
+        '
+        Me.CBX_A_OptativaMateria.AutoSize = True
+        Me.CBX_A_OptativaMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBX_A_OptativaMateria.Location = New System.Drawing.Point(88, 226)
+        Me.CBX_A_OptativaMateria.Name = "CBX_A_OptativaMateria"
+        Me.CBX_A_OptativaMateria.Size = New System.Drawing.Size(105, 21)
+        Me.CBX_A_OptativaMateria.TabIndex = 15
+        Me.CBX_A_OptativaMateria.Text = "¿Es Optativa?"
+        Me.CBX_A_OptativaMateria.UseVisualStyleBackColor = True
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(45, 64)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(37, 17)
+        Me.Label30.TabIndex = 14
+        Me.Label30.Text = "Tipo:"
+        '
+        'RDB_A_CorrelativaMateria
+        '
+        Me.RDB_A_CorrelativaMateria.AutoSize = True
+        Me.RDB_A_CorrelativaMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RDB_A_CorrelativaMateria.Location = New System.Drawing.Point(184, 60)
+        Me.RDB_A_CorrelativaMateria.Name = "RDB_A_CorrelativaMateria"
+        Me.RDB_A_CorrelativaMateria.Size = New System.Drawing.Size(89, 21)
+        Me.RDB_A_CorrelativaMateria.TabIndex = 13
+        Me.RDB_A_CorrelativaMateria.TabStop = True
+        Me.RDB_A_CorrelativaMateria.Text = "Correlativa"
+        Me.RDB_A_CorrelativaMateria.UseVisualStyleBackColor = True
+        '
+        'RDB_A_NormalMateria
+        '
+        Me.RDB_A_NormalMateria.AutoSize = True
+        Me.RDB_A_NormalMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RDB_A_NormalMateria.Location = New System.Drawing.Point(88, 61)
+        Me.RDB_A_NormalMateria.Name = "RDB_A_NormalMateria"
+        Me.RDB_A_NormalMateria.Size = New System.Drawing.Size(70, 21)
+        Me.RDB_A_NormalMateria.TabIndex = 12
+        Me.RDB_A_NormalMateria.TabStop = True
+        Me.RDB_A_NormalMateria.Text = "Normal"
+        Me.RDB_A_NormalMateria.UseVisualStyleBackColor = True
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(85, 164)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(122, 17)
+        Me.Label24.TabIndex = 11
+        Me.Label24.Text = "Seleccionar Carrera"
+        '
+        'CMB_A_SeleccionarCarreraMateria
+        '
+        Me.CMB_A_SeleccionarCarreraMateria.FormattingEnabled = True
+        Me.CMB_A_SeleccionarCarreraMateria.Location = New System.Drawing.Point(88, 188)
+        Me.CMB_A_SeleccionarCarreraMateria.Name = "CMB_A_SeleccionarCarreraMateria"
+        Me.CMB_A_SeleccionarCarreraMateria.Size = New System.Drawing.Size(266, 21)
+        Me.CMB_A_SeleccionarCarreraMateria.TabIndex = 10
+        '
+        'BTN_A_MateriaCancelar
+        '
+        Me.BTN_A_MateriaCancelar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_A_MateriaCancelar.Location = New System.Drawing.Point(388, 323)
+        Me.BTN_A_MateriaCancelar.Name = "BTN_A_MateriaCancelar"
+        Me.BTN_A_MateriaCancelar.Size = New System.Drawing.Size(94, 42)
+        Me.BTN_A_MateriaCancelar.TabIndex = 8
+        Me.BTN_A_MateriaCancelar.Text = "Cancelar"
+        Me.BTN_A_MateriaCancelar.UseVisualStyleBackColor = True
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Segoe WP Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(3, 12)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(100, 32)
+        Me.Label26.TabIndex = 9
+        Me.Label26.Text = "Materia"
+        '
+        'TXT_A_CodigoMateria
+        '
+        Me.TXT_A_CodigoMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_A_CodigoMateria.Location = New System.Drawing.Point(88, 93)
+        Me.TXT_A_CodigoMateria.Name = "TXT_A_CodigoMateria"
+        Me.TXT_A_CodigoMateria.Size = New System.Drawing.Size(70, 25)
+        Me.TXT_A_CodigoMateria.TabIndex = 2
+        '
+        'BTN_A_MateriaSiguiente
+        '
+        Me.BTN_A_MateriaSiguiente.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_A_MateriaSiguiente.Location = New System.Drawing.Point(288, 323)
+        Me.BTN_A_MateriaSiguiente.Name = "BTN_A_MateriaSiguiente"
+        Me.BTN_A_MateriaSiguiente.Size = New System.Drawing.Size(94, 42)
+        Me.BTN_A_MateriaSiguiente.TabIndex = 7
+        Me.BTN_A_MateriaSiguiente.Text = "Siguiente"
+        Me.BTN_A_MateriaSiguiente.UseVisualStyleBackColor = True
+        '
+        'TXT_A_DescripcionMateria
+        '
+        Me.TXT_A_DescripcionMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_A_DescripcionMateria.Location = New System.Drawing.Point(88, 124)
+        Me.TXT_A_DescripcionMateria.Name = "TXT_A_DescripcionMateria"
+        Me.TXT_A_DescripcionMateria.Size = New System.Drawing.Size(266, 25)
+        Me.TXT_A_DescripcionMateria.TabIndex = 0
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(6, 132)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(76, 17)
+        Me.Label28.TabIndex = 4
+        Me.Label28.Text = "Descripción"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(31, 101)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(51, 17)
+        Me.Label29.TabIndex = 3
+        Me.Label29.Text = "Código"
+        '
+        'PNL_A_Correlativa
+        '
+        Me.PNL_A_Correlativa.Controls.Add(Me.CMB_A_CorrelativaOptativa)
+        Me.PNL_A_Correlativa.Controls.Add(Me.Label52)
+        Me.PNL_A_Correlativa.Controls.Add(Me.CLB_A_CorrelativasMaterias)
+        Me.PNL_A_Correlativa.Controls.Add(Me.BTN_A_CorrelativaVolver)
+        Me.PNL_A_Correlativa.Controls.Add(Me.BTN_A_CorrelativaCancelar)
+        Me.PNL_A_Correlativa.Controls.Add(Me.Label32)
+        Me.PNL_A_Correlativa.Controls.Add(Me.BTN_A_CorrelativaAceptar)
+        Me.PNL_A_Correlativa.Controls.Add(Me.Label33)
+        Me.PNL_A_Correlativa.Location = New System.Drawing.Point(21, 200)
+        Me.PNL_A_Correlativa.Name = "PNL_A_Correlativa"
+        Me.PNL_A_Correlativa.Size = New System.Drawing.Size(151, 56)
+        Me.PNL_A_Correlativa.TabIndex = 17
+        Me.PNL_A_Correlativa.Visible = False
+        '
+        'CMB_A_CorrelativaOptativa
+        '
+        Me.CMB_A_CorrelativaOptativa.FormattingEnabled = True
+        Me.CMB_A_CorrelativaOptativa.Location = New System.Drawing.Point(9, 258)
+        Me.CMB_A_CorrelativaOptativa.Name = "CMB_A_CorrelativaOptativa"
+        Me.CMB_A_CorrelativaOptativa.Size = New System.Drawing.Size(266, 21)
+        Me.CMB_A_CorrelativaOptativa.TabIndex = 18
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.Location = New System.Drawing.Point(6, 232)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(191, 17)
+        Me.Label52.TabIndex = 17
+        Me.Label52.Text = "¿Con que materias es optativa?"
+        '
+        'CLB_A_CorrelativasMaterias
+        '
+        Me.CLB_A_CorrelativasMaterias.FormattingEnabled = True
+        Me.CLB_A_CorrelativasMaterias.Location = New System.Drawing.Point(9, 84)
+        Me.CLB_A_CorrelativasMaterias.Name = "CLB_A_CorrelativasMaterias"
+        Me.CLB_A_CorrelativasMaterias.Size = New System.Drawing.Size(473, 139)
+        Me.CLB_A_CorrelativasMaterias.TabIndex = 16
+        '
+        'BTN_A_CorrelativaVolver
+        '
+        Me.BTN_A_CorrelativaVolver.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_A_CorrelativaVolver.Location = New System.Drawing.Point(188, 323)
+        Me.BTN_A_CorrelativaVolver.Name = "BTN_A_CorrelativaVolver"
+        Me.BTN_A_CorrelativaVolver.Size = New System.Drawing.Size(94, 42)
+        Me.BTN_A_CorrelativaVolver.TabIndex = 15
+        Me.BTN_A_CorrelativaVolver.Text = "Volver"
+        Me.BTN_A_CorrelativaVolver.UseVisualStyleBackColor = True
+        '
+        'BTN_A_CorrelativaCancelar
+        '
+        Me.BTN_A_CorrelativaCancelar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_A_CorrelativaCancelar.Location = New System.Drawing.Point(388, 323)
+        Me.BTN_A_CorrelativaCancelar.Name = "BTN_A_CorrelativaCancelar"
+        Me.BTN_A_CorrelativaCancelar.Size = New System.Drawing.Size(94, 42)
+        Me.BTN_A_CorrelativaCancelar.TabIndex = 8
+        Me.BTN_A_CorrelativaCancelar.Text = "Cancelar"
+        Me.BTN_A_CorrelativaCancelar.UseVisualStyleBackColor = True
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Segoe WP Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(3, 12)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(134, 32)
+        Me.Label32.TabIndex = 9
+        Me.Label32.Text = "Correlativa"
+        '
+        'BTN_A_CorrelativaAceptar
+        '
+        Me.BTN_A_CorrelativaAceptar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_A_CorrelativaAceptar.Location = New System.Drawing.Point(288, 323)
+        Me.BTN_A_CorrelativaAceptar.Name = "BTN_A_CorrelativaAceptar"
+        Me.BTN_A_CorrelativaAceptar.Size = New System.Drawing.Size(94, 42)
+        Me.BTN_A_CorrelativaAceptar.TabIndex = 7
+        Me.BTN_A_CorrelativaAceptar.Text = "Aceptar"
+        Me.BTN_A_CorrelativaAceptar.UseVisualStyleBackColor = True
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(6, 60)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(160, 17)
+        Me.Label33.TabIndex = 4
+        Me.Label33.Text = "Seleccione las correlativas"
         '
         'PNL_A_Aula
         '
@@ -2165,98 +2406,6 @@ Partial Class F_Secundario
         Me.BTN_A_CursoSiguiente.TabIndex = 7
         Me.BTN_A_CursoSiguiente.Text = "Siguiente"
         Me.BTN_A_CursoSiguiente.UseVisualStyleBackColor = True
-        '
-        'PNL_A_Correlativa
-        '
-        Me.PNL_A_Correlativa.Controls.Add(Me.CMB_A_CorrelativaOptativa)
-        Me.PNL_A_Correlativa.Controls.Add(Me.Label52)
-        Me.PNL_A_Correlativa.Controls.Add(Me.CLB_A_CorrelativasMaterias)
-        Me.PNL_A_Correlativa.Controls.Add(Me.BTN_A_CorrelativaVolver)
-        Me.PNL_A_Correlativa.Controls.Add(Me.BTN_A_CorrelativaCancelar)
-        Me.PNL_A_Correlativa.Controls.Add(Me.Label32)
-        Me.PNL_A_Correlativa.Controls.Add(Me.BTN_A_CorrelativaAceptar)
-        Me.PNL_A_Correlativa.Controls.Add(Me.Label33)
-        Me.PNL_A_Correlativa.Location = New System.Drawing.Point(21, 200)
-        Me.PNL_A_Correlativa.Name = "PNL_A_Correlativa"
-        Me.PNL_A_Correlativa.Size = New System.Drawing.Size(151, 56)
-        Me.PNL_A_Correlativa.TabIndex = 17
-        Me.PNL_A_Correlativa.Visible = False
-        '
-        'CMB_A_CorrelativaOptativa
-        '
-        Me.CMB_A_CorrelativaOptativa.FormattingEnabled = True
-        Me.CMB_A_CorrelativaOptativa.Location = New System.Drawing.Point(9, 258)
-        Me.CMB_A_CorrelativaOptativa.Name = "CMB_A_CorrelativaOptativa"
-        Me.CMB_A_CorrelativaOptativa.Size = New System.Drawing.Size(266, 21)
-        Me.CMB_A_CorrelativaOptativa.TabIndex = 18
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(6, 232)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(191, 17)
-        Me.Label52.TabIndex = 17
-        Me.Label52.Text = "¿Con que materias es optativa?"
-        '
-        'CLB_A_CorrelativasMaterias
-        '
-        Me.CLB_A_CorrelativasMaterias.FormattingEnabled = True
-        Me.CLB_A_CorrelativasMaterias.Location = New System.Drawing.Point(9, 84)
-        Me.CLB_A_CorrelativasMaterias.Name = "CLB_A_CorrelativasMaterias"
-        Me.CLB_A_CorrelativasMaterias.Size = New System.Drawing.Size(473, 139)
-        Me.CLB_A_CorrelativasMaterias.TabIndex = 16
-        '
-        'BTN_A_CorrelativaVolver
-        '
-        Me.BTN_A_CorrelativaVolver.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_A_CorrelativaVolver.Location = New System.Drawing.Point(188, 323)
-        Me.BTN_A_CorrelativaVolver.Name = "BTN_A_CorrelativaVolver"
-        Me.BTN_A_CorrelativaVolver.Size = New System.Drawing.Size(94, 42)
-        Me.BTN_A_CorrelativaVolver.TabIndex = 15
-        Me.BTN_A_CorrelativaVolver.Text = "Volver"
-        Me.BTN_A_CorrelativaVolver.UseVisualStyleBackColor = True
-        '
-        'BTN_A_CorrelativaCancelar
-        '
-        Me.BTN_A_CorrelativaCancelar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_A_CorrelativaCancelar.Location = New System.Drawing.Point(388, 323)
-        Me.BTN_A_CorrelativaCancelar.Name = "BTN_A_CorrelativaCancelar"
-        Me.BTN_A_CorrelativaCancelar.Size = New System.Drawing.Size(94, 42)
-        Me.BTN_A_CorrelativaCancelar.TabIndex = 8
-        Me.BTN_A_CorrelativaCancelar.Text = "Cancelar"
-        Me.BTN_A_CorrelativaCancelar.UseVisualStyleBackColor = True
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Segoe WP Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(3, 12)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(134, 32)
-        Me.Label32.TabIndex = 9
-        Me.Label32.Text = "Correlativa"
-        '
-        'BTN_A_CorrelativaAceptar
-        '
-        Me.BTN_A_CorrelativaAceptar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_A_CorrelativaAceptar.Location = New System.Drawing.Point(288, 323)
-        Me.BTN_A_CorrelativaAceptar.Name = "BTN_A_CorrelativaAceptar"
-        Me.BTN_A_CorrelativaAceptar.Size = New System.Drawing.Size(94, 42)
-        Me.BTN_A_CorrelativaAceptar.TabIndex = 7
-        Me.BTN_A_CorrelativaAceptar.Text = "Aceptar"
-        Me.BTN_A_CorrelativaAceptar.UseVisualStyleBackColor = True
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(6, 60)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(160, 17)
-        Me.Label33.TabIndex = 4
-        Me.Label33.Text = "Seleccione las correlativas"
         '
         'PNL_A_Otro
         '
@@ -5301,162 +5450,13 @@ Partial Class F_Secundario
         Me.BTN_S_MateriaBorrar.Text = "Borrar"
         Me.BTN_S_MateriaBorrar.UseVisualStyleBackColor = True
         '
-        'PNL_A_Materia
-        '
-        Me.PNL_A_Materia.Controls.Add(Me.CBX_A_OptativaMateria)
-        Me.PNL_A_Materia.Controls.Add(Me.Label30)
-        Me.PNL_A_Materia.Controls.Add(Me.RDB_A_CorrelativaMateria)
-        Me.PNL_A_Materia.Controls.Add(Me.RDB_A_NormalMateria)
-        Me.PNL_A_Materia.Controls.Add(Me.Label24)
-        Me.PNL_A_Materia.Controls.Add(Me.CMB_A_SeleccionarCarreraMateria)
-        Me.PNL_A_Materia.Controls.Add(Me.BTN_A_MateriaCancelar)
-        Me.PNL_A_Materia.Controls.Add(Me.Label26)
-        Me.PNL_A_Materia.Controls.Add(Me.TXT_A_CodigoMateria)
-        Me.PNL_A_Materia.Controls.Add(Me.BTN_A_MateriaSiguiente)
-        Me.PNL_A_Materia.Controls.Add(Me.TXT_A_DescripcionMateria)
-        Me.PNL_A_Materia.Controls.Add(Me.Label28)
-        Me.PNL_A_Materia.Controls.Add(Me.Label29)
-        Me.PNL_A_Materia.Location = New System.Drawing.Point(34, 138)
-        Me.PNL_A_Materia.Name = "PNL_A_Materia"
-        Me.PNL_A_Materia.Size = New System.Drawing.Size(121, 56)
-        Me.PNL_A_Materia.TabIndex = 16
-        Me.PNL_A_Materia.Visible = False
-        '
-        'CBX_A_OptativaMateria
-        '
-        Me.CBX_A_OptativaMateria.AutoSize = True
-        Me.CBX_A_OptativaMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBX_A_OptativaMateria.Location = New System.Drawing.Point(88, 226)
-        Me.CBX_A_OptativaMateria.Name = "CBX_A_OptativaMateria"
-        Me.CBX_A_OptativaMateria.Size = New System.Drawing.Size(105, 21)
-        Me.CBX_A_OptativaMateria.TabIndex = 15
-        Me.CBX_A_OptativaMateria.Text = "¿Es Optativa?"
-        Me.CBX_A_OptativaMateria.UseVisualStyleBackColor = True
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(45, 64)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(37, 17)
-        Me.Label30.TabIndex = 14
-        Me.Label30.Text = "Tipo:"
-        '
-        'RDB_A_CorrelativaMateria
-        '
-        Me.RDB_A_CorrelativaMateria.AutoSize = True
-        Me.RDB_A_CorrelativaMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RDB_A_CorrelativaMateria.Location = New System.Drawing.Point(184, 60)
-        Me.RDB_A_CorrelativaMateria.Name = "RDB_A_CorrelativaMateria"
-        Me.RDB_A_CorrelativaMateria.Size = New System.Drawing.Size(89, 21)
-        Me.RDB_A_CorrelativaMateria.TabIndex = 13
-        Me.RDB_A_CorrelativaMateria.TabStop = True
-        Me.RDB_A_CorrelativaMateria.Text = "Correlativa"
-        Me.RDB_A_CorrelativaMateria.UseVisualStyleBackColor = True
-        '
-        'RDB_A_NormalMateria
-        '
-        Me.RDB_A_NormalMateria.AutoSize = True
-        Me.RDB_A_NormalMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RDB_A_NormalMateria.Location = New System.Drawing.Point(88, 61)
-        Me.RDB_A_NormalMateria.Name = "RDB_A_NormalMateria"
-        Me.RDB_A_NormalMateria.Size = New System.Drawing.Size(70, 21)
-        Me.RDB_A_NormalMateria.TabIndex = 12
-        Me.RDB_A_NormalMateria.TabStop = True
-        Me.RDB_A_NormalMateria.Text = "Normal"
-        Me.RDB_A_NormalMateria.UseVisualStyleBackColor = True
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(85, 164)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(122, 17)
-        Me.Label24.TabIndex = 11
-        Me.Label24.Text = "Seleccionar Carrera"
-        '
-        'CMB_A_SeleccionarCarreraMateria
-        '
-        Me.CMB_A_SeleccionarCarreraMateria.FormattingEnabled = True
-        Me.CMB_A_SeleccionarCarreraMateria.Location = New System.Drawing.Point(88, 188)
-        Me.CMB_A_SeleccionarCarreraMateria.Name = "CMB_A_SeleccionarCarreraMateria"
-        Me.CMB_A_SeleccionarCarreraMateria.Size = New System.Drawing.Size(266, 21)
-        Me.CMB_A_SeleccionarCarreraMateria.TabIndex = 10
-        '
-        'BTN_A_MateriaCancelar
-        '
-        Me.BTN_A_MateriaCancelar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_A_MateriaCancelar.Location = New System.Drawing.Point(388, 323)
-        Me.BTN_A_MateriaCancelar.Name = "BTN_A_MateriaCancelar"
-        Me.BTN_A_MateriaCancelar.Size = New System.Drawing.Size(94, 42)
-        Me.BTN_A_MateriaCancelar.TabIndex = 8
-        Me.BTN_A_MateriaCancelar.Text = "Cancelar"
-        Me.BTN_A_MateriaCancelar.UseVisualStyleBackColor = True
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Segoe WP Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(3, 12)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(100, 32)
-        Me.Label26.TabIndex = 9
-        Me.Label26.Text = "Materia"
-        '
-        'TXT_A_CodigoMateria
-        '
-        Me.TXT_A_CodigoMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_A_CodigoMateria.Location = New System.Drawing.Point(88, 93)
-        Me.TXT_A_CodigoMateria.Name = "TXT_A_CodigoMateria"
-        Me.TXT_A_CodigoMateria.Size = New System.Drawing.Size(70, 25)
-        Me.TXT_A_CodigoMateria.TabIndex = 2
-        '
-        'BTN_A_MateriaSiguiente
-        '
-        Me.BTN_A_MateriaSiguiente.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_A_MateriaSiguiente.Location = New System.Drawing.Point(288, 323)
-        Me.BTN_A_MateriaSiguiente.Name = "BTN_A_MateriaSiguiente"
-        Me.BTN_A_MateriaSiguiente.Size = New System.Drawing.Size(94, 42)
-        Me.BTN_A_MateriaSiguiente.TabIndex = 7
-        Me.BTN_A_MateriaSiguiente.Text = "Siguiente"
-        Me.BTN_A_MateriaSiguiente.UseVisualStyleBackColor = True
-        '
-        'TXT_A_DescripcionMateria
-        '
-        Me.TXT_A_DescripcionMateria.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_A_DescripcionMateria.Location = New System.Drawing.Point(88, 124)
-        Me.TXT_A_DescripcionMateria.Name = "TXT_A_DescripcionMateria"
-        Me.TXT_A_DescripcionMateria.Size = New System.Drawing.Size(266, 25)
-        Me.TXT_A_DescripcionMateria.TabIndex = 0
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(6, 132)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(76, 17)
-        Me.Label28.TabIndex = 4
-        Me.Label28.Text = "Descripción"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(31, 101)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(51, 17)
-        Me.Label29.TabIndex = 3
-        Me.Label29.Text = "Código"
-        '
         'F_Secundario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1248, 457)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.PNL_A_Materia)
         Me.Name = "F_Secundario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión de la Universidad"
@@ -5466,6 +5466,10 @@ Partial Class F_Secundario
         Me.PNL_A_ExamenFinal.PerformLayout()
         CType(Me.NUD_A_NParcialExamenFinal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NUD_A_LlamadoExamenFinal, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PNL_A_Materia.ResumeLayout(False)
+        Me.PNL_A_Materia.PerformLayout()
+        Me.PNL_A_Correlativa.ResumeLayout(False)
+        Me.PNL_A_Correlativa.PerformLayout()
         Me.PNL_A_Aula.ResumeLayout(False)
         Me.PNL_A_Aula.PerformLayout()
         Me.PNL_A_Profesor.ResumeLayout(False)
@@ -5487,8 +5491,6 @@ Partial Class F_Secundario
         Me.PNL_A_Curso.ResumeLayout(False)
         Me.PNL_A_Curso.PerformLayout()
         CType(Me.NUD_A_ComisionCurso, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PNL_A_Correlativa.ResumeLayout(False)
-        Me.PNL_A_Correlativa.PerformLayout()
         Me.PNL_A_Otro.ResumeLayout(False)
         Me.PNL_A_Otro.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -5541,8 +5543,6 @@ Partial Class F_Secundario
         Me.PNL_S_Carrera.PerformLayout()
         Me.PNL_S_Materia.ResumeLayout(False)
         Me.PNL_S_Materia.PerformLayout()
-        Me.PNL_A_Materia.ResumeLayout(False)
-        Me.PNL_A_Materia.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
