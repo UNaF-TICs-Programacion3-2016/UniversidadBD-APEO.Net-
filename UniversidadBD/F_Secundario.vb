@@ -1,6 +1,7 @@
 ﻿Public Class F_Secundario
     Public Facultad As New Facultad()
     Public Carrera As New Carrera()
+    Public Materia As New Materia()
     Private oConeccion As New Coneccion()
     Public Alumno As New Alumnos
     Private Profesor As New Profesores
@@ -59,6 +60,14 @@
         Alumno.InsertarAlumno()
         Me.Close()
     End Sub
+    Private Sub BTN_A_CorrelativaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaAceptar.Click
+        Materia.Codigo = TXT_A_CodigoMateria.Text
+        Materia.Descripcion = TXT_A_DescripcionMateria.Text
+        Materia.Correlativa = RDB_A_CorrelativaMateria.Checked
+        Materia.Optativa = CBX_A_OptativaMateria.Checked
+        Materia.InsertarMateria()
+        Me.Close()
+    End Sub
     'PANELES
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
@@ -68,6 +77,9 @@
     End Sub
     Private Sub PNL_A_Alumno2_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Alumno2.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadAlumno, PNL_A_Alumno2, "FACULTAD", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_A_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Materia.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_SeleccionarCarreraMateria, PNL_A_Carrera, "CARRERA", "DESCRIPCION")
     End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
@@ -82,6 +94,9 @@
         Me.Close()
     End Sub
     Private Sub BTN_A_AlumnoCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_AlumnoCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
     End Sub
 End Class

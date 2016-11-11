@@ -64,6 +64,7 @@ Public MustInherit Class Persona
         Fila("PERSONA_CUIL") = F_Secundario.Alumno.CUIL
         Fila("PERSONA_DNI") = F_Secundario.Alumno.DNI
         Insert(Tabla)
+        Comando.Parameters.Clear()
         Comando.CommandText = "Insert Into Persona VALUES(:idpersona,:nombre,:apellido,:cuil,:dni)"
         Comando.Parameters.Add(New OracleParameter(":idpersona", OracleDbType.Int64, 10, "ID_PERSONA"))
         Comando.Parameters.Add(New OracleParameter(":nombre", OracleDbType.Varchar2, 100, "PERSONA_NOMBRE"))

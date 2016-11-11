@@ -38,7 +38,6 @@ Public Class Carrera
             pFacultad = value
         End Set
     End Property
-    'METODOS
     'INSERTAR CARRERA
     Friend Sub InsertarCarrera()
         Dim Tabla As String = "CARRERA"
