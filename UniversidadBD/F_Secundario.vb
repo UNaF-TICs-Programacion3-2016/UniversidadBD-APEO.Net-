@@ -4,7 +4,8 @@
     Public Materia As New Materia()
     Private oConeccion As New Coneccion()
     Public Alumno As New Alumnos
-    Private Profesor As New Profesores
+    Public Profesor As New Profesores
+    Public oAula As New Aula
     Private Otro As New Otros
     Private oConfiguracion As New Configuracion()
     'CLICK PARA SIGUIENTE PANEL
@@ -99,4 +100,6 @@
     Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
     End Sub
+
+
 End Class
