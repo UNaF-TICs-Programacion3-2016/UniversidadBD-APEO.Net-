@@ -1,5 +1,6 @@
 ﻿Public Class F_Secundario
     Public Facultad As New Facultad()
+    Public Carrera As New Carrera()
     Private oConeccion As New Coneccion()
     Public Alumno As New Alumnos
     Private Profesor As New Profesores
@@ -11,16 +12,8 @@
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Correlativa, TabControl1)
     End Sub
     Private Sub BTN_A_AlumnoSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_A_AlumnoSiguiente.Click
-        Alumno.Nombre = TXT_A_NombreAlumno.Text
-        Alumno.Apellido = TXT_A_ApellidoAlumno.Text
-        Alumno.CUIL = TXT_A_CUILAlumno.Text
-        Alumno.DNI = TXT_A_DNIAlumno.Text
-        Alumno.FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
-        Alumno.NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
-        Alumno.InsertarAlumno()
         PNL_A_Alumno.Visible = False
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Alumno2, TabControl1)
-        Me.Close()
     End Sub
     Private Sub BTN_E_ProfesorSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_E_ProfesorSiguiente.Click
         PNL_E_Profesor.Visible = False
@@ -48,13 +41,47 @@
         Facultad.InsertarFacultad()
         Me.Close()
     End Sub
+    'CLICK PARA ACEPTAR
+    Private Sub BTN_A_CarreraAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_CarreraAceptar.Click
+        Carrera.Codigo = TXT_A_CodigoCarrera.Text
+        Carrera.Descripcion = TXT_A_DescripcionCarrera.Text
+        Carrera.Duracion = TXT_A_DuracionCarrera.Text
+        Carrera.InsertarCarrera()
+        Me.Close()
+    End Sub
+    Private Sub BTN_A_AlumnoAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_AlumnoAceptar.Click
+        Alumno.Nombre = TXT_A_NombreAlumno.Text
+        Alumno.Apellido = TXT_A_ApellidoAlumno.Text
+        Alumno.CUIL = TXT_A_CUILAlumno.Text
+        Alumno.DNI = TXT_A_DNIAlumno.Text
+        Alumno.FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
+        Alumno.NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
+        Alumno.InsertarAlumno()
+        Me.Close()
+    End Sub
+    'PANELES
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_A_Carrera_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Carrera.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadCarrera, PNL_A_Carrera, "FACULTAD", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_A_Alumno2_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Alumno2.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadAlumno, PNL_A_Alumno2, "FACULTAD", "DESCRIPCION")
     End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
         TXT_E_CodigoFacultad.Text = Facultad.Codigo
         TXT_E_DescripcionFacultad.Text = Facultad.Descripcion
+    End Sub
+    Private Sub CMB_A_SeleccionarFacultadAlumno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_SeleccionarFacultadAlumno.SelectedIndexChanged
 
+    End Sub
+    'CANCELAR
+    Private Sub BTN_A_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_FacultadCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_A_AlumnoCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_AlumnoCancelar.Click
+        Me.Close()
     End Sub
 End Class

@@ -20,9 +20,9 @@ Public Class Coneccion
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
+        Combo.ValueMember = "ID_" & Tabla
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
-        Combo.ValueMember = "ID_" & Tabla
     End Sub
     Protected Sub ActualizarSQL(Tabla As String)
         Dim Adaptador = New OracleDataAdapter()
