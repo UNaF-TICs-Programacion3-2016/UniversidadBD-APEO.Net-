@@ -73,7 +73,9 @@ Public NotInheritable Class Alumnos
     Friend Sub InsertarAlumno()
         Dim Tabla As String = "PERSONA"
         Try
-            InsertarPersona(Tabla)
+            InsertarPersona()
+            InsertarCorreo()
+            InsertarTelefono()
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
             Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1

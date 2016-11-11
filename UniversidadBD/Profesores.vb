@@ -46,10 +46,10 @@ Public NotInheritable Class Profesores
     End Property
     Friend Overrides Property Correo As String
         Get
-            Return MyBase.Correo
+            Return MyBase.pCorreo
         End Get
         Set(value As String)
-            MyBase.Correo = value
+            MyBase.pCorreo = value
         End Set
     End Property
     'Propiedades especiales
@@ -69,19 +69,13 @@ Public NotInheritable Class Profesores
             pFechaDeIngreso = value
         End Set
     End Property
-    Friend Property Correo() As String
-        Get
-            Return pCorreo
-        End Get
-        Set(ByVal value As String)
-            pCorreo = value
-        End Set
-    End Property
     'INSERTAR PROFESOR
     Friend Sub InsertarProfesor()
         Dim Tabla As String = "PERSONA"
         Try
-            InsertarPersona(Tabla)
+            InsertarPersona()
+            InsertarCorreo()
+            InsertarTelefono()
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
             Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
@@ -90,14 +84,14 @@ Public NotInheritable Class Profesores
             InsertarSQL(Tabla)
             Fila("PROFESOR_FECHA_INGRESO") = F_Secundario.Profesor.FechaDeIngreso
             Fila("PROFESOR_RELA_PERSONA") = IDPERSONA
-            Fila("PROFESOR_RELA_CORREO") = IDPERSONA
+            Fila("PROFESOR_MATRICULA") = F_Secundario.Profesor.Matricula
             Insert(Tabla)
             Comando.Parameters.Clear()
-            Comando.CommandText = "Insert Into Profesor VALUES(:idprofesor,:fechaingreso,:relapersona,:relacorreo)"
+            Comando.CommandText = "Insert Into Profesor VALUES(:idprofesor,:fechaingreso,:relapersona,:matricula)"
             Comando.Parameters.Add(New OracleParameter(":idprofesor", OracleDbType.Int64, 10, "ID_PROFESOR"))
             Comando.Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date, 0, "PROFESOR_FECHA_INGRESO"))
             Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "PROFESOR_RELA_PERSONA"))
-            Comando.Parameters.Add(New OracleParameter(":relacorreo", OracleDbType.Int64, 10, "PROFESOR_RELA_CORREO"))
+            Comando.Parameters.Add(New OracleParameter(":matricula", OracleDbType.Int64, 10, "PROFESOR_MATRICULA"))
             ActualizarSQL(Tabla)
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception

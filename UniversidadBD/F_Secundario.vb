@@ -3,10 +3,11 @@
     Public Carrera As New Carrera()
     Public Materia As New Materia()
     Private oConeccion As New Coneccion()
-    Public Alumno As New Alumnos
-    Public Profesor As New Profesores
-    Public oAula As New Aula
-    Private Otro As New Otros
+    Public Alumno As New Alumnos()
+    Public Profesor As New Profesores()
+    Public Persona As New Persona()
+    Public oAula As New Aula()
+    Public Otro As New Otros()
     Private oConfiguracion As New Configuracion()
     'CLICK PARA SIGUIENTE PANEL
     Private Sub BTN_A_MateriaSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_MateriaSiguiente.Click
@@ -52,10 +53,12 @@
         Me.Close()
     End Sub
     Private Sub BTN_A_AlumnoAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_AlumnoAceptar.Click
-        Alumno.Nombre = TXT_A_NombreAlumno.Text
-        Alumno.Apellido = TXT_A_ApellidoAlumno.Text
-        Alumno.CUIL = TXT_A_CUILAlumno.Text
-        Alumno.DNI = TXT_A_DNIAlumno.Text
+        Persona.Nombre = TXT_A_NombreAlumno.Text
+        Persona.Apellido = TXT_A_ApellidoAlumno.Text
+        Persona.CUIL = TXT_A_CUILAlumno.Text
+        Persona.DNI = TXT_A_DNIAlumno.Text
+        Persona.Telefono = TXT_A_TelefonoAlumno.Text
+        Persona.Correo = TXT_A_CorreoAlumno.Text
         Alumno.FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
         Alumno.NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
         Alumno.InsertarAlumno()
@@ -73,6 +76,29 @@
         oAula.Codigo = TXT_A_CodigoAula.Text
         oAula.Descripcion = TXT_A_DescripcionAula.Text
         oAula.InsertarAula()
+        Me.Close()
+    End Sub
+    Private Sub BTN_A_ProfesorAceptas_Click(sender As Object, e As EventArgs) Handles BTN_A_ProfesorAceptas.Click
+        Persona.Nombre = TXT_A_NombreProfesor.Text
+        Persona.Apellido = TXT_A_ApellidoProfesor.Text
+        Persona.CUIL = TXT_A_CUILProfesor.Text
+        Persona.DNI = TXT_A_DNIProfesor.Text
+        Persona.Telefono = TXT_A_TelefonoProfesor.Text
+        Persona.Correo = TXT_A_CorreoProfesor.Text
+        Profesor.FechaDeIngreso = DTP_A_FechaIngresoProfesor.Value
+        Profesor.Matricula = TXT_A_MatriculaProfesor.Text
+        Profesor.InsertarProfesor()
+        Me.Close()
+    End Sub
+    Private Sub BTN_A_OtroAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_OtroAceptar.Click
+        Persona.Nombre = TXT_A_NombreOtro.Text
+        Persona.Apellido = TXT_A_ApellidoOtro.Text
+        Persona.CUIL = TXT_A_CUILOtro.Text
+        Persona.DNI = TXT_A_DNIOtro.Text
+        Persona.Correo = TXT_A_CorreoOtro.Text
+        Persona.Telefono = TXT_A_TelefonoOtro.Text
+        Otro.FechaDeIngreso = DTP_A_FechaIngresoOtro.Value
+        Otro.InsertarOtro()
         Me.Close()
     End Sub
     'PANELES
@@ -108,5 +134,9 @@
     End Sub
     Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
+    End Sub
+    Private Sub PNL_A_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Otro.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_FacultadOtro, PNL_A_Otro, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_A_OcupacionOtro, PNL_A_Otro, "PUESTO_ADMIN", "DESCRIPCION")
     End Sub
 End Class

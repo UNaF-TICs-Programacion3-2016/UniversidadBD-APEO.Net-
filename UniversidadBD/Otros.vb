@@ -1,4 +1,5 @@
-﻿Public NotInheritable Class Otros
+﻿Imports Oracle.DataAccess.Client
+Public NotInheritable Class Otros
     Inherits Persona
     Private pFechaDeIngreso As Date
     Private pPuesto As String
@@ -68,4 +69,38 @@
             pPuesto = value
         End Set
     End Property
+    'INSERTAR OTRO
+    Friend Sub InsertarOtro()
+        Dim Tabla As String = "ADMINISTRACION"
+        Try
+            InsertarPersona()
+            InsertarTelefono()
+            InsertarCorreo()
+            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            Tabla = "PERSONA"
+            InsertarSQL(Tabla)
+            Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
+            Dim IDPERSONA As String = Almacenamiento.Tables("PERSONA").Rows(Ultimo)("ID_PERSONA").ToString
+            Tabla = "ADMINISTRACION"
+            InsertarSQL(Tabla)
+            Dim IDFACULTAD As Integer = F_Secundario.CMB_A_FacultadOtro.SelectedValue
+            Dim IDPUESTO As Integer = F_Secundario.CMB_A_OcupacionOtro.SelectedValue
+            Fila("ADMIN_FECHA_INGRESO") = F_Secundario.Otro.FechaDeIngreso
+            Fila("ADMIN_RELA_PERSONA") = IDPERSONA
+            Fila("ADMIN_RELA_PUESTO") = IDPUESTO
+            Fila("ADMIN_RELA_FACULTAD") = IDFACULTAD
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Administracion VALUES(:idadministracion,:fechaingreso,:relapersona,:puesto,:facultad)"
+            Comando.Parameters.Add(New OracleParameter(":idadministracion", OracleDbType.Int64, 10, "ID_ADMINISTRACION"))
+            Comando.Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date, 0, "ADMIN_FECHA_INGRESO"))
+            Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "ADMIN_RELA_PERSONA"))
+            Comando.Parameters.Add(New OracleParameter(":puesto", OracleDbType.Int64, 10, "ADMIN_RELA_PUESTO"))
+            Comando.Parameters.Add(New OracleParameter(":facultad", OracleDbType.Int64, 10, "ADMIN_RELA_FACULTAD"))
+            ActualizarSQL(Tabla)
+            MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
