@@ -1,8 +1,6 @@
 ﻿Public NotInheritable Class Otros
     Inherits Persona
-    Private pCorreo As String
     Private pFechaDeIngreso As Date
-    Private pFechaDeBaja As Date
     Private pPuesto As String
     'Propiedades heredadas
     Friend Overrides Property Nombre As String
@@ -37,29 +35,29 @@
             MyBase.DNI = value
         End Set
     End Property
-    'Propiedades especiales
-    Friend Property Correo() As String
+    Friend Overrides Property Correo As String
         Get
-            Return pCorreo
+            Return MyBase.Correo
         End Get
-        Set(ByVal value As String)
-            pCorreo = value
+        Set(value As String)
+            MyBase.Correo = value
         End Set
     End Property
+    Friend Overrides Property Telefono As String
+        Get
+            Return MyBase.Telefono
+        End Get
+        Set(value As String)
+            MyBase.Telefono = value
+        End Set
+    End Property
+    'Propiedades especiales
     Friend Property FechaDeIngreso() As Date
         Get
             Return pFechaDeIngreso
         End Get
         Set(ByVal value As Date)
             pFechaDeIngreso = value
-        End Set
-    End Property
-    Friend Property FechaDeBaja() As Date
-        Get
-            Return pFechaDeBaja
-        End Get
-        Set(ByVal value As Date)
-            pFechaDeBaja = value
         End Set
     End Property
     Friend Property Puesto() As String
@@ -70,5 +68,4 @@
             pPuesto = value
         End Set
     End Property
-
 End Class

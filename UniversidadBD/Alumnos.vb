@@ -36,6 +36,22 @@ Public NotInheritable Class Alumnos
             MyBase.DNI = value
         End Set
     End Property
+    Friend Overrides Property Correo As String
+        Get
+            Return MyBase.Correo
+        End Get
+        Set(value As String)
+            MyBase.Correo = value
+        End Set
+    End Property
+    Friend Overrides Property Telefono As String
+        Get
+            Return MyBase.Telefono
+        End Get
+        Set(value As String)
+            MyBase.Telefono = value
+        End Set
+    End Property
     'Propiedades especiales
     Friend Property NumeroDeLegajo() As String
         Get
@@ -58,7 +74,7 @@ Public NotInheritable Class Alumnos
         Dim Tabla As String = "PERSONA"
         Try
             InsertarPersona(Tabla)
-            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
             Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
             Dim IDPERSONA As String = Almacenamiento.Tables("PERSONA").Rows(Ultimo)("ID_PERSONA").ToString

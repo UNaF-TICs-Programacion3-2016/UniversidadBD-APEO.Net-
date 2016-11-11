@@ -6,7 +6,7 @@ Public MustInherit Class Persona
     Protected pCUIL As String
     Protected pDNI As String
     Protected pTelefono As String
-    Protected pTipoTelefono As String
+    Private pCorreo As String
     'PROPIEDADES
     Friend Overridable Property Nombre() As String
         Get
@@ -48,12 +48,12 @@ Public MustInherit Class Persona
             pTelefono = value
         End Set
     End Property
-    Friend Overridable Property TipoTelefono() As String
+    Friend Overridable Property Correo() As String
         Get
-            Return pTipoTelefono
+            Return pCorreo
         End Get
         Set(value As String)
-            pTipoTelefono = value
+            pCorreo = value
         End Set
     End Property
     'METODOS
@@ -72,5 +72,8 @@ Public MustInherit Class Persona
         Comando.Parameters.Add(New OracleParameter(":cuil", OracleDbType.Int64, 11, "PERSONA_CUIL"))
         Comando.Parameters.Add(New OracleParameter(":dni", OracleDbType.Int64, 10, "PERSONA_DNI"))
         ActualizarSQL(Tabla)
+    End Sub
+    Friend Sub InsertarTelefono()
+
     End Sub
 End Class

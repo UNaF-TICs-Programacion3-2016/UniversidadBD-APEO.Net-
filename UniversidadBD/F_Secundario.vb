@@ -69,6 +69,12 @@
         Materia.InsertarMateria()
         Me.Close()
     End Sub
+    Private Sub BTN_A_AulaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_AulaAceptar.Click
+        oAula.Codigo = TXT_A_CodigoAula.Text
+        oAula.Descripcion = TXT_A_DescripcionAula.Text
+        oAula.InsertarAula()
+        Me.Close()
+    End Sub
     'PANELES
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
@@ -81,6 +87,9 @@
     End Sub
     Private Sub PNL_A_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Materia.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_SeleccionarCarreraMateria, PNL_A_Carrera, "CARRERA", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_A_Aula_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Aula.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_SeleccionarAulaFacultad, PNL_A_Aula, "FACULTAD", "DESCRIPCION")
     End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
@@ -100,6 +109,4 @@
     Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
     End Sub
-
-
 End Class
