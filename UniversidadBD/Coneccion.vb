@@ -3,6 +3,7 @@ Public Class Coneccion
     Protected Conexion As New OracleConnection()
     Protected Comando As New OracleCommand()
     Protected Almacenamiento As New DataSet()
+    Protected Transaccion As OracleTransaction
     Protected Fila As DataRow
     Protected Columna As DataColumn
     Protected Tabla As DataTable

@@ -292,21 +292,21 @@ Partial Class F_Principal
         '
         Me.CuatrimestreToolStripMenuItem.Image = CType(resources.GetObject("CuatrimestreToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CuatrimestreToolStripMenuItem.Name = "CuatrimestreToolStripMenuItem"
-        Me.CuatrimestreToolStripMenuItem.Size = New System.Drawing.Size(152, 30)
+        Me.CuatrimestreToolStripMenuItem.Size = New System.Drawing.Size(150, 30)
         Me.CuatrimestreToolStripMenuItem.Text = "Curso"
         '
         'ExamenFinalToolStripMenuItem
         '
         Me.ExamenFinalToolStripMenuItem.Image = CType(resources.GetObject("ExamenFinalToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ExamenFinalToolStripMenuItem.Name = "ExamenFinalToolStripMenuItem"
-        Me.ExamenFinalToolStripMenuItem.Size = New System.Drawing.Size(152, 30)
+        Me.ExamenFinalToolStripMenuItem.Size = New System.Drawing.Size(150, 30)
         Me.ExamenFinalToolStripMenuItem.Text = "Examen"
         '
         'NotasToolStripMenuItem
         '
         Me.NotasToolStripMenuItem.Image = CType(resources.GetObject("NotasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NotasToolStripMenuItem.Name = "NotasToolStripMenuItem"
-        Me.NotasToolStripMenuItem.Size = New System.Drawing.Size(152, 30)
+        Me.NotasToolStripMenuItem.Size = New System.Drawing.Size(150, 30)
         Me.NotasToolStripMenuItem.Text = "Notas"
         '
         'VERToolStripMenuItem
@@ -748,7 +748,7 @@ Partial Class F_Principal
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label12)
         Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(105, 68)
         Me.PNL_C_ExamenesFinales.Name = "PNL_C_ExamenesFinales"
-        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(214, 67)
+        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(214, 63)
         Me.PNL_C_ExamenesFinales.TabIndex = 5
         Me.PNL_C_ExamenesFinales.Visible = False
         '
@@ -1509,8 +1509,6 @@ Partial Class F_Principal
     Friend WithEvents CuatrimestreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExamenFinalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VERToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents GestiónDeAlumnosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InscripcionesAExamenesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InscripcionesAMateriasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1634,5 +1632,6 @@ Partial Class F_Principal
     Friend WithEvents CMB_C_SeleccionarMateriaNotasExamen As System.Windows.Forms.ComboBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents Label39 As System.Windows.Forms.Label
-
+    Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
+    Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class

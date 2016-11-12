@@ -98,4 +98,41 @@ Public NotInheritable Class Alumnos
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'METODO QUE NO SIRVE
+    Friend Sub InsertAlumno()
+        Dim IDPERSONA As Long
+        Try
+            Conexion.Open()
+            Transaccion = Conexion.BeginTransaction(IsolationLevel.ReadCommitted)
+            Comando.Connection = Conexion
+            Comando.Transaction = Transaccion
+            With Comando
+                .CommandType = CommandType.StoredProcedure
+                .CommandText = "INSERT_PERSONA"
+                .Parameters.Clear()
+                '.Parameters.Add(New OracleParameter(":idpersona", OracleDbType.Long, 10, "ID_PERSONA"))
+                .Parameters.Add(New OracleParameter("nombre", OracleDbType.Varchar2) With {.Value = F_Secundario.Persona.Nombre("PERSONA_NOMBRE")})
+                .Parameters.Add(New OracleParameter("apellido", OracleDbType.Varchar2) With {.Value = F_Secundario.Persona.Apellido("PERSONA_APELLIDO")})
+                .Parameters.Add(New OracleParameter("cuil", OracleDbType.Long) With {.Value = F_Secundario.Persona.CUIL("PERSONA_CUIL")})
+                .Parameters.Add(New OracleParameter("dni", OracleDbType.Long) With {.Value = F_Secundario.Persona.DNI("PERSONA_DNI")})
+                .Parameters.Add(New OracleParameter("last_id", OracleDbType.Long, ParameterDirection.Output))
+                .ExecuteNonQuery()
+                IDPERSONA = Long.Parse(.Parameters("last_id").Value.ToString)
+                .CommandType = CommandType.Text
+                .Parameters.Clear()
+                .CommandText = "Insert Into Alumno VALUES(:idalumno,:numerolegajo,:fechaingreso,:relapersona)"
+                .Parameters.Add(New OracleParameter(":idalumno", OracleDbType.Long) With {.Value = -1})
+                .Parameters.Add(New OracleParameter(":numerolegajo", OracleDbType.Long) With {.Value = pNumeroDeLegajo})
+                .Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date) With {.Value = pFechaDeIngreso})
+                .Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Long) With {.Value = IDPERSONA})
+                .ExecuteNonQuery()
+            End With
+            Transaccion.Commit()
+        Catch ex As Exception
+            Transaccion.Rollback()
+            MsgBox(ex.Message)
+        Finally
+            Conexion.Close()
+        End Try
+    End Sub
 End Class
