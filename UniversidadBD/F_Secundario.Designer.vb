@@ -5446,7 +5446,7 @@ Partial Class F_Secundario
         Me.PNL_A_Correlativa.Controls.Add(Me.Label33)
         Me.PNL_A_Correlativa.Location = New System.Drawing.Point(39, 211)
         Me.PNL_A_Correlativa.Name = "PNL_A_Correlativa"
-        Me.PNL_A_Correlativa.Size = New System.Drawing.Size(141, 57)
+        Me.PNL_A_Correlativa.Size = New System.Drawing.Size(140, 51)
         Me.PNL_A_Correlativa.TabIndex = 17
         Me.PNL_A_Correlativa.Visible = False
         '
@@ -5546,9 +5546,9 @@ Partial Class F_Secundario
         Me.PNL_A_Materia.Controls.Add(Me.TXT_A_DescripcionMateria)
         Me.PNL_A_Materia.Controls.Add(Me.Label28)
         Me.PNL_A_Materia.Controls.Add(Me.Label29)
-        Me.PNL_A_Materia.Location = New System.Drawing.Point(33, 146)
+        Me.PNL_A_Materia.Location = New System.Drawing.Point(48, 146)
         Me.PNL_A_Materia.Name = "PNL_A_Materia"
-        Me.PNL_A_Materia.Size = New System.Drawing.Size(106, 56)
+        Me.PNL_A_Materia.Size = New System.Drawing.Size(105, 59)
         Me.PNL_A_Materia.TabIndex = 16
         Me.PNL_A_Materia.Visible = False
         '

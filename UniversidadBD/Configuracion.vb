@@ -33,25 +33,12 @@ Public Class Configuracion
             End Try
         End If
     End Sub
-    Friend Sub SeleccionarCorrelativas()
-        Try
-            Dim ID As Integer = F_Secundario.CMB_A_SeleccionarCarreraMateria.SelectedValue
-            Dim Tabla As String = "MATERIA"
-            Dim Condicion As String = "MATERIA_RELA_CARRERA = ID"
-            InsertarSQLC(Tabla, Condicion)
-            F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.ValueMember = "ID_MATERIA"
-            F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.DataSource = Almacenamiento.Tables(Tabla)
-            F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.DisplayMember = "MATERIA_DESCRIPCION"
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-    Sub CargarCombo(Panel As Panel)
+    Sub CargarCombo(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
         If Panel.Visible = True Then
             Try
-                SeleccionarCorrelativas()
+                InsertarSQLC(Tabla, Tabla & "_" & Columna, Tabla & "_" & Condicion, Combo, Referencia)
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
