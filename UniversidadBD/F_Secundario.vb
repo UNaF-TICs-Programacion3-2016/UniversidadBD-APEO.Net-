@@ -117,6 +117,13 @@
     Private Sub PNL_A_Aula_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Aula.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_SeleccionarAulaFacultad, PNL_A_Aula, "FACULTAD", "DESCRIPCION")
     End Sub
+    Private Sub PNL_A_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Otro.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_FacultadOtro, PNL_A_Otro, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_A_OcupacionOtro, PNL_A_Otro, "PUESTO_ADMIN", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_A_Usuario_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Usuario.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_FacultadUsuario, PNL_A_Usuario, "FACULTAD", "DESCRIPCION")
+    End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
         TXT_E_CodigoFacultad.Text = Facultad.Codigo
@@ -134,9 +141,5 @@
     End Sub
     Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
-    End Sub
-    Private Sub PNL_A_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Otro.VisibleChanged
-        oConfiguracion.CargarComboBox(CMB_A_FacultadOtro, PNL_A_Otro, "FACULTAD", "DESCRIPCION")
-        oConfiguracion.CargarComboBox(CMB_A_OcupacionOtro, PNL_A_Otro, "PUESTO_ADMIN", "DESCRIPCION")
     End Sub
 End Class

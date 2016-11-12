@@ -66,7 +66,7 @@ Public Class Materia
         End Set
     End Property
     'INSERTAR LOS DATOS
-    Friend Sub MateriaInsertar(Tabla As String)
+    Friend Sub InsertarMateriaNormal(Tabla As String)
         Try
             InsertarSQL(Tabla)
             Dim ID As String = CStr(F_Secundario.CMB_A_SeleccionarCarreraMateria.SelectedValue)
@@ -91,9 +91,9 @@ Public Class Materia
         Dim Tabla As String = "MATERIA"
         Try
             If F_Secundario.Materia.Correlativa = False And F_Secundario.Materia.Optativa = False Then
-                MateriaInsertar(Tabla)
-            ElseIf F_Secundario.materia.Correlativa = True And F_Secundario.materia.Optativa = False Then
-                MateriaInsertar(Tabla)
+                InsertarMateriaNormal(Tabla)
+            ElseIf F_Secundario.Materia.Correlativa = True And F_Secundario.Materia.Optativa = False Then
+                InsertarMateriaNormal(Tabla)
                 InsertarSQL(Tabla)
                 Dim Ultimo As Integer = (Almacenamiento.Tables("MATERIA").Rows.Count) - 1
                 Dim ID As String = Almacenamiento.Tables("MATERIA").Rows(Ultimo)("ID_MATERIA").ToString
