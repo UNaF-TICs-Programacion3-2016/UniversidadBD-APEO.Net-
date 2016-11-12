@@ -11,6 +11,8 @@ Proyecto para una Base de Datos de una Universidad.
 **INTRODUCCION**
 
 El Proyecto consiste en crear una Base de Datos y una Interfaz de Usuario para implementarla en una Universidad. Va a almacenar todos los datos de una Universidad para mejor manejo de la informacion y de los datos.
+
+
 **OBJETIVOS**
 
 1. Poder almacenar toda la informacion posible de la Universidad, Facultad, Carreras, Profesores, Alumnos, Materias y Examenes
