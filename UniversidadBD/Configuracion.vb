@@ -1,4 +1,5 @@
-﻿Public Class Configuracion
+﻿Imports Oracle.DataAccess.Client
+Public Class Configuracion
     Inherits Coneccion
     Private X As Integer
     Private Y As Integer
@@ -29,6 +30,28 @@
                 CargarFilaSQL(Tabla, Tabla & "_" & Columna, Combo)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+    Friend Sub SeleccionarCorrelativas()
+        Try
+            Dim ID As Integer = F_Secundario.CMB_A_SeleccionarCarreraMateria.SelectedValue
+            Dim Tabla As String = "MATERIA"
+            Dim Condicion As String = "MATERIA_RELA_CARRERA = ID"
+            InsertarSQLC(Tabla, Condicion)
+            F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.ValueMember = "ID_MATERIA"
+            F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.DataSource = Almacenamiento.Tables(Tabla)
+            F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.DisplayMember = "MATERIA_DESCRIPCION"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Sub CargarCombo(Panel As Panel)
+        If Panel.Visible = True Then
+            Try
+                SeleccionarCorrelativas()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
             End Try
         End If
     End Sub

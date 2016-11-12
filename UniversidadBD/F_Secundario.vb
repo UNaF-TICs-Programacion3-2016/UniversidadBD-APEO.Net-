@@ -11,6 +11,11 @@
     Private oConfiguracion As New Configuracion()
     'CLICK PARA SIGUIENTE PANEL
     Private Sub BTN_A_MateriaSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_MateriaSiguiente.Click
+        Materia.Codigo = TXT_A_CodigoMateria.Text
+        Materia.Descripcion = TXT_A_DescripcionMateria.Text
+        Materia.Correlativa = RDB_A_CorrelativaMateria.Checked
+        Materia.Optativa = CBX_A_OptativaMateria.Checked
+        Materia.InsertarMateria()
         PNL_A_Materia.Visible = False
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Correlativa, TabControl1)
     End Sub
@@ -64,12 +69,7 @@
         Alumno.InsertarAlumno()
         Me.Close()
     End Sub
-    Private Sub BTN_A_CorrelativaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaAceptar.Click
-        Materia.Codigo = TXT_A_CodigoMateria.Text
-        Materia.Descripcion = TXT_A_DescripcionMateria.Text
-        Materia.Correlativa = RDB_A_CorrelativaMateria.Checked
-        Materia.Optativa = CBX_A_OptativaMateria.Checked
-        Materia.InsertarMateria()
+    Private Sub BTN_A_CorrelativaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaTerminar.Click
         Me.Close()
     End Sub
     Private Sub BTN_A_AulaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_AulaAceptar.Click
@@ -124,6 +124,9 @@
     Private Sub PNL_A_Usuario_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Usuario.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_FacultadUsuario, PNL_A_Usuario, "FACULTAD", "DESCRIPCION")
     End Sub
+    Private Sub PNL_A_Correlativa_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Correlativa.VisibleChanged
+        oConfiguracion.CargarCombo(PNL_A_Correlativa)
+    End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
         TXT_E_CodigoFacultad.Text = Facultad.Codigo
@@ -142,4 +145,5 @@
     Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
     End Sub
+
 End Class
