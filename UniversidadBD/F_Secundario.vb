@@ -146,4 +146,16 @@
         Me.Close()
     End Sub
 
+    Private Sub BTN_A_MateriaAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaAgregar.Click
+        'Materia.CargarCorrelativa()
+        'LBX_A_CorrelativasMateria.Items.Add(CMB_A_SeleccioneCorrelativasCorrelativa.Text)
+    End Sub
+
+    Private Sub PNL_A_Correlativa_Paint(sender As Object, e As PaintEventArgs) Handles PNL_A_Correlativa.Paint
+
+    End Sub
+
+    Private Sub F_Secundario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -26,11 +26,11 @@ Partial Class F_GestionAlumnos
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        ''Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        ''Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        ''Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        ''Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        ''Me.LineShape3 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MISESIÓNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -68,7 +68,7 @@ Partial Class F_GestionAlumnos
         Me.Panel1.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.ShapeContainer2)
+        ''Me.Panel1.Controls.Add(Me.ShapeContainer2)
         Me.Panel1.Location = New System.Drawing.Point(-5, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1380, 134)
@@ -97,50 +97,50 @@ Partial Class F_GestionAlumnos
         '
         'ShapeContainer2
         '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(1380, 134)
-        Me.ShapeContainer2.TabIndex = 1
-        Me.ShapeContainer2.TabStop = False
+        ''Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
+        ''Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
+        ''Me.ShapeContainer2.Name = "ShapeContainer2"
+        ''Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2})
+        ''Me.ShapeContainer2.Size = New System.Drawing.Size(1380, 134)
+        ''Me.ShapeContainer2.TabIndex = 1
+        ''Me.ShapeContainer2.TabStop = False
         '
         'LineShape2
         '
-        Me.LineShape2.BorderWidth = 4
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.X1 = -5
-        Me.LineShape2.X2 = 1380
-        Me.LineShape2.Y1 = 0
-        Me.LineShape2.Y2 = 0
+        '' Me.LineShape2.BorderWidth = 4
+        ''Me.LineShape2.Name = "LineShape2"
+        ''Me.LineShape2.X1 = -5
+        ''Me.LineShape2.X2 = 1380
+        ''Me.LineShape2.Y1 = 0
+        ''Me.LineShape2.Y2 = 0
         '
         'LineShape1
         '
-        Me.LineShape1.BorderWidth = 4
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = -2
-        Me.LineShape1.X2 = 1368
-        Me.LineShape1.Y1 = 135
-        Me.LineShape1.Y2 = 135
+        ''Me.LineShape1.BorderWidth = 4
+        '' Me.LineShape1.Name = "LineShape1"
+        '' Me.LineShape1.X1 = -2
+        ''Me.LineShape1.X2 = 1368
+        ''Me.LineShape1.Y1 = 135
+        ''Me.LineShape1.Y2 = 135
         '
         'ShapeContainer1
         '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape3, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(920, 478)
-        Me.ShapeContainer1.TabIndex = 1
-        Me.ShapeContainer1.TabStop = False
+        ''Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        ''Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        ''Me.ShapeContainer1.Name = "ShapeContainer1"
+        ''Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape3, Me.LineShape1})
+        ''Me.ShapeContainer1.Size = New System.Drawing.Size(920, 478)
+        ''Me.ShapeContainer1.TabIndex = 1
+        ''Me.ShapeContainer1.TabStop = False
         '
         'LineShape3
         '
-        Me.LineShape3.BorderWidth = 3
-        Me.LineShape3.Name = "LineShape3"
-        Me.LineShape3.X1 = -5
-        Me.LineShape3.X2 = 1380
-        Me.LineShape3.Y1 = 168
-        Me.LineShape3.Y2 = 168
+        ''Me.LineShape3.BorderWidth = 3
+        ''Me.LineShape3.Name = "LineShape3"
+        ''Me.LineShape3.X1 = -5
+        ''Me.LineShape3.X2 = 1380
+        ''  Me.LineShape3.Y1 = 168
+        ''    Me.LineShape3.Y2 = 168
         '
         'MenuStrip1
         '
@@ -333,7 +333,7 @@ Partial Class F_GestionAlumnos
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.ShapeContainer1)
+        '' Me.Controls.Add(Me.ShapeContainer1)
         Me.Name = "F_GestionAlumnos"
         Me.Text = "F_GestionAlumnos"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -349,10 +349,10 @@ Partial Class F_GestionAlumnos
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    ''Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
+    ''Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    ''Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
+    ''Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents MISESIÓNToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HORARIOSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -381,5 +381,5 @@ Partial Class F_GestionAlumnos
     Friend WithEvents AnulaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PlanDeEstudioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents LineShape3 As Microsoft.VisualBasic.PowerPacks.LineShape
+    ''Friend WithEvents LineShape3 As Microsoft.VisualBasic.PowerPacks.LineShape
 End Class

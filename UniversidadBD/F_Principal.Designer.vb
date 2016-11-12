@@ -54,8 +54,8 @@ Partial Class F_Principal
         Me.CambiarClaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        ''Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        '' Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -397,22 +397,22 @@ Partial Class F_Principal
         '
         'ShapeContainer1
         '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1075, 558)
-        Me.ShapeContainer1.TabIndex = 2
-        Me.ShapeContainer1.TabStop = False
+        ''Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        ''Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        ''Me.ShapeContainer1.Name = "ShapeContainer1"
+        ''Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
+        ''Me.ShapeContainer1.Size = New System.Drawing.Size(1075, 558)
+        ''Me.ShapeContainer1.TabIndex = 2
+        ''Me.ShapeContainer1.TabStop = False
         '
         'LineShape1
         '
-        Me.LineShape1.BorderWidth = 6
-        Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 0
-        Me.LineShape1.X2 = 1368
-        Me.LineShape1.Y1 = 65
-        Me.LineShape1.Y2 = 65
+        '' Me.LineShape1.BorderWidth = 6
+        ''Me.LineShape1.Name = "LineShape1"
+        ''Me.LineShape1.X1 = 0
+        ''Me.LineShape1.X2 = 1368
+        ''Me.LineShape1.Y1 = 65
+        ''Me.LineShape1.Y2 = 65
         '
         'ToolStrip1
         '
@@ -1458,7 +1458,7 @@ Partial Class F_Principal
         Me.Controls.Add(Me.PNL_C_Cursos)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TSM_UNIVERSIDAD)
-        Me.Controls.Add(Me.ShapeContainer1)
+        ''Me.Controls.Add(Me.ShapeContainer1)
         Me.MainMenuStrip = Me.TSM_UNIVERSIDAD
         Me.MaximizeBox = False
         Me.Name = "F_Principal"
@@ -1632,6 +1632,6 @@ Partial Class F_Principal
     Friend WithEvents CMB_C_SeleccionarMateriaNotasExamen As System.Windows.Forms.ComboBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents Label39 As System.Windows.Forms.Label
-    Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
-    Private WithEvents LineShape1 As PowerPacks.LineShape
+    '' Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
+    ''Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class
