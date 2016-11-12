@@ -135,4 +135,11 @@ Public NotInheritable Class Alumnos
             Conexion.Close()
         End Try
     End Sub
+    Friend Sub InsertarFacultadAlumno()
+        Try
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

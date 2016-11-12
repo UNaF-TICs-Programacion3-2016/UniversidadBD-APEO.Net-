@@ -127,13 +127,16 @@
     Private Sub PNL_A_Correlativa_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Correlativa.VisibleChanged
         oConfiguracion.CargarCombo(CMB_A_SeleccioneCorrelativasCorrelativa, PNL_A_Correlativa, "MATERIA", "DESCRIPCION", "RELA_CARRERA", CMB_A_SeleccionarCarreraMateria)
     End Sub
+    Private Sub BTN_A_AlumnoCancelar_VisibleChanged(sender As Object, e As EventArgs) Handles BTN_A_AlumnoCancelar.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadAlumno, PNL_A_Alumno2, "FACULTAD", "DESCRIPCION")
+    End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
         TXT_E_CodigoFacultad.Text = Facultad.Codigo
         TXT_E_DescripcionFacultad.Text = Facultad.Descripcion
     End Sub
     Private Sub CMB_A_SeleccionarFacultadAlumno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_SeleccionarFacultadAlumno.SelectedIndexChanged
-
+        oConfiguracion.CargarCombo(CMB_A_SeleccioneCarrreraAlumno, PNL_A_Alumno2, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_A_SeleccionarFacultadAlumno)
     End Sub
     'CANCELAR
     Private Sub BTN_A_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_FacultadCancelar.Click
@@ -145,5 +148,4 @@
     Private Sub BTN_A_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaCancelar.Click
         Me.Close()
     End Sub
-
 End Class
