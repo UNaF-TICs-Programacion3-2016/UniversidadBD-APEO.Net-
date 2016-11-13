@@ -1051,7 +1051,7 @@ Partial Class F_Secundario
         Me.PNL_A_Curso.Controls.Add(Me.BTN_A_CursoSiguiente)
         Me.PNL_A_Curso.Location = New System.Drawing.Point(331, 18)
         Me.PNL_A_Curso.Name = "PNL_A_Curso"
-        Me.PNL_A_Curso.Size = New System.Drawing.Size(94, 56)
+        Me.PNL_A_Curso.Size = New System.Drawing.Size(103, 50)
         Me.PNL_A_Curso.TabIndex = 22
         Me.PNL_A_Curso.Visible = False
         '
