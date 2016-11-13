@@ -25,17 +25,8 @@
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Correlativa, TabControl1)
     End Sub
     Private Sub BTN_A_AlumnoSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_AlumnoSiguiente.Click
-        Persona.Nombre = TXT_A_NombreAlumno.Text
-        Persona.Apellido = TXT_A_ApellidoAlumno.Text
-        Persona.CUIL = TXT_A_CUILAlumno.Text
-        Persona.DNI = TXT_A_DNIAlumno.Text
-        Persona.Telefono = TXT_A_TelefonoAlumno.Text
-        Persona.Correo = TXT_A_CorreoAlumno.Text
-        Alumno.FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
-        Alumno.NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
-        Alumno.InsertarAlumno()
-        PNL_E_Alumno.Visible = False
-        oConfiguracion.EstablecerConfiguracion(Me, PNL_E_Alumno2, TabControl1)
+        PNL_A_Alumno.Visible = False
+        oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Alumno2, TabControl1)
     End Sub
     'CLICK PARA ACEPTAR
     Private Sub BTN_A_FacultadAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_FacultadAceptar.Click
@@ -85,6 +76,15 @@
         Me.Close()
     End Sub
     Private Sub BTN_A_AlumnoAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_AlumnoAceptar.Click
+        Persona.Nombre = TXT_A_NombreAlumno.Text
+        Persona.Apellido = TXT_A_ApellidoAlumno.Text
+        Persona.CUIL = TXT_A_CUILAlumno.Text
+        Persona.DNI = TXT_A_DNIAlumno.Text
+        Persona.Telefono = TXT_A_TelefonoAlumno.Text
+        Persona.Correo = TXT_A_CorreoAlumno.Text
+        Alumno.FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
+        Alumno.NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
+        Alumno.InsertarAlumno()
         Me.Close()
     End Sub
     Private Sub BTN_A_OtroAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_OtroAceptar.Click
