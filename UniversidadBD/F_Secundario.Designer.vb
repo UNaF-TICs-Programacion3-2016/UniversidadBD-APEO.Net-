@@ -589,6 +589,7 @@ Partial Class F_Secundario
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.PNL_A_ExamenFinal)
         Me.TabPage1.Controls.Add(Me.PNL_A_ProfesorMaterias)
         Me.TabPage1.Controls.Add(Me.PNL_A_Profesor)
         Me.TabPage1.Controls.Add(Me.PNL_A_Usuario)
@@ -636,9 +637,9 @@ Partial Class F_Secundario
         Me.PNL_A_ExamenFinal.Controls.Add(Me.BTN_A_ExamenFinalCancelar)
         Me.PNL_A_ExamenFinal.Controls.Add(Me.Label164)
         Me.PNL_A_ExamenFinal.Controls.Add(Me.BTN_A_ExamenFinalAceptar)
-        Me.PNL_A_ExamenFinal.Location = New System.Drawing.Point(581, 35)
+        Me.PNL_A_ExamenFinal.Location = New System.Drawing.Point(324, 236)
         Me.PNL_A_ExamenFinal.Name = "PNL_A_ExamenFinal"
-        Me.PNL_A_ExamenFinal.Size = New System.Drawing.Size(519, 402)
+        Me.PNL_A_ExamenFinal.Size = New System.Drawing.Size(99, 56)
         Me.PNL_A_ExamenFinal.TabIndex = 38
         Me.PNL_A_ExamenFinal.Visible = False
         '
@@ -5777,7 +5778,6 @@ Partial Class F_Secundario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1250, 453)
-        Me.Controls.Add(Me.PNL_A_ExamenFinal)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "F_Secundario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

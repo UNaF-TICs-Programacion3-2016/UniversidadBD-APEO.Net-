@@ -35,8 +35,7 @@
         oConfiguracion.EstablecerConfiguracion(Me, PNL_E_Alumno2, TabControl1)
     End Sub
     Private Sub BTN_A_ProfesorSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_A_ProfesorSiguiente.Click
-        PNL_A_Profesor.Visible = False
-        oConfiguracion.EstablecerConfiguracion(Me, PNL_A_ProfesorMaterias, TabControl1)
+
     End Sub
     Private Sub BTN_A_CursoSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_A_CursoSiguiente.Click
         PNL_A_Curso.Visible = False
@@ -117,6 +116,8 @@
         Examen.Hora = CMB_A_HoraExamen.SelectedValue
         Examen.Minuto = CMB_A_MinutoExamen.SelectedValue
         Examen.InsertarExamen()
+        PNL_A_ExamenFinal.Visible = False
+        oConfiguracion.EstablecerConfiguracion(Me, PNL_A_ProfesorMaterias, TabControl1)
         Me.Close()
     End Sub
     'PANELES
