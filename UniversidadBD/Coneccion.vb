@@ -7,7 +7,7 @@ Public Class Coneccion
     Protected Fila As DataRow
     Protected Tabla As DataTable
     Sub New()
-        Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=Eze140995;"
+        Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=balditofc42;"
         Almacenamiento.Tables.Clear()
         Comando.Parameters.Clear()
     End Sub
