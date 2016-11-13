@@ -109,11 +109,13 @@
         Me.Close()
     End Sub
     Private Sub BTN_A_MateriaAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaAgregar.Click
-        Materia.RelacionarCorrelativos()
+        Materia.RelacionarCorrelativa()
     End Sub
     Private Sub BTN_A_ExamenFinalAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenFinalAceptar.Click
         Examen.Fecha = DTP_A_FechaExamenFinal.Value
-        Examen.Condicion = RDB_A_FinalExamenFinal.Checked
+        Examen.Tipo = RDB_A_FinalExamenFinal.Checked
+        Examen.Hora = CMB_A_HoraExamen.SelectedValue
+        Examen.Minuto = CMB_A_MinutoExamen.SelectedValue
         Examen.InsertarExamen()
         Me.Close()
     End Sub

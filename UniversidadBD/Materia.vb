@@ -1,7 +1,6 @@
 ﻿Imports Oracle.DataAccess.Client
 Public Class Materia
     Inherits Coneccion
-    Private pCarrera As Carrera
     Private pDescripcion As String
     Private pCodigo As String
     Private pDireccion As String
@@ -47,14 +46,6 @@ Public Class Materia
         End Get
         Set(ByVal value As Boolean)
             pOptativa = value
-        End Set
-    End Property
-    Public Property Carrera() As Carrera
-        Get
-            Return pCarrera
-        End Get
-        Set(ByVal value As Carrera)
-            pCarrera = value
         End Set
     End Property
     Public Property Grupo() As String
@@ -136,11 +127,11 @@ Public Class Materia
             ElseIf F_Secundario.Materia.Correlativa = True And F_Secundario.Materia.Optativa = False Then
                 InsertarMateriaNormal()
                 InsertarMateriaCorrelativa()
-            ElseIf F_Secundario.materia.Correlativa = True And F_Secundario.materia.Optativa = True Then
+            ElseIf F_Secundario.Materia.Correlativa = True And F_Secundario.Materia.Optativa = True Then
                 InsertarMateriaOptativa()
                 InsertarMateriaNormal()
                 InsertarMateriaCorrelativa()
-            ElseIf F_Secundario.materia.Correlativa = False And F_Secundario.materia.Optativa = True Then
+            ElseIf F_Secundario.Materia.Correlativa = False And F_Secundario.Materia.Optativa = True Then
                 InsertarMateriaOptativa()
                 InsertarMateriaNormal()
             End If
@@ -149,30 +140,7 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Friend Sub RelacionarCorrelativas()
-        Try
-            Dim Tabla As String = "MATERIA"
-            InsertarSQL(Tabla)
-            Dim Ultimo As Integer = Almacenamiento.Tables(Tabla).Rows.Count - 1
-            Dim ID As String = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_MATERIA").ToString
-            Tabla = "MATERIA_CORRELATIVA"
-            InsertarSQL(Tabla)
-            Dim RELA As String = CStr(F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.SelectedValue)
-            Fila("MATE_CORRE_RELA_MATERIA") = ID
-            Fila("MATE_CORRE_RELA_CORRELATIVA") = RELA
-            Insert(Tabla)
-            Comando.Parameters.Clear()
-            Comando.CommandText = "Insert Into Materia_Correlativa VALUES(:idmatecorre,:relamateria,:relacorre)"
-            Comando.Parameters.Add(New OracleParameter(":idmatecorre", OracleDbType.Long, 10, "ID_MATERIA_CORRELATIVA"))
-            Comando.Parameters.Add(New OracleParameter(":relamateria", OracleDbType.Long, 10, "MATE_CORRE_RELA_MATERIA"))
-            Comando.Parameters.Add(New OracleParameter(":relacorre", OracleDbType.Long, 10, "MATE_CORRE_RELA_CORRELATIVA"))
-            ActualizarSQL(Tabla)
-            MessageBox.Show("Los datos se guardaron correctamente")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-    Friend Sub RelacionarCorrelativos()
+    Friend Sub RelacionarCorrelativa()
         Try
             Dim Tabla As String = "MATERIA_CORRELATIVA"
             Dim MATERIA As Integer = F_Secundario.CMB_A_SeleccioneMateriasCorrelativa.SelectedValue

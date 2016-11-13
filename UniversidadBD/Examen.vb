@@ -2,8 +2,8 @@
 Public Class Examen
     Inherits Coneccion
     Private pFecha As Date
-    Private pHora As Integer
-    Private pMinuto As Integer
+    Private pHora As String
+    Private pMinuto As String
     Private pTipo As Boolean
     Private pLlamado As Integer
     Private pNumeroParcial As Integer
@@ -17,11 +17,11 @@ Public Class Examen
             pFecha = value
         End Set
     End Property
-    Public Property Hora() As Integer
+    Public Property Hora() As String
         Get
             Return pHora
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             pHora = value
         End Set
     End Property
@@ -41,11 +41,11 @@ Public Class Examen
             pCondicion = value
         End Set
     End Property
-    Public Property Minuto() As Integer
+    Public Property Minuto() As String
         Get
             Return pMinuto
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             pMinuto = value
         End Set
     End Property
@@ -71,18 +71,16 @@ Public Class Examen
             Dim Tabla As String = "EXAMEN"
             InsertarSQL(Tabla)
             Dim RELAMATERIA As String = F_Secundario.CMB_A_MateriaExamenFinal.SelectedValue
-            Dim RELAHORA As String = F_Secundario.CMB_A_HoraExamen.SelectedValue
-            Dim RELAMINUTO As String = F_Secundario.CMB_A_MinutoExamen.SelectedValue
             Dim RELAAULA As String = F_Secundario.CMB_A_AulaExamenFinal.SelectedValue
             Fila("EXAMEN_RELA_MATERIA") = RELAMATERIA
             Fila("EXAMEN_FECHA") = F_Secundario.Examen.Fecha
-            Fila("EXAMEN_RELA_HORA") = RELAHORA
-            If F_Secundario.Examen.Condicion = True Then
+            Fila("EXAMEN_RELA_HORA") = F_Secundario.Examen.Hora
+            If F_Secundario.Examen.Tipo = True Then
                 Fila("EXAMEN_RELA_TIPO_EXAMEN") = 2
             Else
                 Fila("EXAMEN_RELA_TIPO_EXAMEN") = 1
             End If
-            Fila("EXAMEN_RELA_MINUTO") = RELAMINUTO
+            Fila("EXAMEN_RELA_MINUTO") = F_Secundario.Examen.Minuto
             Fila("EXAMEN_LLAMADO") = F_Secundario.NUD_A_LlamadoExamenFinal.Value
             Fila("EXAMEN_NUMERO_PARCIAL") = F_Secundario.NUD_A_NParcialExamenFinal.Value
             Fila("EXAMEN_RELA_AULA") = RELAAULA
