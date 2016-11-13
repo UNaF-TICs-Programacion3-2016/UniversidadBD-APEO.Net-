@@ -93,6 +93,22 @@ Public NotInheritable Class Alumnos
             Comando.Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date, 0, "ALUMNO_FECHA_INGRESO"))
             Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "ALUMNO_RELA_PERSONA"))
             ActualizarSQL(Tabla)
+            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            InsertarSQL(Tabla)
+            Dim ULTIMOID As Integer = (Almacenamiento.Tables("ALUMNO").Rows.Count) - 1
+            Dim IDALUMNO As String = Almacenamiento.Tables("ALUMNO").Rows(Ultimo)("ID_ALUMNO").ToString
+            Tabla = "ALUMNO_CARRERA"
+            InsertarSQL(Tabla)
+            Dim RELACARRERA As Integer = F_Secundario.CMB_A_SeleccioneCarrreraAlumno.SelectedValue
+            Fila("ALU_CARRE_RELA_ALUMNO") = IDALUMNO
+            Fila("ALU_CARRE_RELA_CARRERA") = RELACARRERA
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Alumno_Carrera VALUES(:idalucarre,:relaalumno,:relacarrera)"
+            Comando.Parameters.Add(New OracleParameter(":idalucarre", OracleDbType.Int64, 10, "ID_ALUMNO_CARRERA"))
+            Comando.Parameters.Add(New OracleParameter(":relaalumno", OracleDbType.Int64, 10, "ALU_CARRE_RELA_ALUMNO"))
+            Comando.Parameters.Add(New OracleParameter(":relacarrera", OracleDbType.Int64, 10, "ALU_CARRE_RELA_CARRERA"))
+            ActualizarSQL(Tabla)
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -133,13 +149,6 @@ Public NotInheritable Class Alumnos
             MsgBox(ex.Message)
         Finally
             Conexion.Close()
-        End Try
-    End Sub
-    Friend Sub InsertarFacultadAlumno()
-        Try
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class
