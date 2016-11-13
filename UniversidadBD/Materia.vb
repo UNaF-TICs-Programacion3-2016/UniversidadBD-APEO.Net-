@@ -149,31 +149,26 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Friend Sub CargarCorrelativa()
-        ''Try
-
-        ''    InsertarSQL("MATERIA")
-        ''        Dim Ultimo As Integer = (Almacenamiento.Tables("MATERIA").Rows.Count) - 1
-        ''    Dim ID As String = Almacenamiento.Tables("MATERIA").Rows(Ultimo)("ID_MATERIA").ToString
-
-        ''    InsertarSQL("MATERIA_CORRELATIVA")
-        ''        Dim RELA As String = CStr(F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.SelectedValue)
-        ''    Fila("MATE_CORRE_RELA_MATERIA") = RELA
-        ''    Fila("MATE_CORRE_RELA_CORRELATIVA") = ID
-
-        ''    Insert("MATERIA_CORRELATIVA")
-        ''        Comando.Parameters.Clear()
-        ''        Comando.CommandText = "Insert Into Materia_Correlativa VALUES (:idmateriacorrelativa,:rela_materia,:rela_correlativa)"
-        ''        Comando.Parameters.Add(New OracleParameter(":idmateriacorrelativa", OracleDbType.Int64, 10, "ID_MATERIA_CORRELATIVA"))
-        ''        Comando.Parameters.Add(New OracleParameter(":rela_materia", OracleDbType.Int64, 10, "MATE_CORRE_RELA_MATERIA"))
-        ''        Comando.Parameters.Add(New OracleParameter(":rela_correlativa", OracleDbType.Int64, 10, "MATE_CORRE_RELA_CORRELATIVA"))
-        ''        ActualizarSQL("MATERIA_CORRELATIVA")
-
-
-        ''Catch ex As Exception
-        ''    MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-        ''End Try
+    Friend Sub RelacionarCorrelativa()
+        Try
+            Dim Tabla As String = "MATERIA_CORRELATIVA"
+            Dim MATERIA As Integer = F_Secundario.CMB_A_SeleccioneMateriasCorrelativa.SelectedValue
+            Dim CORRELATIVA As String = F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.SelectedValue
+            InsertarSQL(Tabla)
+            Fila("MATE_CORRE_RELA_MATERIA") = MATERIA
+            Fila("MATE_CORRE_RELA_CORRELATIVA") = CORRELATIVA
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Materia_Correlativa VALUES(:idmatecorre,:relamateria,:relacorrelativa)"
+            Comando.Parameters.Add(New OracleParameter(":idmatecorre", OracleDbType.Long, 10, "ID_MATERIA_CORRELATIVA"))
+            Comando.Parameters.Add(New OracleParameter(":relamateria", OracleDbType.Long, 10, "MATE_CORRE_RELA_MATERIA"))
+            Comando.Parameters.Add(New OracleParameter(":relacorrelativa", OracleDbType.Long, 10, "MATE_CORRE_RELA_CORRELATIVA"))
+            ActualizarSQL(Tabla)
+            F_Secundario.LBX_A_CorrelativasMateria.Items.Add(F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.Text)
+            MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 End Class
