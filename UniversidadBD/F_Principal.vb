@@ -1,6 +1,7 @@
 ﻿
 Public Class F_Principal
     Private oConfiguracion As New Configuracion
+    Private Conexion As New Coneccion()
     'FACULTAD
     Private Sub AgregarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarToolStripMenuItem.Click
         oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_S_Facultad, F_Secundario.TabControl1)
@@ -98,5 +99,13 @@ Public Class F_Principal
         PNL_C_ExamenesFinales.Visible = False
         PNL_C_ExamenesParciales.Visible = False
         oConfiguracion.EstablecerPanel(PNL_C_NotasExamen)
+    End Sub
+    'FORM
+    Private Sub F_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Conexion.Conectarse()
+    End Sub
+    'INSCRIPCIONES
+    Private Sub InscripcionesAExamenesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles InscripcionesAExamenesToolStripMenuItem1.Click
+        oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_A_Inscripcion, F_Secundario.TabControl1)
     End Sub
 End Class

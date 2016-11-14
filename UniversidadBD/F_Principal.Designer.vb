@@ -54,8 +54,6 @@ Partial Class F_Principal
         Me.CambiarClaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        ''Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        '' Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -164,6 +162,7 @@ Partial Class F_Principal
         Me.CMB_C_SeleccionarMateriaNotasExamen = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
+        Me.InscripcionesAExamenesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSM_UNIVERSIDAD.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.PNL_C_Cursos.SuspendLayout()
@@ -282,7 +281,7 @@ Partial Class F_Principal
         '
         'AGREGARToolStripMenuItem2
         '
-        Me.AGREGARToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuatrimestreToolStripMenuItem, Me.ExamenFinalToolStripMenuItem, Me.NotasToolStripMenuItem})
+        Me.AGREGARToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuatrimestreToolStripMenuItem, Me.ExamenFinalToolStripMenuItem, Me.NotasToolStripMenuItem, Me.InscripcionesAExamenesToolStripMenuItem1})
         Me.AGREGARToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AGREGARToolStripMenuItem2.Name = "AGREGARToolStripMenuItem2"
         Me.AGREGARToolStripMenuItem2.Size = New System.Drawing.Size(112, 29)
@@ -395,25 +394,6 @@ Partial Class F_Principal
         Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(223, 30)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
-        'ShapeContainer1
-        '
-        ''Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        ''Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        ''Me.ShapeContainer1.Name = "ShapeContainer1"
-        ''Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        ''Me.ShapeContainer1.Size = New System.Drawing.Size(1075, 558)
-        ''Me.ShapeContainer1.TabIndex = 2
-        ''Me.ShapeContainer1.TabStop = False
-        '
-        'LineShape1
-        '
-        '' Me.LineShape1.BorderWidth = 6
-        ''Me.LineShape1.Name = "LineShape1"
-        ''Me.LineShape1.X1 = 0
-        ''Me.LineShape1.X2 = 1368
-        ''Me.LineShape1.Y1 = 65
-        ''Me.LineShape1.Y2 = 65
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Window
@@ -429,8 +409,8 @@ Partial Class F_Principal
         '
         Me.ToolStripLabel1.Image = CType(resources.GetObject("ToolStripLabel1.Image"), System.Drawing.Image)
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(94, 24)
-        Me.ToolStripLabel1.Text = "CONECTADO"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(95, 24)
+        Me.ToolStripLabel1.Text = "BUSCANDO..."
         '
         'ToolStripSeparator3
         '
@@ -468,7 +448,7 @@ Partial Class F_Principal
         Me.PNL_C_Cursos.Controls.Add(Me.Label1)
         Me.PNL_C_Cursos.Location = New System.Drawing.Point(3, 68)
         Me.PNL_C_Cursos.Name = "PNL_C_Cursos"
-        Me.PNL_C_Cursos.Size = New System.Drawing.Size(96, 67)
+        Me.PNL_C_Cursos.Size = New System.Drawing.Size(100, 63)
         Me.PNL_C_Cursos.TabIndex = 4
         Me.PNL_C_Cursos.Visible = False
         '
@@ -1447,6 +1427,12 @@ Partial Class F_Principal
         Me.Label39.TabIndex = 13
         Me.Label39.Text = "Notas de Exámen"
         '
+        'InscripcionesAExamenesToolStripMenuItem1
+        '
+        Me.InscripcionesAExamenesToolStripMenuItem1.Name = "InscripcionesAExamenesToolStripMenuItem1"
+        Me.InscripcionesAExamenesToolStripMenuItem1.Size = New System.Drawing.Size(298, 30)
+        Me.InscripcionesAExamenesToolStripMenuItem1.Text = "Inscripciones a Examenes"
+        '
         'F_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1458,7 +1444,6 @@ Partial Class F_Principal
         Me.Controls.Add(Me.PNL_C_Cursos)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TSM_UNIVERSIDAD)
-        ''Me.Controls.Add(Me.ShapeContainer1)
         Me.MainMenuStrip = Me.TSM_UNIVERSIDAD
         Me.MaximizeBox = False
         Me.Name = "F_Principal"
@@ -1632,6 +1617,7 @@ Partial Class F_Principal
     Friend WithEvents CMB_C_SeleccionarMateriaNotasExamen As System.Windows.Forms.ComboBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents InscripcionesAExamenesToolStripMenuItem1 As ToolStripMenuItem
     '' Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     ''Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class

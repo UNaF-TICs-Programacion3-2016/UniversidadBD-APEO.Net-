@@ -152,6 +152,10 @@
         oConfiguracion.CargarCombo(CMB_A_AulaCurso, PNL_A_Curso2, "AULA", "DESCRIPCION", "RELA_FACULTAD", CMB_A_FacultadCurso)
         oConfiguracion.CargarComboEspecifico(CMB_A_ProfesoresCurso, PNL_A_Curso2, "PERSONA, PROFESOR", "PERSONA_APELLIDO", "ID_PROFESOR", "ID_PERSONA = PROFESOR_RELA_PERSONA")
     End Sub
+    Private Sub PNL_A_Inscripcion_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Inscripcion.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_FacultadExamen, PNL_A_Inscripcion, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_A_CarreraExamen, PNL_A_Inscripcion, "CARRERA", "DESCRIPCION")
+    End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
         TXT_E_CodigoFacultad.Text = Facultad.Codigo
@@ -222,6 +226,9 @@
     Private Sub BTN_A_CursoCancelar2_Click(sender As Object, e As EventArgs) Handles BTN_A_CursoCancelar2.Click
         Me.Close()
     End Sub
+    Private Sub BTN_A_ExamenCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenCancelar.Click
+        Me.Close()
+    End Sub
     'CREO QUE ESTO NO SIRVE
     Private Sub BTN_A_CorrelativaSalir_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaSalir.Click
         Me.Close()
@@ -255,5 +262,12 @@
         oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadAlumno, PNL_A_Alumno2, "FACULTAD", "DESCRIPCION")
 
     End Sub
+    'PENDIENTE
+    Private Sub CMB_A_CarreraExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_CarreraExamen.SelectedIndexChanged
+        Dim ID As Integer = CMB_A_CarreraExamen.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_A_ExamenExamen, PNL_A_Inscripcion, "CARRERA, MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "CARRERA.ID_CARRERA = " & ID & " AND MATERIA.MATERIA_RELA_CARRERA = CARRERA.ID_CARRERA AND MATERIA.ID_MATERIA = EXAMEN.EXAMEN_RELA_MATERIA")
+    End Sub
+    Private Sub CMB_A_ExamenExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_ExamenExamen.SelectedIndexChanged
 
+    End Sub
 End Class

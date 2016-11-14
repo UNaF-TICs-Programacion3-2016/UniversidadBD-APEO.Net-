@@ -11,6 +11,15 @@ Public Class Coneccion
         Almacenamiento.Tables.Clear()
         Comando.Parameters.Clear()
     End Sub
+    Public Sub Conectarse()
+        Try
+            Conexion.Open()
+            F_Principal.ToolStripLabel1.Text = "CONECTADO"
+            Conexion.Close()
+        Catch ex As Exception
+            F_Principal.ToolStripLabel1.Text = "DESCONECTADO"
+        End Try
+    End Sub
     'COMANDOS
     Protected Sub InsertarSQL(Tabla As String)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla, Conexion)
