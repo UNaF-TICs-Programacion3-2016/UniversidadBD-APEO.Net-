@@ -39,10 +39,17 @@ Public Class Coneccion
     Protected Sub InsertarSQLC(Tabla As String, Columna As String, Condicion As String, Combo As ComboBox, Referencia As ComboBox)
         Dim ID As Integer = Referencia.SelectedValue
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion & " = " & ID, Conexion)
-        'Dim Adaptador = New OracleDataAdapter("Select * From MATERIA Where MATERIA_RELA_CARRERA = " & ID, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
         Combo.ValueMember = "ID_" & Tabla
+        Combo.DataSource = Almacenamiento.Tables(Tabla)
+        Combo.DisplayMember = Columna
+    End Sub
+    Public Sub InsertarSQLE(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
+        Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion, Conexion)
+        Almacenamiento.Tables.Clear()
+        Adaptador.Fill(Almacenamiento, Tabla)
+        Combo.ValueMember = Valor
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub

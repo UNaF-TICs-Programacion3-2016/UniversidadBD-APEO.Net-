@@ -1,8 +1,6 @@
 ﻿Imports Oracle.DataAccess.Client
-
 Public Class Examen
     Inherits Coneccion
-
     Private pFecha As Date
     Private pHora As Integer
     Private pTipo As String
@@ -67,6 +65,7 @@ Public Class Examen
             pNumeroParcial = value
         End Set
     End Property
+    'INSERTAR EXAMEN
     Friend Sub InsertarExamen()
         Try
 
@@ -99,6 +98,30 @@ Public Class Examen
             Comando.Parameters.Add(New OracleParameter(":numeroparcial", OracleDbType.Int64, 2, "EXAMEN_NUMERO_PARCIAL"))
             Comando.Parameters.Add(New OracleParameter(":aula", OracleDbType.Int64, 10, "EXAMEN_RELA_AULA"))
             ActualizarSQL(Tabla)
+            MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Friend Sub InsertarProfesorExamen()
+        Try
+            Dim Tabla As String = "EXAMEN"
+            InsertarSQL(Tabla)
+            Dim Ultimo As Integer = (Almacenamiento.Tables(Tabla).Rows.Count) - 1
+            Dim ID As String = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_EXAMEN").ToString
+            Dim Profesor As String = F_Secundario.CMB_A_ProfesoresExamen.SelectedValue
+            Tabla = "EXAMEN_PROFESOR"
+            InsertarSQL(Tabla)
+            Fila("EXA_PROFE_RELA_EXAMEN") = ID
+            Fila("EXA_PROFE_RELA_PROFESORES") = Profesor
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Examen_Profesor VALUES(:idexaprofe,:relaexamen,:relaprofe)"
+            Comando.Parameters.Add(New OracleParameter(":idexaprofe", OracleDbType.Long, 10, "ID_EXAMEN_PROFESOR"))
+            Comando.Parameters.Add(New OracleParameter(":relaexamen", OracleDbType.Long, 10, "EXA_PROFE_RELA_EXAMEN"))
+            Comando.Parameters.Add(New OracleParameter(":relaprofe", OracleDbType.Long, 10, "EXA_PROFE_RELA_PROFESORES"))
+            ActualizarSQL(Tabla)
+            F_Secundario.LTB_A_ProfesoresExamen.Items.Add(F_Secundario.CMB_A_ProfesoresExamen.Text)
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)

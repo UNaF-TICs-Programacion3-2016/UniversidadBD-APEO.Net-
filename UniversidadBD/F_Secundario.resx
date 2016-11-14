@@ -117,4 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BTN_A_AgregarProfesorCurso.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAF0AAABdAVVgLpQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAAQUlEQVQ4T+3OMQoAIAxD0R7do3mzqNC/pbh1qvCWpARDUum+9bgONsQMdA1wVNjJdbAh/gPuW+DI
+        dbAhZqBlQHEA8XVo00kz52AAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BTN_A_ExamenAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        XQAAAF0BVWAulAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABBSURBVDhP7c4x
+        CgAgDEPRHt2jebOo0L+luHWq8JakBENS6b71uA42xAx0DXBU2Ml1sCH+A+5b4Mh1sCFmoGVAcQDxdWjT
+        STPnYAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

@@ -96,23 +96,6 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Friend Sub InsertarMateriaCorrelativa()
-        Try
-            InsertarSQL("MATERIA")
-            Dim Ultimo As Integer = (Almacenamiento.Tables("MATERIA").Rows.Count) - 1
-            Dim ID As String = Almacenamiento.Tables("MATERIA").Rows(Ultimo)("ID_MATERIA").ToString
-            InsertarSQL("CORRELATIVA")
-            Fila("CORRELATIVA_RELA_MATERIA") = ID
-            Insert("CORRELATIVA")
-            Comando.Parameters.Clear()
-            Comando.CommandText = "Insert Into Correlativa VALUES(:idcorrelativa,:relamateria)"
-            Comando.Parameters.Add(New OracleParameter(":idcorrelativa", OracleDbType.Int64, 10, "ID_CORRELATIVA"))
-            Comando.Parameters.Add(New OracleParameter(":relamateria", OracleDbType.Int64, 10, "CORRELATIVA_RELA_MATERIA"))
-            ActualizarSQL("CORRELATIVA")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
     Friend Sub InsertarMateriaOptativa()
         Try
             InsertarSQL("OPTATIVA")
@@ -131,17 +114,10 @@ Public Class Materia
     End Sub
     Friend Sub InsertarMateria()
         Try
-            If F_Secundario.Materia.Correlativa = False And F_Secundario.Materia.Optativa = False Then
-                InsertarMateriaNormal()
-            ElseIf F_Secundario.Materia.Correlativa = True And F_Secundario.Materia.Optativa = False Then
-                InsertarMateriaNormal()
-                InsertarMateriaCorrelativa()
-            ElseIf F_Secundario.materia.Correlativa = True And F_Secundario.materia.Optativa = True Then
+            If F_Secundario.Materia.Optativa = True Then
                 InsertarMateriaOptativa()
                 InsertarMateriaNormal()
-                InsertarMateriaCorrelativa()
-            ElseIf F_Secundario.materia.Correlativa = False And F_Secundario.materia.Optativa = True Then
-                InsertarMateriaOptativa()
+            Else
                 InsertarMateriaNormal()
             End If
             MessageBox.Show("Los datos se guardaron correctamente")
@@ -170,5 +146,4 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 End Class
