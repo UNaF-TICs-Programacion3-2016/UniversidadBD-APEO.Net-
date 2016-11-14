@@ -127,4 +127,27 @@ Public Class Examen
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Friend Sub InscripcionExamen()
+        Try
+            Dim Tabla As String = "ALUMNO_EXAMEN"
+            Dim Examen As String = F_Secundario.CMB_A_LlamadoExamen.SelectedValue
+            Dim Alumno As String = F_Secundario.CMB_A_AlumnoExamen.SelectedValue
+            Dim Condicion As String = F_Secundario.CMB_A_CondiciónExamen.SelectedValue
+            InsertarSQL(Tabla)
+            Fila("ALU_EXA_RELA_EXAMEN") = Examen
+            Fila("ALU_EXA_RELA_ALUMNO") = Alumno
+            Fila("ALU_EXA_RELA_CONDICION") = Condicion
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Alumno_Examen VALUES(:idexaalumno,:examen,:alumno,:condicion)"
+            Comando.Parameters.Add(New OracleParameter(":idexaalumno", OracleDbType.Long, 10, "ID_ALUMNO_EXAMEN"))
+            Comando.Parameters.Add(New OracleParameter(":examen", OracleDbType.Long, 10, "ALU_EXA_RELA_EXAMEN"))
+            Comando.Parameters.Add(New OracleParameter(":alumno", OracleDbType.Long, 10, "ALU_EXA_RELA_ALUMNO"))
+            Comando.Parameters.Add(New OracleParameter(":condicion", OracleDbType.Long, 10, "ALU_EXA_RELA_CONDICION"))
+            ActualizarSQL(Tabla)
+            MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

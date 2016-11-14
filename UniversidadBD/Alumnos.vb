@@ -96,7 +96,7 @@ Public NotInheritable Class Alumnos
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
             Dim ULTIMOID As Integer = (Almacenamiento.Tables("ALUMNO").Rows.Count) - 1
-            Dim IDALUMNO As String = Almacenamiento.Tables("ALUMNO").Rows(Ultimo)("ID_ALUMNO").ToString
+            Dim IDALUMNO As String = Almacenamiento.Tables("ALUMNO").Rows(ULTIMOID)("ID_ALUMNO").ToString
             Tabla = "ALUMNO_CARRERA"
             InsertarSQL(Tabla)
             Dim RELACARRERA As Integer = F_Secundario.CMB_A_SeleccioneCarrreraAlumno.SelectedValue
