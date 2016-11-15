@@ -140,6 +140,14 @@ Public Class F_Secundario
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
     End Sub
+    Private Sub PNL_E_Carrera_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Carrera.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_E_SeleccionarCarreraCarrera, PNL_E_Carrera, "CARRERA", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultadCarrera, PNL_E_Carrera, "FACULTAD", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_E_Aula_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Aula.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_E_SeleccionarAulaAula, PNL_E_Aula, "AULA", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultadAula, PNL_E_Aula, "FACULTAD", "DESCRIPCION")
+    End Sub
     Private Sub PNL_A_Carrera_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Carrera.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadCarrera, PNL_A_Carrera, "FACULTAD", "DESCRIPCION")
 
@@ -309,4 +317,19 @@ Public Class F_Secundario
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCorrelativasCorrelativa, PNL_A_Correlativa, "MATERIA", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCarreraCorrelativa, PNL_A_Correlativa, "CARRERA", "DESCRIPCION")
     End Sub
+
+    Private Sub BTN_E_CarreraAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_CarreraAceptar.Click
+        Carrera.Descripcion = TXT_E_DescripcionCarrera.Text
+        Carrera.Duracion = TXT_E_DuracionCarrera.Text
+        Carrera.Codigo = TXT_E_CodigoCarrera.Text
+        Carrera.EditarCarrera()
+    End Sub
+
+    Private Sub BTN_E_AulaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_AulaAceptar.Click
+        oAula.Descripcion = TXT_E_DescripcionAula.Text
+        oAula.EditarAula()
+    End Sub
+
+
+
 End Class
