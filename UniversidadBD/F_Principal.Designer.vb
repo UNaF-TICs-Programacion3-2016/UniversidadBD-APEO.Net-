@@ -36,7 +36,6 @@ Partial Class F_Principal
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AGREGARToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CuatrimestreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExamenFinalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,11 +50,6 @@ Partial Class F_Principal
         Me.FinalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParcialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MISESIÓNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CambiarClaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -182,7 +176,7 @@ Partial Class F_Principal
         '
         Me.TSM_UNIVERSIDAD.BackColor = System.Drawing.Color.White
         Me.TSM_UNIVERSIDAD.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem, Me.MISESIÓNToolStripMenuItem})
+        Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem})
         Me.TSM_UNIVERSIDAD.Location = New System.Drawing.Point(0, 0)
         Me.TSM_UNIVERSIDAD.Name = "TSM_UNIVERSIDAD"
         Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1197, 33)
@@ -239,7 +233,7 @@ Partial Class F_Principal
         '
         'PERSONASToolStripMenuItem
         '
-        Me.PERSONASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem1, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem1, Me.ToolStripSeparator6, Me.UsuarioToolStripMenuItem})
+        Me.PERSONASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem1, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem1, Me.ToolStripSeparator6})
         Me.PERSONASToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PERSONASToolStripMenuItem.Name = "PERSONASToolStripMenuItem"
         Me.PERSONASToolStripMenuItem.Size = New System.Drawing.Size(116, 29)
@@ -249,34 +243,27 @@ Partial Class F_Principal
         '
         Me.AgregarToolStripMenuItem1.Image = CType(resources.GetObject("AgregarToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.AgregarToolStripMenuItem1.Name = "AgregarToolStripMenuItem1"
-        Me.AgregarToolStripMenuItem1.Size = New System.Drawing.Size(157, 30)
+        Me.AgregarToolStripMenuItem1.Size = New System.Drawing.Size(155, 30)
         Me.AgregarToolStripMenuItem1.Text = "Profesor"
         '
         'EditarToolStripMenuItem
         '
         Me.EditarToolStripMenuItem.Image = CType(resources.GetObject("EditarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(157, 30)
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(155, 30)
         Me.EditarToolStripMenuItem.Text = "Alumno"
         '
         'EliminarToolStripMenuItem1
         '
         Me.EliminarToolStripMenuItem1.Image = CType(resources.GetObject("EliminarToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
-        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(157, 30)
+        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(155, 30)
         Me.EliminarToolStripMenuItem1.Text = "Otro"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(154, 6)
-        '
-        'UsuarioToolStripMenuItem
-        '
-        Me.UsuarioToolStripMenuItem.Image = CType(resources.GetObject("UsuarioToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.UsuarioToolStripMenuItem.Name = "UsuarioToolStripMenuItem"
-        Me.UsuarioToolStripMenuItem.Size = New System.Drawing.Size(157, 30)
-        Me.UsuarioToolStripMenuItem.Text = "Usuarios"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(152, 6)
         '
         'AGREGARToolStripMenuItem2
         '
@@ -373,39 +360,6 @@ Partial Class F_Principal
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(250, 6)
-        '
-        'MISESIÓNToolStripMenuItem
-        '
-        Me.MISESIÓNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CambiarUsuarioToolStripMenuItem, Me.CambiarClaveToolStripMenuItem, Me.ToolStripSeparator5, Me.CerrarSesiónToolStripMenuItem})
-        Me.MISESIÓNToolStripMenuItem.Name = "MISESIÓNToolStripMenuItem"
-        Me.MISESIÓNToolStripMenuItem.Size = New System.Drawing.Size(114, 29)
-        Me.MISESIÓNToolStripMenuItem.Text = "MI SESIÓN"
-        '
-        'CambiarUsuarioToolStripMenuItem
-        '
-        Me.CambiarUsuarioToolStripMenuItem.Image = CType(resources.GetObject("CambiarUsuarioToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
-        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(223, 30)
-        Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar usuario"
-        '
-        'CambiarClaveToolStripMenuItem
-        '
-        Me.CambiarClaveToolStripMenuItem.Image = CType(resources.GetObject("CambiarClaveToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CambiarClaveToolStripMenuItem.Name = "CambiarClaveToolStripMenuItem"
-        Me.CambiarClaveToolStripMenuItem.Size = New System.Drawing.Size(223, 30)
-        Me.CambiarClaveToolStripMenuItem.Text = "Cambiar Clave"
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(220, 6)
-        '
-        'CerrarSesiónToolStripMenuItem
-        '
-        Me.CerrarSesiónToolStripMenuItem.Image = CType(resources.GetObject("CerrarSesiónToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(223, 30)
-        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'ToolStrip1
         '
@@ -1473,7 +1427,6 @@ Partial Class F_Principal
     Friend WithEvents EditarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AGREGARToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CuatrimestreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExamenFinalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1560,11 +1513,6 @@ Partial Class F_Principal
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents CMB_C_SeleccioneFacultadExamenParcial As System.Windows.Forms.ComboBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents MISESIÓNToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CambiarUsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CambiarClaveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents NotasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label25 As System.Windows.Forms.Label

@@ -48,12 +48,6 @@
         oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_E_Otro, F_Secundario.TabControl1)
         oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_S_Otro, F_Secundario.TabControl1)
     End Sub
-    'USUARIO
-    Private Sub UsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuarioToolStripMenuItem.Click
-        oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_A_Usuario, F_Secundario.TabControl1)
-        oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_E_Usuario, F_Secundario.TabControl1)
-        oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_S_Usuario, F_Secundario.TabControl1)
-    End Sub
     'GESTION DE ALUMNOS
     Private Sub GestiónDeAlumnosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeAlumnosToolStripMenuItem.Click
         F_GestionAlumnos.Show()
