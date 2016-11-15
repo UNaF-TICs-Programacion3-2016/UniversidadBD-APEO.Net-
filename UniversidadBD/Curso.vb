@@ -73,4 +73,24 @@ Public Class Cursos
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Friend Sub InsertarAlumnoCurso()
+        Try
+            Dim Tabla As String = "CURSO_ALUMNO"
+            Dim Curso As String = F_Secundario.CMB_A_CursoIC.SelectedValue
+            Dim Alumno As String = F_Secundario.CMB_A_AlumnoIC.SelectedValue
+            InsertarSQL(Tabla)
+            Fila("CUR_ALU_RELA_CURSO") = Curso
+            Fila("CUR_ALU_RELA_ALUMNO") = Alumno
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Curso_Alumno VALUES(:idalucurso,:curso,:alumno)"
+            Comando.Parameters.Add(New OracleParameter(":idalucurso", OracleDbType.Long, 10, "ID_CURSO_ALUMNO"))
+            Comando.Parameters.Add(New OracleParameter(":curso", OracleDbType.Long, 10, "CUR_ALU_RELA_CURSO"))
+            Comando.Parameters.Add(New OracleParameter(":alumno", OracleDbType.Long, 10, "CUR_ALU_RELA_ALUMNO"))
+            ActualizarSQL(Tabla)
+            MessageBox.Show("Los datos han sido guardados correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

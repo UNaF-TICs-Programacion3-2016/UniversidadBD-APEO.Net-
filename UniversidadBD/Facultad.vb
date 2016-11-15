@@ -39,7 +39,16 @@ Public Class Facultad
         End Try
     End Sub
     'EDITAR FACULTAD
-    Friend Sub ValoresFacultad(Combo As ComboBox, Tabla As String)
-        'F_Secundario.Facultad.Codigo = Almacenamiento.Tables(Tabla).Rows.Find()
+    Friend Sub EditarFacultad()
+        Try
+            Dim ID As Integer = F_Secundario.CMB_E_SeleccionarFacultad.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "UPDATE FACULTAD SET FACULTAD_DESCRIPCION = '" & pDescripcion & "', FACULTAD_CODIGO = '" & pCodigo & "' WHERE ID_FACULTAD = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

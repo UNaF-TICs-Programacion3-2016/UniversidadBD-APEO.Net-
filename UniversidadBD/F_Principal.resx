@@ -121,38 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="CuatrimestreToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
-        sQAAA7EB9YPtSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADHSURBVDhPrZGx
-        DcIwFETdpYkQozAGTSp2oEtPSZkKJAZArEADBQ2bhXvmLBkDiqIk0suX7999O07o+z6ipxFn8RB10rN+
-        7R6eJtPDVhzEVazEThxFV4BGDw9eMmSjuBQ0EE+iynf3TpV7ePCSIfseUAaGIONsfP068hDpk+Y5AYuF
-        4HKYfnO9mFzDg/drQBQ8vXNdQ6F9+Evh7vXTlX8OuYbn74C9KxdE3ZhcSx6Yf8DkT5h0idN+I9PHQMbZ
-        0AouiOljUCa0L4cy91kB+SZQAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ExamenFinalToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        dAAAAHQBMYXlgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADYSURBVDhPzdAx
-        DgFBFMbxDY2E4ATO4ChUKiIRnWJLiZJCKCh1Eo1ErSEO4QBuoBYiYfxn8l4yzc7udl7yS2bem/dtspEx
-        JqLWsIcsDijaPbfrBcTaTEK9cMIeLkQHeQKmeGDiejLIGmCX57hg7XoyCAZQFXS9e4xwADXDBk3oV1sy
-        CwdQDXxwxxB1jL15asAIV+xwRAE1b54acMYKfTxR1pnMkwOoKt6wF9XWZXkTDOjgC/sfSrhhq8vyJhjQ
-        w8J7PMBS79IL/4M09q3dcWdp/EeAPeRBgIl+6XbGJpIDIG8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="NotasToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEmSURBVDhPfdMx
-        S8NQFIbh1MlBKVIQdRARsWJBbAcXpQhOCkXEWZzVyc2hQyd1KNilzk7STS2iiLi5FsTBXfB/xPeLtxLS
-        c3rgGXJ77ndPmiSiFrBqWEEujuNoGNUHGoZ33GHC2tin6jg/XKKGF5StHlENC1jHLn5Qc/rcgD1c4RiH
-        aIX1bXxhI1xHHYygjRuDJphDCwq6xzgesYy/CahZLBrUrIBvnEMBJUyjh/8JLqCRs3ZwjZNwUB5PeMCm
-        FryAU4ziFvvaHAJm8Irkyaj6t1DAVIpG1CnV1OYitHk+teY+hSN8Yilcr+EZk5k+N0D3qUm06QA6eczo
-        GwygKuiijjfof0reA6PXDNjCGRSUQ/IeZPtCr/sxpeklanoB3ueclR8MiKNf2g5nkLCSyekAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
   <data name="AgregarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
@@ -249,6 +217,62 @@
         B3ps+mxLeMJxWZ5HXTxjWcMBHrDQVG6irt8capjipKn4H92Y2fQX2A32YonRC1wAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="CuatrimestreToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
+        sQAAA7EB9YPtSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADHSURBVDhPrZGx
+        DcIwFETdpYkQozAGTSp2oEtPSZkKJAZArEADBQ2bhXvmLBkDiqIk0suX7999O07o+z6ipxFn8RB10rN+
+        7R6eJtPDVhzEVazEThxFV4BGDw9eMmSjuBQ0EE+iynf3TpV7ePCSIfseUAaGIONsfP068hDpk+Y5AYuF
+        4HKYfnO9mFzDg/drQBQ8vXNdQ6F9+Evh7vXTlX8OuYbn74C9KxdE3ZhcSx6Yf8DkT5h0idN+I9PHQMbZ
+        0AouiOljUCa0L4cy91kB+SZQAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ExamenFinalToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        dAAAAHQBMYXlgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADYSURBVDhPzdAx
+        DgFBFMbxDY2E4ATO4ChUKiIRnWJLiZJCKCh1Eo1ErSEO4QBuoBYiYfxn8l4yzc7udl7yS2bem/dtspEx
+        JqLWsIcsDijaPbfrBcTaTEK9cMIeLkQHeQKmeGDiejLIGmCX57hg7XoyCAZQFXS9e4xwADXDBk3oV1sy
+        CwdQDXxwxxB1jL15asAIV+xwRAE1b54acMYKfTxR1pnMkwOoKt6wF9XWZXkTDOjgC/sfSrhhq8vyJhjQ
+        w8J7PMBS79IL/4M09q3dcWdp/EeAPeRBgIl+6XbGJpIDIG8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="NotasToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEmSURBVDhPfdMx
+        S8NQFIbh1MlBKVIQdRARsWJBbAcXpQhOCkXEWZzVyc2hQyd1KNilzk7STS2iiLi5FsTBXfB/xPeLtxLS
+        c3rgGXJ77ndPmiSiFrBqWEEujuNoGNUHGoZ33GHC2tin6jg/XKKGF5StHlENC1jHLn5Qc/rcgD1c4RiH
+        aIX1bXxhI1xHHYygjRuDJphDCwq6xzgesYy/CahZLBrUrIBvnEMBJUyjh/8JLqCRs3ZwjZNwUB5PeMCm
+        FryAU4ziFvvaHAJm8Irkyaj6t1DAVIpG1CnV1OYitHk+teY+hSN8Yilcr+EZk5k+N0D3qUm06QA6eczo
+        GwygKuiijjfof0reA6PXDNjCGRSUQ/IeZPtCr/sxpeklanoB3ueclR8MiKNf2g5nkLCSyekAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="InscripcionesAExamenesToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        bwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPjdOx
+        SgNBEMbxE6JoEVCjYGGMImmigqSxkJA2gRDExlRRtEgKG0HRSrRRSScqaISgYKE+hY/h26z/T+b07rjk
+        MvCDZedmdm9vzyOy+MRNgjcsO+e8IMURctFEFFFHF0uRee8Mk8HJOIR2MY5HzAXmh25wjwPUoN1kbP6/
+        AbGAdWilWRuLxiPYRAW7aMc1eMEpdlBAwxSU9xGLiG3wbLRKGXrvDRzaeGtgg2ER/RsQ+8hDO1jFMbT6
+        FSYGNiB0Jy5sXEQbaqjD1bhsuTSKcQ1GkQo8pJXmMWbjKczgAZdIIdSgAyVL8A/xHHolHWwG77hGFfpC
+        oQYq1idUwr8HK5abRg97eMIXcgg10Moq1jb9e7ANFb9CxSe4xZrVJP9MRAsfuIOu9G+x5RJ/Z51BE9r2
+        N/6KnXPeD+tKMLn6bw4qAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="InscripcionesACursosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
+        gQAAAoEBiQq9lAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEnSURBVDhPtZO9
+        SkMxFMf7CBUpStvknHyUVorgIChOrvoEjroVnAVx8hFcuvsG4tal0pdw0sFFEARnJ+P/pEajvR86eOGX
+        5J6T/G7uyb2NEMInTvOlI75BP1mA+NYxX2utl/I1CwJmXs1jCcs8giSAhx7zVorHxms9RGLmiO7QTwue
+        fuWJztA/ffDSI1r7EjBvg/Nk/QkWvEL+DPbkXubKGhnHCb8TxO2/YSfHpQKvlEOhDhKDTmdZ8saYFamN
+        7dp1qVOpABP7WHiY8N63JJ8QSaXAEu1/K16GJTOuFeB4NnBcpyUc1Qr6SrXR7xZhld38/1fAOe+geBeF
+        kDmpFWBCEwxKkKtaIOMqooD4Eczk85dYTPxJgB3ksdiIANZ7KVYl8189E4TGO1IJhfFD/WFQAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <data name="GestiónDeAlumnosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -271,16 +295,6 @@
         0AouiOljUCa0L4cy91kB+SZQAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="InscripcionesAExamenesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        dAAAAHQBMYXlgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADYSURBVDhPzdAx
-        DgFBFMbxDY2E4ATO4ChUKiIRnWJLiZJCKCh1Eo1ErSEO4QBuoBYiYfxn8l4yzc7udl7yS2bem/dtspEx
-        JqLWsIcsDijaPbfrBcTaTEK9cMIeLkQHeQKmeGDiejLIGmCX57hg7XoyCAZQFXS9e4xwADXDBk3oV1sy
-        CwdQDXxwxxB1jL15asAIV+xwRAE1b54acMYKfTxR1pnMkwOoKt6wF9XWZXkTDOjgC/sfSrhhq8vyJhjQ
-        w8J7PMBS79IL/4M09q3dcWdp/EeAPeRBgIl+6XbGJpIDIG8AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="FinalesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -301,6 +315,16 @@
         FSYGNiB0Jy5sXEQbaqjD1bhsuTSKcQ1GkQo8pJXmMWbjKczgAZdIIdSgAyVL8A/xHHolHWwG77hGFfpC
         oQYq1idUwr8HK5abRg97eMIXcgg10Moq1jb9e7ANFb9CxSe4xZrVJP9MRAsfuIOu9G+x5RJ/Z51BE9r2
         N/6KnXPeD+tKMLn6bw4qAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="InscripcionesAExamenesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        dAAAAHQBMYXlgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADYSURBVDhPzdAx
+        DgFBFMbxDY2E4ATO4ChUKiIRnWJLiZJCKCh1Eo1ErSEO4QBuoBYiYfxn8l4yzc7udl7yS2bem/dtspEx
+        JqLWsIcsDijaPbfrBcTaTEK9cMIeLkQHeQKmeGDiejLIGmCX57hg7XoyCAZQFXS9e4xwADXDBk3oV1sy
+        CwdQDXxwxxB1jL15asAIV+xwRAE1b54acMYKfTxR1pnMkwOoKt6wF9XWZXkTDOjgC/sfSrhhq8vyJhjQ
+        w8J7PMBS79IL/4M09q3dcWdp/EeAPeRBgIl+6XbGJpIDIG8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="CambiarUsuarioToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -382,42 +406,6 @@
     <value>True</value>
   </metadata>
   <metadata name="PROFESOR.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ALUMNOS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CONDICION.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NOTALIBRE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="NOTAREGULAR.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FECHA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="HORA.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PROFESOR.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="DataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

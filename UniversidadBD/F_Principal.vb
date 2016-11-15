@@ -1,5 +1,4 @@
-﻿
-Public Class F_Principal
+﻿Public Class F_Principal
     Private oConfiguracion As New Configuracion
     Private Conexion As New Coneccion()
     'FACULTAD
@@ -107,5 +106,50 @@ Public Class F_Principal
     'INSCRIPCIONES
     Private Sub InscripcionesAExamenesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles InscripcionesAExamenesToolStripMenuItem1.Click
         oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_A_Inscripcion, F_Secundario.TabControl1)
+    End Sub
+    'INSCRIPCIONES A CURSOS
+    Private Sub InscripcionesACursosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InscripcionesACursosToolStripMenuItem.Click
+        oConfiguracion.EstablecerConfiguracion(F_Secundario, F_Secundario.PNL_A_InscripcionCursadas, F_Secundario.TabControl1)
+    End Sub
+    'PANELES
+    Private Sub PNL_C_NotasExamen_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_C_NotasExamen.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_C_SeleccionarFacultadNotasExamen, PNL_C_NotasExamen, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_C_SeleccionarCarreraNotasExamen, PNL_C_NotasExamen, "CARRERA", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_C_SeleccionarFacultadNotasExamenP, PNL_C_NotasExamen, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_C_SeleccionarCarreraNotasExamenP, PNL_C_NotasExamen, "CARRERA", "DESCRIPCION")
+    End Sub
+    'COMBOS
+    Private Sub CMB_C_SeleccionarCarreraNotasExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarCarreraNotasExamen.SelectedIndexChanged
+        Dim ID As Integer = CMB_C_SeleccionarCarreraNotasExamen.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccionarMateriaNotasExamen, PNL_C_NotasExamen, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_MATERIA", "MATERIA_RELA_CARRERA = " & ID & " AND EXAMEN_RELA_MATERIA = ID_MATERIA")
+    End Sub
+    Private Sub CMB_C_SeleccionarFacultadNotasExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarFacultadNotasExamen.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_C_SeleccionarCarreraNotasExamen, PNL_C_NotasExamen, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_C_SeleccionarFacultadNotasExamen)
+    End Sub
+    Private Sub CMB_C_SeleccionarMateriaNotasExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarMateriaNotasExamen.SelectedIndexChanged
+        Dim ID As Integer = CMB_C_SeleccionarMateriaNotasExamen.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccionarLlamadoNotasExamen, PNL_C_NotasExamen, "EXAMEN", "EXAMEN_LLAMADO", "ID_EXAMEN", "EXAMEN_RELA_MATERIA = " & ID & " AND EXAMEN_RELA_TIPO_EXAMEN <> 1")
+        Dim Examen As Integer = CMB_C_SeleccionarLlamadoNotasExamen.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccionarAlumnoNotasExamen, PNL_C_NotasExamen, "PERSONA, ALUMNO, ALUMNO_EXAMEN", "PERSONA_NOMBRE", "ID_ALUMNO_EXAMEN", "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = ALU_EXA_RELA_ALUMNO AND ALU_EXA_RELA_EXAMEN = " & Examen)
+    End Sub
+    Private Sub CMB_C_SeleccionarMateriaNotasExamenP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarMateriaNotasExamenP.SelectedIndexChanged
+        Dim ID As Integer = CMB_C_SeleccionarMateriaNotasExamenP.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_NParcialNotasExamen, PNL_C_NotasExamen, "EXAMEN", "EXAMEN_NUMERO_PARCIAL", "ID_EXAMEN", "EXAMEN_RELA_MATERIA = " & ID & " AND EXAMEN_RELA_TIPO_EXAMEN <> 2")
+        Dim Examen As Integer = CMB_C_SeleccionarMateriaNotasExamenP.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccionarAlumnoNotasExamenP, PNL_C_NotasExamen, "PERSONA, ALUMNO, ALUMNO_EXAMEN", "PERSONA_NOMBRE", "ID_ALUMNO_EXAMEN", "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = ALU_EXA_RELA_ALUMNO AND ALU_EXA_RELA_EXAMEN = " & Examen)
+    End Sub
+    Private Sub CMB_C_SeleccionarFacultadNotasExamenP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarFacultadNotasExamenP.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_C_SeleccionarCarreraNotasExamenP, PNL_C_NotasExamen, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_C_SeleccionarFacultadNotasExamenP)
+    End Sub
+    Private Sub CMB_C_SeleccionarCarreraNotasExamenP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarCarreraNotasExamenP.SelectedIndexChanged
+        Dim ID As Integer = CMB_C_SeleccionarCarreraNotasExamenP.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccionarMateriaNotasExamenP, PNL_C_NotasExamen, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_MATERIA", "MATERIA_RELA_CARRERA = " & ID & " AND EXAMEN_RELA_MATERIA = ID_MATERIA")
+    End Sub
+    'BOTONES ACEPTAR
+    Private Sub BTN_C_NotasExamenFinalCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_NotasExamenFinalCargar.Click
+        F_Secundario.Examen.NotaExamenFinal()
+    End Sub
+    Private Sub BTN_C_NotasExamenParcialCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_NotasExamenParcialCargar.Click
+        F_Secundario.Examen.NotaExamenParcial()
     End Sub
 End Class

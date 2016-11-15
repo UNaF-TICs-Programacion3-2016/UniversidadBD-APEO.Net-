@@ -51,4 +51,13 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    Sub CargarComboSinRepetir(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String)
+        If Panel.Visible = True Then
+            Try
+                CargarSinRepetir(Combo, Tabla, Columna, Valor)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
 End Class

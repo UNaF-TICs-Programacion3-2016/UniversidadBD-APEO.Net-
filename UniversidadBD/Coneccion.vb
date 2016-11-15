@@ -54,12 +54,26 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    Public Sub InsertarSQLE(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
+    Protected Sub InsertarSQLE(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
         Combo.ValueMember = Valor
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
+    End Sub
+    Protected Sub CargarSinRepetir(Combo As ComboBox, Tabla As String, Columna As String, Valor As String)
+        Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla, Conexion)
+        Almacenamiento.Tables.Clear()
+        Adaptador.Fill(Almacenamiento, Tabla)
+        Combo.ValueMember = Valor
+        Combo.DataSource = Almacenamiento.Tables(Tabla)
+        Combo.DisplayMember = Columna
+    End Sub
+    Public Sub EditarSQL(Tabla As String, Columna As String, Valor As String, Condicion As String, Referencia As String)
+        Dim Adaptador = New OracleDataAdapter("Update " & Tabla & " Set " & Columna & " = " & Valor & " Where " & Condicion & " = " & Referencia, Conexion)
+        Almacenamiento.Tables.Clear()
+        Adaptador.Fill(Almacenamiento, Tabla)
+        ActualizarSQL(Tabla)
     End Sub
 End Class

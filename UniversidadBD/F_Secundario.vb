@@ -1,4 +1,5 @@
-﻿Public Class F_Secundario
+﻿Imports Oracle.DataAccess.Client
+Public Class F_Secundario
     Public Facultad As New Facultad()
     Public Carrera As New Carrera()
     Public Materia As New Materia()
@@ -121,6 +122,20 @@
         Examen.InscripcionExamen()
         Me.Close()
     End Sub
+    Private Sub BTN_E_FacultadAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadAceptar.Click
+        Facultad.Codigo = TXT_E_CodigoFacultad.Text
+        Facultad.Descripcion = TXT_E_DescripcionFacultad.Text
+        Facultad.EditarFacultad()
+    End Sub
+    Private Sub BTN_A_BuscarIC_Click(sender As Object, e As EventArgs) Handles BTN_A_BuscarIC.Click
+        Dim DNI As String = TXT_A_BuscarIC.Text
+        Dim ID As String = CMB_A_AlumnoIC.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_A_AlumnoIC, PNL_A_InscripcionCursadas, "PERSONA, ALUMNO", "PERSONA_APELLIDO", "ID_ALUMNO", "PERSONA_DNI = " & DNI & " AND ID_PERSONA = ALUMNO_RELA_PERSONA")
+    End Sub
+    Private Sub BTN_A_InscribirIC_Click(sender As Object, e As EventArgs) Handles BTN_A_InscribirIC.Click
+        Curso.InsertarAlumnoCurso()
+        Me.Close()
+    End Sub
     'PANELES
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
@@ -165,6 +180,10 @@
         oConfiguracion.CargarComboBox(CMB_A_FacultadExamen, PNL_A_Inscripcion, "FACULTAD", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_CarreraExamen, PNL_A_Inscripcion, "CARRERA", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_CondiciónExamen, PNL_A_Inscripcion, "CONDICION", "DESCRIPCION")
+    End Sub
+    Private Sub Panel1_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_InscripcionCursadas.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_A_FacultadIC, PNL_A_InscripcionCursadas, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboBox(CMB_A_CarreraIC, PNL_A_InscripcionCursadas, "CARRERA", "DESCRIPCION")
     End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
@@ -212,13 +231,23 @@
     Private Sub CMB_A_FacultadExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_FacultadExamen.SelectedIndexChanged
         oConfiguracion.CargarCombo(CMB_A_CarreraExamen, PNL_A_Inscripcion, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_A_FacultadExamen)
     End Sub
+    Private Sub CMB_A_FacultadIC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_FacultadIC.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_A_CarreraIC, PNL_A_InscripcionCursadas, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_A_FacultadIC)
+    End Sub
+    Private Sub CMB_A_ComisionIC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_ComisionIC.SelectedIndexChanged
+        Dim ID As Integer = CMB_A_CarreraIC.SelectedValue
+        Dim Comision As String = CMB_A_ComisionIC.Text
+        oConfiguracion.CargarComboEspecifico(CMB_A_CursoIC, PNL_A_InscripcionCursadas, "MATERIA, CURSO", "MATERIA_DESCRIPCION", "ID_CURSO", "MATERIA_RELA_CARRERA = " & ID & " AND ID_MATERIA = CURSO_RELA_MATERIA AND CURSO_N_COMISION = " & Comision)
+    End Sub
+    Private Sub CMB_A_CarreraIC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_CarreraIC.SelectedIndexChanged
+        oConfiguracion.CargarComboSinRepetir(CMB_A_ComisionIC, PNL_A_InscripcionCursadas, "CURSO", "CURSO_N_COMISION", "CURSO_N_COMISION")
+    End Sub
     'CANCELAR
     Private Sub BTN_A_ExamenFinalCancelar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ExamenFinalCancelar.Click
         Me.Close()
     End Sub
     Private Sub BTN_A_CancelarOtro_Click(sender As Object, e As EventArgs) Handles BTN_A_CancelarOtro.Click
         Me.Close()
-
     End Sub
     Private Sub BTN_A_AlumnoCancelar2_Click_1(sender As Object, e As EventArgs) Handles BTN_A_AlumnoCancelar2.Click
         Me.Close()
@@ -250,6 +279,12 @@
     Private Sub BTN_A_ExamenCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenCancelar.Click
         Me.Close()
     End Sub
+    Private Sub BTN_E_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_A_TerminarIC_Click(sender As Object, e As EventArgs) Handles BTN_A_TerminarIC.Click
+        Me.Close()
+    End Sub
     'CREO QUE ESTO NO SIRVE
     Private Sub BTN_A_CorrelativaSalir_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaSalir.Click
         Me.Close()
@@ -279,9 +314,4 @@
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCorrelativasCorrelativa, PNL_A_Correlativa, "MATERIA", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCarreraCorrelativa, PNL_A_Correlativa, "CARRERA", "DESCRIPCION")
     End Sub
-    Private Sub BTN_A_AlumnoCancelar_VisibleChanged(sender As Object, e As EventArgs) Handles BTN_A_AlumnoCancelar.VisibleChanged
-        oConfiguracion.CargarComboBox(CMB_A_SeleccionarFacultadAlumno, PNL_A_Alumno2, "FACULTAD", "DESCRIPCION")
-
-    End Sub
-
 End Class

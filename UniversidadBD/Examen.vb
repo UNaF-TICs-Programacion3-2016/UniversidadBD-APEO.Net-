@@ -150,4 +150,44 @@ Public Class Examen
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    Friend Sub NotaExamenFinal()
+        Try
+            Dim Tabla As String = "NOTA"
+            Dim Nota As String = F_Principal.NUD_C_NotaNotasExamen.Value
+            Dim Relacion As String = F_Principal.CMB_C_SeleccionarAlumnoNotasExamen.SelectedValue
+            InsertarSQL(Tabla)
+            Fila("NOTA_NOTA") = Nota
+            Fila("NOTA_RELA_ALUMNO_EXAMEN") = Relacion
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Nota VALUES(:idnota,:nota,:alumnoexa)"
+            Comando.Parameters.Add(New OracleParameter(":idnota", OracleDbType.Long, 10, "ID_NOTA"))
+            Comando.Parameters.Add(New OracleParameter(":nota", OracleDbType.Long, 10, "NOTA_NOTA"))
+            Comando.Parameters.Add(New OracleParameter(":alumnoexa", OracleDbType.Long, 10, "NOTA_RELA_ALUMNO_EXAMEN"))
+            ActualizarSQL(Tabla)
+            MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Friend Sub NotaExamenParcial()
+        Try
+            Dim Tabla As String = "NOTA"
+            Dim Nota As String = F_Principal.NUD_C_NotaNotasExamenParcial.Value
+            Dim Relacion As String = F_Principal.CMB_C_SeleccionarAlumnoNotasExamenP.SelectedValue
+            InsertarSQL(Tabla)
+            Fila("NOTA_NOTA") = Nota
+            Fila("NOTA_RELA_ALUMNO_EXAMEN") = Relacion
+            Insert(Tabla)
+            Comando.Parameters.Clear()
+            Comando.CommandText = "Insert Into Nota VALUES(:idnota,:nota,:alumnoexa)"
+            Comando.Parameters.Add(New OracleParameter(":idnota", OracleDbType.Long, 10, "ID_NOTA"))
+            Comando.Parameters.Add(New OracleParameter(":nota", OracleDbType.Long, 10, "NOTA_NOTA"))
+            Comando.Parameters.Add(New OracleParameter(":alumnoexa", OracleDbType.Long, 10, "NOTA_RELA_ALUMNO_EXAMEN"))
+            ActualizarSQL(Tabla)
+            MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
