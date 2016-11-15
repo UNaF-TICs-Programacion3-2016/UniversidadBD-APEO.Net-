@@ -47,7 +47,7 @@ Public Class Aula
             Dim ID As Integer = F_Secundario.CMB_E_SeleccionarAulaAula.SelectedValue
             Dim ID2 As Integer = F_Secundario.CMB_E_SeleccionarFacultadAula.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "UPDATE AULA SET AULA_DESCRIPCION = '" & pDescripcion & "'AULA_RELA_FACULTAD = '" & ID2 & "' WHERE ID_AULA = " & ID
+            Comando.CommandText = "UPDATE AULA SET AULA_DESCRIPCION = '" & pDescripcion & "', AULA_RELA_FACULTAD = '" & ID2 & "' WHERE ID_AULA = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()

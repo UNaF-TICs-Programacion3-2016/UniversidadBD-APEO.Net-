@@ -1106,7 +1106,7 @@ Partial Class F_Principal
         'CMB_C_NParcialNotasExamen
         '
         Me.CMB_C_NParcialNotasExamen.FormattingEnabled = True
-        Me.CMB_C_NParcialNotasExamen.Location = New System.Drawing.Point(42, 213)
+        Me.CMB_C_NParcialNotasExamen.Location = New System.Drawing.Point(42, 163)
         Me.CMB_C_NParcialNotasExamen.Name = "CMB_C_NParcialNotasExamen"
         Me.CMB_C_NParcialNotasExamen.Size = New System.Drawing.Size(63, 28)
         Me.CMB_C_NParcialNotasExamen.TabIndex = 32
@@ -1115,7 +1115,7 @@ Partial Class F_Principal
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(40, 193)
+        Me.Label26.Location = New System.Drawing.Point(40, 143)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(65, 17)
         Me.Label26.TabIndex = 31
@@ -1145,7 +1145,7 @@ Partial Class F_Principal
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(40, 295)
+        Me.Label28.Location = New System.Drawing.Point(39, 318)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(37, 17)
         Me.Label28.TabIndex = 29
@@ -1161,7 +1161,7 @@ Partial Class F_Principal
         '
         'NUD_C_NotaNotasExamenParcial
         '
-        Me.NUD_C_NotaNotasExamenParcial.Location = New System.Drawing.Point(42, 315)
+        Me.NUD_C_NotaNotasExamenParcial.Location = New System.Drawing.Point(42, 340)
         Me.NUD_C_NotaNotasExamenParcial.Name = "NUD_C_NotaNotasExamenParcial"
         Me.NUD_C_NotaNotasExamenParcial.Size = New System.Drawing.Size(52, 27)
         Me.NUD_C_NotaNotasExamenParcial.TabIndex = 28
@@ -1179,7 +1179,7 @@ Partial Class F_Principal
         'CMB_C_SeleccionarAlumnoNotasExamenP
         '
         Me.CMB_C_SeleccionarAlumnoNotasExamenP.FormattingEnabled = True
-        Me.CMB_C_SeleccionarAlumnoNotasExamenP.Location = New System.Drawing.Point(42, 264)
+        Me.CMB_C_SeleccionarAlumnoNotasExamenP.Location = New System.Drawing.Point(42, 289)
         Me.CMB_C_SeleccionarAlumnoNotasExamenP.Name = "CMB_C_SeleccionarAlumnoNotasExamenP"
         Me.CMB_C_SeleccionarAlumnoNotasExamenP.Size = New System.Drawing.Size(266, 28)
         Me.CMB_C_SeleccionarAlumnoNotasExamenP.TabIndex = 27
@@ -1196,7 +1196,7 @@ Partial Class F_Principal
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(39, 244)
+        Me.Label30.Location = New System.Drawing.Point(39, 269)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(122, 17)
         Me.Label30.TabIndex = 26
@@ -1206,7 +1206,7 @@ Partial Class F_Principal
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(40, 142)
+        Me.Label31.Location = New System.Drawing.Point(40, 195)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(123, 17)
         Me.Label31.TabIndex = 22
@@ -1215,7 +1215,7 @@ Partial Class F_Principal
         'CMB_C_SeleccionarMateriaNotasExamenP
         '
         Me.CMB_C_SeleccionarMateriaNotasExamenP.FormattingEnabled = True
-        Me.CMB_C_SeleccionarMateriaNotasExamenP.Location = New System.Drawing.Point(42, 162)
+        Me.CMB_C_SeleccionarMateriaNotasExamenP.Location = New System.Drawing.Point(42, 215)
         Me.CMB_C_SeleccionarMateriaNotasExamenP.Name = "CMB_C_SeleccionarMateriaNotasExamenP"
         Me.CMB_C_SeleccionarMateriaNotasExamenP.Size = New System.Drawing.Size(266, 28)
         Me.CMB_C_SeleccionarMateriaNotasExamenP.TabIndex = 23
@@ -1267,7 +1267,7 @@ Partial Class F_Principal
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(40, 295)
+        Me.Label34.Location = New System.Drawing.Point(40, 320)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(37, 17)
         Me.Label34.TabIndex = 29
@@ -1283,7 +1283,7 @@ Partial Class F_Principal
         '
         'NUD_C_NotaNotasExamen
         '
-        Me.NUD_C_NotaNotasExamen.Location = New System.Drawing.Point(42, 315)
+        Me.NUD_C_NotaNotasExamen.Location = New System.Drawing.Point(42, 340)
         Me.NUD_C_NotaNotasExamen.Name = "NUD_C_NotaNotasExamen"
         Me.NUD_C_NotaNotasExamen.Size = New System.Drawing.Size(52, 27)
         Me.NUD_C_NotaNotasExamen.TabIndex = 28
@@ -1301,7 +1301,7 @@ Partial Class F_Principal
         'CMB_C_SeleccionarAlumnoNotasExamen
         '
         Me.CMB_C_SeleccionarAlumnoNotasExamen.FormattingEnabled = True
-        Me.CMB_C_SeleccionarAlumnoNotasExamen.Location = New System.Drawing.Point(42, 264)
+        Me.CMB_C_SeleccionarAlumnoNotasExamen.Location = New System.Drawing.Point(42, 289)
         Me.CMB_C_SeleccionarAlumnoNotasExamen.Name = "CMB_C_SeleccionarAlumnoNotasExamen"
         Me.CMB_C_SeleccionarAlumnoNotasExamen.Size = New System.Drawing.Size(266, 28)
         Me.CMB_C_SeleccionarAlumnoNotasExamen.TabIndex = 27
@@ -1318,7 +1318,7 @@ Partial Class F_Principal
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(39, 244)
+        Me.Label36.Location = New System.Drawing.Point(39, 269)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(122, 17)
         Me.Label36.TabIndex = 26
@@ -1328,7 +1328,7 @@ Partial Class F_Principal
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(40, 142)
+        Me.Label37.Location = New System.Drawing.Point(39, 195)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(123, 17)
         Me.Label37.TabIndex = 22
@@ -1337,7 +1337,7 @@ Partial Class F_Principal
         'CMB_C_SeleccionarLlamadoNotasExamen
         '
         Me.CMB_C_SeleccionarLlamadoNotasExamen.FormattingEnabled = True
-        Me.CMB_C_SeleccionarLlamadoNotasExamen.Location = New System.Drawing.Point(42, 213)
+        Me.CMB_C_SeleccionarLlamadoNotasExamen.Location = New System.Drawing.Point(41, 163)
         Me.CMB_C_SeleccionarLlamadoNotasExamen.Name = "CMB_C_SeleccionarLlamadoNotasExamen"
         Me.CMB_C_SeleccionarLlamadoNotasExamen.Size = New System.Drawing.Size(119, 28)
         Me.CMB_C_SeleccionarLlamadoNotasExamen.TabIndex = 25
@@ -1345,7 +1345,7 @@ Partial Class F_Principal
         'CMB_C_SeleccionarMateriaNotasExamen
         '
         Me.CMB_C_SeleccionarMateriaNotasExamen.FormattingEnabled = True
-        Me.CMB_C_SeleccionarMateriaNotasExamen.Location = New System.Drawing.Point(42, 162)
+        Me.CMB_C_SeleccionarMateriaNotasExamen.Location = New System.Drawing.Point(41, 215)
         Me.CMB_C_SeleccionarMateriaNotasExamen.Name = "CMB_C_SeleccionarMateriaNotasExamen"
         Me.CMB_C_SeleccionarMateriaNotasExamen.Size = New System.Drawing.Size(266, 28)
         Me.CMB_C_SeleccionarMateriaNotasExamen.TabIndex = 23
@@ -1354,7 +1354,7 @@ Partial Class F_Principal
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(40, 193)
+        Me.Label38.Location = New System.Drawing.Point(39, 143)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(128, 17)
         Me.Label38.TabIndex = 24

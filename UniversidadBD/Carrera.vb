@@ -68,7 +68,7 @@ Public Class Carrera
             Dim ID As Integer = F_Secundario.CMB_E_SeleccionarCarreraCarrera.SelectedValue
             Dim ID2 As Integer = F_Secundario.CMB_E_SeleccionarFacultadCarrera.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "UPDATE CARRERA SET CARRERA_DESCRIPCION = '" & pDescripcion & "', CARRERA_DURACION = '" & pDuracion & "'CARRERA_CODIGO = '" & pCodigo & "'CARRERA_RELA_FACULTAD = '" & ID2 & "' WHERE ID_CARRERA = " & ID
+            Comando.CommandText = "UPDATE CARRERA SET CARRERA_DESCRIPCION = '" & pDescripcion & "', CARRERA_DURACION = '" & pDuracion & "', CARRERA_CODIGO = '" & pCodigo & "', CARRERA_RELA_FACULTAD = '" & ID2 & "' WHERE ID_CARRERA = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
@@ -76,5 +76,4 @@ Public Class Carrera
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 End Class
