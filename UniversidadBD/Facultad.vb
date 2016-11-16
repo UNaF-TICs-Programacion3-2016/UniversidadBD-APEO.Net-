@@ -51,4 +51,17 @@ Public Class Facultad
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'ELIMINAR FACULTAD
+    Friend Sub EliminarFacultad()
+        Try
+            Dim ID As Integer = F_Secundario.CMB_S_FacultadSeleccionar.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM FACULTAD WHERE ID_FACULTAD=" & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

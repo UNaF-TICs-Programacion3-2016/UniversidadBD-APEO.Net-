@@ -69,4 +69,31 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    Sub CargarListaCondicion(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
+        If Panel.Visible = True Then
+            Try
+                CargarListaSQLC(Tabla, Columna, Condicion, Lista)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+    Sub CargarListaSinRepetirC(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
+        If Panel.Visible = True Then
+            Try
+                CargarListaSinRepetirSQLC(Tabla, Columna, Condicion, Lista, Referencia)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+    Sub CargarDGVCondicion(Datos As DataGridView, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
+        If Panel.Visible = True Then
+            Try
+                CargarDGV_SQLC(Tabla, Columna, Condicion, Datos)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
 End Class

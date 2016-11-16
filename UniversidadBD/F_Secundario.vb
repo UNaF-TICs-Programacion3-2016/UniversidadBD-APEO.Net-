@@ -147,6 +147,10 @@ Public Class F_Secundario
         oAula.Descripcion = TXT_E_DescripcionAula.Text
         oAula.EditarAula()
     End Sub
+    Private Sub BTN_S_FacultadBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_FacultadBorrar.Click
+        Facultad.EliminarFacultad()
+        Me.Close()
+    End Sub
     'PANELES
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
@@ -203,6 +207,9 @@ Public Class F_Secundario
     Private Sub Panel1_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_InscripcionCursadas.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_FacultadIC, PNL_A_InscripcionCursadas, "FACULTAD", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_CarreraIC, PNL_A_InscripcionCursadas, "CARRERA", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_S_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Facultad.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_FacultadSeleccionar, PNL_S_Facultad, "FACULTAD", "DESCRIPCION")
     End Sub
     'COMBOBOX
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
@@ -304,6 +311,9 @@ Public Class F_Secundario
     Private Sub BTN_A_TerminarIC_Click(sender As Object, e As EventArgs) Handles BTN_A_TerminarIC.Click
         Me.Close()
     End Sub
+    Private Sub BTN_S_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_FacultadCancelar.Click
+        Me.Close()
+    End Sub
     'CREO QUE ESTO NO SIRVE
     Private Sub BTN_A_CorrelativaSalir_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaSalir.Click
         Me.Close()
@@ -328,9 +338,4 @@ Public Class F_Secundario
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCorrelativasCorrelativa, PNL_A_Correlativa, "MATERIA", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCarreraCorrelativa, PNL_A_Correlativa, "CARRERA", "DESCRIPCION")
     End Sub
-
-
-
-
-
 End Class
