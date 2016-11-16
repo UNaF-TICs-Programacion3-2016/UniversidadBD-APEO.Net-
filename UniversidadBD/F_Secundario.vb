@@ -151,7 +151,42 @@ Public Class F_Secundario
         Facultad.EliminarFacultad()
         Me.Close()
     End Sub
+    Private Sub BTN_S_CarreraBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_CarreraBorrar.Click
+        Carrera.EliminarCarrera()
+    End Sub
+    Private Sub BTN_S_AlumnoBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_AlumnoBorrar.Click
+        Alumno.EliminarAlumno()
+    End Sub
+
+    Private Sub BTN_S_OtroEliminar_Click(sender As Object, e As EventArgs) Handles BTN_S_OtroEliminar.Click
+        Otro.EliminarOtro()
+    End Sub
+    Private Sub BTN_S_MateriaBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_MateriaBorrar.Click
+        Materia.EliminarMateria()
+    End Sub
+    Private Sub BTN_S_ExamenFinalBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_ExamenFinalBorrar.Click
+        Examen.EliminarExamen()
+    End Sub
+    Private Sub BTN_S_AulaBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_AulaBorrar.Click
+        oAula.EliminarAula()
+    End Sub
+    Private Sub BTN_S_CursoBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_CursoBorrar.Click
+        Curso.EliminarCurso()
+    End Sub
+    Private Sub BTN_S_ProfesorBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_ProfesorBorrar.Click
+        Profesor.EliminarProfesor()
+    End Sub
+
     'PANELES
+    Private Sub PNL_S_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Materia.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_SeleccionarCarreraMateria, PNL_S_Materia, "CARRERA", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_S_ExamenFinal_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_ExamenFinal.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_FacultadExamenFinal, PNL_S_ExamenFinal, "FACULTAD", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_S_Aula_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Aula.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_SeleccionarAulaAula, PNL_S_Aula, "AULA", "DESCRIPCION")
+    End Sub
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_E_SeleccionarFacultad, PNL_E_Facultad, "FACULTAD", "DESCRIPCION")
     End Sub
@@ -211,7 +246,44 @@ Public Class F_Secundario
     Private Sub PNL_S_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Facultad.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_S_FacultadSeleccionar, PNL_S_Facultad, "FACULTAD", "DESCRIPCION")
     End Sub
+    Private Sub PNL_S_Carrera_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Carrera.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_SeleccionarCarreraCarrera, PNL_S_Carrera, "CARRERA", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_S_Alumno_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Alumno.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_SeleccionarAlumno, PNL_S_Alumno, "ALUMNO", "DESCRIPCION")
+    End Sub
+    Private Sub PNL_S_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Otro.VisibleChanged
+        oConfiguracion.CargarComboEspecifico(CMB_S_SeleccionePersonaOtro, PNL_S_Otro, "PERSONA", "PERSONA_APELLIDO", "ID_ADMINISTRACION", "ID_PERSONA=ADMIN_RELA_PERSONA")
+    End Sub
+    Private Sub PNL_S_Profesor_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Profesor.VisibleChanged
+        oConfiguracion.CargarComboEspecifico(CMB_S_SeleccionarProfesorProfesor, PNL_S_Profesor, "PERSONA", "PERSONA_APELLIDO", "ID_PROFESOR", "ID_PERSONA=PROFESOR_RELA_PERSONA")
+    End Sub
+    Private Sub PNL_S_Curso_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Curso.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_S_SeleccionarFacultadCurso, PNL_S_Curso, "FACULTAD", "DESCRIPCION")
+    End Sub
+
     'COMBOBOX
+    Private Sub CMB_S_FacultadExamenFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_FacultadExamenFinal.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_S_CarreraExamenFinal, PNL_S_ExamenFinal, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_S_FacultadExamenFinal)
+    End Sub
+
+    Private Sub CMB_S_CarreraExamenFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_CarreraExamenFinal.SelectedIndexChanged
+        Dim CARRERA As Integer = CMB_S_CarreraExamenFinal.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_S_SeleccionarFinalExamenFinal, PNL_S_ExamenFinal, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "MATERIA_RELA_CARRERA=" & CARRERA & "ID_MATERIA=EXAMEN_RELA_MATERIA")
+    End Sub
+
+    Private Sub CMB_S_SeleccionarMateriaCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarMateriaCurso.SelectedIndexChanged
+        oConfiguracion.CargarComboSinRepetir(CMB_S_ComisionCurso, PNL_S_Curso, "CURSO", "CURSO_N_COMISION", "CURSO_N_COMISION")
+    End Sub
+    Private Sub CMB_S_SeleccionarCarreraCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarCarreraCurso.SelectedIndexChanged
+        oConfiguracion.CargarComboEspecifico(CMB_S_SeleccionarMateriaCurso, PNL_S_Curso, "MATERIA, CURSO", "MATERIA_DESCRIPCION", "ID_CURSO", "ID_MATERIA=CURSO_RELA_MATERIA")
+    End Sub
+    Private Sub CMB_S_SeleccionarFacultadCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarFacultadCurso.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_S_SeleccionarCarreraCurso, PNL_S_Curso, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_S_SeleccionarFacultadCurso)
+    End Sub
+    Private Sub CMB_S_SeleccionarCarreraMateria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarCarreraMateria.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_S_SeleccionarMateriaMateria, PNL_S_Materia, "MATERIA", "DESCRIPCION", "RELA_CARRERA", CMB_S_SeleccionarCarreraMateria)
+    End Sub
     Private Sub CMB_E_SeleccionarFacultad_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_E_SeleccionarFacultad.SelectedIndexChanged
         TXT_E_CodigoFacultad.Text = Facultad.Codigo
         TXT_E_DescripcionFacultad.Text = Facultad.Descripcion
@@ -269,6 +341,31 @@ Public Class F_Secundario
         oConfiguracion.CargarComboSinRepetir(CMB_A_ComisionIC, PNL_A_InscripcionCursadas, "CURSO", "CURSO_N_COMISION", "CURSO_N_COMISION")
     End Sub
     'CANCELAR
+    Private Sub BTN_S_CarreraCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_CarreraCancelar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub BTN_S_AlumnoCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_AlumnoCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_S_Cancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_Cancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_S_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_MateriaCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_S_ProfesorCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_ProfesorCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_S_CursoCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_CursoCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_S_AulaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_AulaCancelar.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_S_ExamenFinalCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_ExamenFinalCancelar.Click
+        Me.Close()
+    End Sub
     Private Sub BTN_A_ExamenFinalCancelar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ExamenFinalCancelar.Click
         Me.Close()
     End Sub
@@ -338,4 +435,6 @@ Public Class F_Secundario
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCorrelativasCorrelativa, PNL_A_Correlativa, "MATERIA", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCarreraCorrelativa, PNL_A_Correlativa, "CARRERA", "DESCRIPCION")
     End Sub
+
+
 End Class

@@ -98,4 +98,19 @@ Public NotInheritable Class Profesores
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'ELIMINAR PROFESOR
+    Friend Sub EliminarProfesor()
+        Try
+            Dim ID = F_Secundario.CMB_S_SeleccionarProfesorProfesor.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM PROFESOR WHERE ID_PROFESOR=" & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MsgBox("Los datos han sido eliminados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
 End Class

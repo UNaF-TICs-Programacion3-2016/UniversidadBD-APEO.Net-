@@ -170,4 +170,18 @@ Public Class Examen
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'ELIMINAR EXAMEN
+    Friend Sub EliminarExamen()
+        Try
+            Dim ID = F_Secundario.CMB_S_SeleccionarFinalExamenFinal.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM EXAMEN WHERE ID_EXAMEN=" & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MsgBox("Los datos han sido eliminados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

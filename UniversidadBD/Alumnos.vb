@@ -114,6 +114,20 @@ Public NotInheritable Class Alumnos
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'ELIMINAR ALUMNO
+    Friend Sub EliminarAlumno()
+        Try
+            Dim ID = F_Secundario.CMB_S_SeleccionarAlumno.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM ALUMNO WHERE ID_ALUMNO=" & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MsgBox("Los datos han sido eliminados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
     'METODO QUE NO SIRVE
     Friend Sub InsertAlumno()
         Dim IDPERSONA As Long

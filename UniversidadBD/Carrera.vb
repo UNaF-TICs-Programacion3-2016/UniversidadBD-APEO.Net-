@@ -76,4 +76,18 @@ Public Class Carrera
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'ELIMINAR CARRERA
+    Friend Sub EliminarCarrera()
+        Try
+            Dim ID = F_Secundario.CMB_S_SeleccionarCarreraCarrera.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM CARRERA WHERE ID_CARRERA=" & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MsgBox("Los datos han sido eliminados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

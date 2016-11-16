@@ -146,4 +146,19 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'ELIMINAR MATERIA
+    Friend Sub EliminarMateria()
+        Try
+            Dim ID = F_Secundario.CMB_S_SeleccionarMateriaMateria.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM MATERIA WHERE ID_MATERIA=" & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MsgBox("Los datos han sido eliminados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
 End Class
