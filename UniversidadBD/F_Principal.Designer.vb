@@ -23,7 +23,6 @@ Partial Class F_Principal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Principal))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TSM_UNIVERSIDAD = New System.Windows.Forms.MenuStrip()
         Me.TSM_ACCIONES = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -88,13 +87,6 @@ Partial Class F_Principal
         Me.Label17 = New System.Windows.Forms.Label()
         Me.LTB_C_ProfesoresExamenesFinales = New System.Windows.Forms.ListBox()
         Me.DGV_C_AlumnosInscriptosExamenesFinales = New System.Windows.Forms.DataGridView()
-        Me.ALUMNOS = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CONDICION = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NOTALIBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NOTAREGULAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FECHA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HORA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PROFESOR = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.CMB_C_SeleccioneLlamado = New System.Windows.Forms.ComboBox()
@@ -143,6 +135,11 @@ Partial Class F_Principal
         Me.CMB_C_SeleccionarMateriaNotasExamen = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
+        Me.LBX_C_FechaExamenExamen = New System.Windows.Forms.ListBox()
+        Me.LBX_C_HoraExamen = New System.Windows.Forms.ListBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
         Me.TSM_UNIVERSIDAD.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.PNL_C_Cursos.SuspendLayout()
@@ -398,9 +395,9 @@ Partial Class F_Principal
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox2)
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox1)
         Me.PNL_C_Cursos.Controls.Add(Me.Label1)
-        Me.PNL_C_Cursos.Location = New System.Drawing.Point(12, 71)
+        Me.PNL_C_Cursos.Location = New System.Drawing.Point(24, 80)
         Me.PNL_C_Cursos.Name = "PNL_C_Cursos"
-        Me.PNL_C_Cursos.Size = New System.Drawing.Size(96, 67)
+        Me.PNL_C_Cursos.Size = New System.Drawing.Size(98, 62)
         Me.PNL_C_Cursos.TabIndex = 4
         Me.PNL_C_Cursos.Visible = False
         '
@@ -434,14 +431,6 @@ Partial Class F_Principal
         Me.DGV_C_HyACursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_C_HyACursos.Location = New System.Drawing.Point(271, 305)
         Me.DGV_C_HyACursos.Name = "DGV_C_HyACursos"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe WP", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV_C_HyACursos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV_C_HyACursos.RowHeadersWidth = 10
         Me.DGV_C_HyACursos.Size = New System.Drawing.Size(416, 89)
         Me.DGV_C_HyACursos.TabIndex = 35
@@ -671,6 +660,11 @@ Partial Class F_Principal
         'PNL_C_ExamenesFinales
         '
         Me.PNL_C_ExamenesFinales.BackColor = System.Drawing.Color.White
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label28)
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label27)
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label26)
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.LBX_C_HoraExamen)
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.LBX_C_FechaExamenExamen)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.BTN_C_ExamenesFinalesCargar)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label17)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.LTB_C_ProfesoresExamenesFinales)
@@ -685,9 +679,9 @@ Partial Class F_Principal
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label14)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.CMB_C_SeleccioneFacultadExamenesFinales)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label12)
-        Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(356, 71)
+        Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(369, 75)
         Me.PNL_C_ExamenesFinales.Name = "PNL_C_ExamenesFinales"
-        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(121, 67)
+        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(209, 67)
         Me.PNL_C_ExamenesFinales.TabIndex = 5
         Me.PNL_C_ExamenesFinales.Visible = False
         '
@@ -722,52 +716,10 @@ Partial Class F_Principal
         'DGV_C_AlumnosInscriptosExamenesFinales
         '
         Me.DGV_C_AlumnosInscriptosExamenesFinales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_C_AlumnosInscriptosExamenesFinales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ALUMNOS, Me.CONDICION, Me.NOTALIBRE, Me.NOTAREGULAR, Me.FECHA, Me.HORA, Me.PROFESOR})
         Me.DGV_C_AlumnosInscriptosExamenesFinales.Location = New System.Drawing.Point(253, 89)
         Me.DGV_C_AlumnosInscriptosExamenesFinales.Name = "DGV_C_AlumnosInscriptosExamenesFinales"
-        Me.DGV_C_AlumnosInscriptosExamenesFinales.Size = New System.Drawing.Size(743, 373)
+        Me.DGV_C_AlumnosInscriptosExamenesFinales.Size = New System.Drawing.Size(345, 322)
         Me.DGV_C_AlumnosInscriptosExamenesFinales.TabIndex = 52
-        '
-        'ALUMNOS
-        '
-        Me.ALUMNOS.HeaderText = "Alumnos"
-        Me.ALUMNOS.Name = "ALUMNOS"
-        Me.ALUMNOS.ReadOnly = True
-        '
-        'CONDICION
-        '
-        Me.CONDICION.HeaderText = "Condición"
-        Me.CONDICION.Name = "CONDICION"
-        Me.CONDICION.ReadOnly = True
-        '
-        'NOTALIBRE
-        '
-        Me.NOTALIBRE.HeaderText = "Nota (Libre)"
-        Me.NOTALIBRE.Name = "NOTALIBRE"
-        Me.NOTALIBRE.ReadOnly = True
-        '
-        'NOTAREGULAR
-        '
-        Me.NOTAREGULAR.HeaderText = "Nota (Regular)"
-        Me.NOTAREGULAR.Name = "NOTAREGULAR"
-        Me.NOTAREGULAR.ReadOnly = True
-        '
-        'FECHA
-        '
-        Me.FECHA.HeaderText = "Fecha"
-        Me.FECHA.Name = "FECHA"
-        Me.FECHA.ReadOnly = True
-        '
-        'HORA
-        '
-        Me.HORA.HeaderText = "Hora"
-        Me.HORA.Name = "HORA"
-        Me.HORA.ReadOnly = True
-        '
-        'PROFESOR
-        '
-        Me.PROFESOR.HeaderText = "Profesor"
-        Me.PROFESOR.Name = "PROFESOR"
         '
         'Label16
         '
@@ -805,7 +757,7 @@ Partial Class F_Principal
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(132, 17)
         Me.Label15.TabIndex = 47
-        Me.Label15.Text = "Seleccione la Materia"
+        Me.Label15.Text = "Seleccione el Examen"
         '
         'CMB_C_SeleccioneMateriaExamenesFinales
         '
@@ -1067,9 +1019,9 @@ Partial Class F_Principal
         Me.PNL_C_NotasExamen.BackColor = System.Drawing.Color.White
         Me.PNL_C_NotasExamen.Controls.Add(Me.GroupBox4)
         Me.PNL_C_NotasExamen.Controls.Add(Me.Label39)
-        Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(128, 75)
+        Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(128, 80)
         Me.PNL_C_NotasExamen.Name = "PNL_C_NotasExamen"
-        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(205, 58)
+        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(223, 62)
         Me.PNL_C_NotasExamen.TabIndex = 7
         Me.PNL_C_NotasExamen.Visible = False
         '
@@ -1223,6 +1175,52 @@ Partial Class F_Principal
         Me.Label39.TabIndex = 13
         Me.Label39.Text = "Notas de Exámen"
         '
+        'LBX_C_FechaExamenExamen
+        '
+        Me.LBX_C_FechaExamenExamen.FormattingEnabled = True
+        Me.LBX_C_FechaExamenExamen.Location = New System.Drawing.Point(253, 445)
+        Me.LBX_C_FechaExamenExamen.Name = "LBX_C_FechaExamenExamen"
+        Me.LBX_C_FechaExamenExamen.Size = New System.Drawing.Size(168, 17)
+        Me.LBX_C_FechaExamenExamen.TabIndex = 56
+        '
+        'LBX_C_HoraExamen
+        '
+        Me.LBX_C_HoraExamen.FormattingEnabled = True
+        Me.LBX_C_HoraExamen.Location = New System.Drawing.Point(430, 445)
+        Me.LBX_C_HoraExamen.Name = "LBX_C_HoraExamen"
+        Me.LBX_C_HoraExamen.Size = New System.Drawing.Size(47, 17)
+        Me.LBX_C_HoraExamen.TabIndex = 57
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(250, 425)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(112, 17)
+        Me.Label26.TabIndex = 58
+        Me.Label26.Text = "Fecha del Examen"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(427, 425)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(108, 17)
+        Me.Label27.TabIndex = 59
+        Me.Label27.Text = "Hora del Examen"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(483, 445)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(24, 17)
+        Me.Label28.TabIndex = 60
+        Me.Label28.Text = "HS"
+        '
         'F_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1326,13 +1324,6 @@ Partial Class F_Principal
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents LTB_C_ProfesoresExamenesFinales As System.Windows.Forms.ListBox
     Friend WithEvents DGV_C_AlumnosInscriptosExamenesFinales As System.Windows.Forms.DataGridView
-    Friend WithEvents ALUMNOS As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CONDICION As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NOTALIBRE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NOTAREGULAR As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FECHA As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents HORA As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PROFESOR As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents CMB_C_SeleccioneLlamado As System.Windows.Forms.ComboBox
@@ -1386,6 +1377,11 @@ Partial Class F_Principal
     Friend WithEvents InscripcionesAExamenesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents InscripcionesACursosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DGV_C_HyACursos As DataGridView
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents LBX_C_HoraExamen As ListBox
+    Friend WithEvents LBX_C_FechaExamenExamen As ListBox
     '' Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     ''Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class

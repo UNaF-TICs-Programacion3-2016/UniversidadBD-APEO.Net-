@@ -115,6 +115,10 @@
         oConfiguracion.CargarComboBox(CMB_C_SeleccioneFacultadCursosFP, PNL_C_Cursos, "FACULTAD", "DESCRIPCION")
         oConfiguracion.CargarComboSinRepetir(CMB_C_SeleccioneComisiónCursos, PNL_C_Cursos, "CURSO", "CURSO_N_COMISION", "CURSO_N_COMISION")
     End Sub
+    Private Sub PNL_C_ExamenesFinales_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_C_ExamenesFinales.VisibleChanged
+        oConfiguracion.CargarComboBox(CMB_C_SeleccioneFacultadExamenesFinales, PNL_C_ExamenesFinales, "FACULTAD", "DESCRIPCION")
+        oConfiguracion.CargarComboSinRepetirC(CMB_C_SeleccioneLlamado, PNL_C_ExamenesFinales, "EXAMEN", "EXAMEN_LLAMADO", "EXAMEN_LLAMADO", "EXAMEN_RELA_TIPO_EXAMEN = 2")
+    End Sub
     'COMBOS
     Private Sub CMB_C_SeleccionarFacultadNotasExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccionarFacultadNotasExamen.SelectedIndexChanged
         oConfiguracion.CargarCombo(CMB_C_SeleccionarCarreraNotasExamen, PNL_C_NotasExamen, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_C_SeleccionarFacultadNotasExamen)
@@ -140,18 +144,35 @@
         Dim Comision As Integer = CMB_C_SeleccioneComisiónCursos.SelectedValue
         oConfiguracion.CargarComboEspecifico(CMB_C_SeleccioneMateriaCursos, PNL_C_Cursos, "MATERIA, CURSO", "MATERIA_DESCRIPCION", "ID_MATERIA", "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = CURSO_RELA_MATERIA AND CURSO_N_COMISION = " & Comision)
     End Sub
-    'BOTONES ACEPTAR
-    Private Sub BTN_C_NotasExamenFinalCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_NotasExamenFinalCargar.Click
-        F_Secundario.Examen.NotaExamenFinal()
-    End Sub
     Private Sub CMB_C_SeleccioneFacultadCursosFP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccioneFacultadCursosFP.SelectedIndexChanged
         oConfiguracion.CargarCombo(CMB_C_SeleccioneCarreraCursosFP, PNL_C_Cursos, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_C_SeleccioneFacultadCursosFP)
     End Sub
+    Private Sub CMB_C_SeleccioneFacultadExamenesFinales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccioneFacultadExamenesFinales.SelectedIndexChanged
+        oConfiguracion.CargarCombo(CMB_C_SeleccioneCarreraExamenesFinales, PNL_C_ExamenesFinales, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_C_SeleccioneFacultadExamenesFinales)
+    End Sub
+    Private Sub CMB_C_SeleccioneCarreraExamenesFinales_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccioneCarreraExamenesFinales.SelectedIndexChanged
+        Dim Carrera As Integer = CMB_C_SeleccioneCarreraExamenesFinales.SelectedValue
+        Dim Llamado As Integer = CMB_C_SeleccioneLlamado.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccioneMateriaExamenesFinales, PNL_C_ExamenesFinales, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = EXAMEN_RELA_MATERIA AND EXAMEN_LLAMADO = " & Llamado)
+    End Sub
+    Private Sub CMB_C_SeleccioneLlamado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccioneLlamado.SelectedIndexChanged
+        Dim Carrera As Integer = CMB_C_SeleccioneCarreraExamenesFinales.SelectedValue
+        Dim Llamado As Integer = CMB_C_SeleccioneLlamado.SelectedValue
+        oConfiguracion.CargarComboEspecifico(CMB_C_SeleccioneMateriaExamenesFinales, PNL_C_ExamenesFinales, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = EXAMEN_RELA_MATERIA AND EXAMEN_LLAMADO = " & Llamado)
+    End Sub
+    'BOTONES ACEPTAR
     Private Sub BTN_C_CursosCargarFP_Click(sender As Object, e As EventArgs) Handles BTN_C_CursosCargarFP.Click
         Dim Materia As Integer = CMB_C_SeleccioneMateriaCursos.SelectedValue
         Dim Comision As Integer = CMB_C_SeleccioneComisiónCursos.SelectedValue
         oConfiguracion.CargarListaCondicion(LTB_C_AlumnosInscriptosCursos, PNL_C_Cursos, "PERSONA, ALUMNO, CURSO_ALUMNO", "PERSONA_APELLIDO", "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = CUR_ALU_RELA_ALUMNO AND CUR_ALU_RELA_CURSO = " & Materia)
         oConfiguracion.CargarListaCondicion(LTB_C_ProfesoresCursoCursos, PNL_C_Cursos, "PERSONA, PROFESOR, CURSO_PROFESOR", "PERSONA_APELLIDO", "ID_PERSONA = PROFESOR_RELA_PERSONA AND ID_PROFESOR = CURSO_PROFESOR_RELA_PROFESOR AND CURSO_PROFESOR_RELA_CURSO = " & Materia)
         oConfiguracion.CargarDGVCondicion(DGV_C_HyACursos, PNL_C_Cursos, "CURSO, HORA, MINUTO, DIA, AULA", "HORA_NUMERO, MINUTO_NUMERO, DIA_DESCRIPCION, AULA_DESCRIPCION", "CURSO_RELA_MATERIA = " & Materia & " AND CURSO_N_COMISION = " & Comision & " AND ID_HORA = CURSO_RELA_HORA_DESDE AND ID_MINUTO = CURSO_RELA_MINUTO_DESDE AND ID_DIA = CURSO_RELA_DIA AND ID_AULA = CURSO_RELA_AULA")
+    End Sub
+    Private Sub BTN_C_ExamenesFinalesCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_ExamenesFinalesCargar.Click
+        Dim Materia As Integer = CMB_C_SeleccioneMateriaExamenesFinales.SelectedValue
+        oConfiguracion.CargarListaCondicion(LTB_C_ProfesoresExamenesFinales, PNL_C_ExamenesFinales, "PERSONA, PROFESOR, EXAMEN_PROFESOR", "PERSONA_APELLIDO", "ID_PERSONA = PROFESOR_RELA_PERSONA AND ID_PROFESOR = EXA_PROFE_RELA_PROFESORES AND EXA_PROFE_RELA_EXAMEN = " & Materia)
+        oConfiguracion.CargarDGVCondicion(DGV_C_AlumnosInscriptosExamenesFinales, PNL_C_ExamenesFinales, "PERSONA, ALUMNO, EXAMEN, CONDICION, NOTA, ALUMNO_EXAMEN", "PERSONA_APELLIDO, CONDICION_DESCRIPCION, NOTA_NOTA", "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = ALU_EXA_RELA_ALUMNO AND ID_CONDICION = ALU_EXA_RELA_CONDICION AND ID_EXAMEN = " & Materia & " AND ALU_EXA_RELA_EXAMEN = ID_EXAMEN AND NOTA_RELA_ALUMNO_EXAMEN = ID_ALUMNO_EXAMEN")
+        oConfiguracion.CargarListaCondicion(LBX_C_FechaExamenExamen, PNL_C_ExamenesFinales, "EXAMEN", "EXAMEN_FECHA", "ID_EXAMEN = " & Materia)
+        oConfiguracion.CargarListaCondicion(LBX_C_HoraExamen, PNL_C_ExamenesFinales, "EXAMEN, HORA", "HORA_NUMERO", "ID_HORA = EXAMEN_RELA_HORA AND ID_EXAMEN = " & Materia)
     End Sub
 End Class
