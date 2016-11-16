@@ -162,7 +162,7 @@ Partial Class F_Principal
         Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem})
         Me.TSM_UNIVERSIDAD.Location = New System.Drawing.Point(0, 0)
         Me.TSM_UNIVERSIDAD.Name = "TSM_UNIVERSIDAD"
-        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1073, 33)
+        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1069, 33)
         Me.TSM_UNIVERSIDAD.TabIndex = 0
         Me.TSM_UNIVERSIDAD.Text = "MenuStrip1"
         '
@@ -351,7 +351,7 @@ Partial Class F_Principal
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 33)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.ToolStrip1.Size = New System.Drawing.Size(1073, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1069, 32)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -681,7 +681,7 @@ Partial Class F_Principal
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label12)
         Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(369, 75)
         Me.PNL_C_ExamenesFinales.Name = "PNL_C_ExamenesFinales"
-        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(209, 67)
+        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(215, 65)
         Me.PNL_C_ExamenesFinales.TabIndex = 5
         Me.PNL_C_ExamenesFinales.Visible = False
         '
@@ -1021,7 +1021,7 @@ Partial Class F_Principal
         Me.PNL_C_NotasExamen.Controls.Add(Me.Label39)
         Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(128, 80)
         Me.PNL_C_NotasExamen.Name = "PNL_C_NotasExamen"
-        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(223, 62)
+        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(220, 62)
         Me.PNL_C_NotasExamen.TabIndex = 7
         Me.PNL_C_NotasExamen.Visible = False
         '
@@ -1226,7 +1226,7 @@ Partial Class F_Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1073, 634)
+        Me.ClientSize = New System.Drawing.Size(1069, 541)
         Me.Controls.Add(Me.PNL_C_NotasExamen)
         Me.Controls.Add(Me.PNL_C_ExamenesParciales)
         Me.Controls.Add(Me.PNL_C_ExamenesFinales)

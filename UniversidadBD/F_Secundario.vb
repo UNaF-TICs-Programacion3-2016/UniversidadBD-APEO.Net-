@@ -97,7 +97,7 @@ Public Class F_Secundario
         Me.Close()
     End Sub
     Private Sub BTN_A_ExamenFinalAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ExamenFinalAceptar.Click
-        Examen.Fecha = DTP_A_FechaExamenFinal.Value
+        Examen.Fecha = DTP_A_FechaExamenFinal.Value.Date
         Examen.Tipo = RDB_A_FinalExamenFinal.Checked
         Examen.Hora = CMB_A_HoraExamen.SelectedValue
         Examen.Minuto = CMB_A_MinutoExamen.SelectedValue
