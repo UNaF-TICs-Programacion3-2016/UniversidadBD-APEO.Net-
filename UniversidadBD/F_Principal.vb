@@ -175,4 +175,7 @@
         oConfiguracion.CargarListaCondicion(LBX_C_FechaExamenExamen, PNL_C_ExamenesFinales, "EXAMEN", "EXAMEN_FECHA", "ID_EXAMEN = " & Materia)
         oConfiguracion.CargarListaCondicion(LBX_C_HoraExamen, PNL_C_ExamenesFinales, "EXAMEN, HORA", "HORA_NUMERO", "ID_HORA = EXAMEN_RELA_HORA AND ID_EXAMEN = " & Materia)
     End Sub
+    Private Sub BTN_C_NotasExamenFinalCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_NotasExamenFinalCargar.Click
+        F_Secundario.Examen.NotaExamenFinal()
+    End Sub
 End Class
