@@ -5,6 +5,7 @@ Public Class Configuracion
     Private Y As Integer
     Private Alto As Integer
     Private Ancho As Integer
+    'CONFIGURACIÓN DE INTERFAZ
     Sub EstablecerConfiguracion(Formulario As Form, Panel As Panel, Pestañas As TabControl)
         Formulario.Width = 587
         Formulario.Height = 485
@@ -24,6 +25,7 @@ Public Class Configuracion
         Panel.Height = 488
         Panel.Visible = True
     End Sub
+    'CARGAR DATOS AL COMBO
     Sub CargarComboBox(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String)
         If Panel.Visible = True Then
             Try
@@ -33,6 +35,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS AL COMBO CON CONDICIONES SIMPLES
     Sub CargarCombo(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
         If Panel.Visible = True Then
             Try
@@ -42,6 +45,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS AL COMBO CON CONDICIONES COMPLEJAS
     Sub CargarComboEspecifico(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String, Condicion As String)
         If Panel.Visible = True Then
             Try
@@ -51,6 +55,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS AL COMBO SIN QUE SE REPITAN
     Sub CargarComboSinRepetir(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String)
         If Panel.Visible = True Then
             Try
@@ -60,6 +65,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS AL COMBO SIN QUE SE REPITAN CUMPLIENDO UNA CONDICION
     Sub CargarComboSinRepetirC(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String, Condicion As String)
         If Panel.Visible = True Then
             Try
@@ -69,6 +75,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS A UNA LISTA CON CONDICIONES
     Sub CargarListaCondicion(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try
@@ -78,6 +85,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS A UNA LISTA SIN QUE SE REPITAN CUMPLIENDO UNA CONDICION
     Sub CargarListaSinRepetirC(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
         If Panel.Visible = True Then
             Try
@@ -87,6 +95,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS AL DATAGRID
     Sub CargarDGVCondicion(Datos As DataGridView, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try

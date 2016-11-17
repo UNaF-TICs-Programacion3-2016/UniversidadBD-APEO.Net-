@@ -25,8 +25,8 @@ Public Class Facultad
         Try
             Dim Tabla As String = "FACULTAD"
             InsertarSQL(Tabla)
-            Fila("FACULTAD_DESCRIPCION") = F_Secundario.Facultad.Descripcion
-            Fila("FACULTAD_CODIGO") = F_Secundario.Facultad.Codigo
+            Fila("FACULTAD_DESCRIPCION") = pDescripcion
+            Fila("FACULTAD_CODIGO") = pCodigo
             Insert(Tabla)
             Comando.CommandText = "Insert Into Facultad VALUES(:idfacultad,:descripcion,:codigo)"
             Comando.Parameters.Add(New OracleParameter(":idpersona", OracleDbType.Int64, 10, "ID_FACULTAD"))

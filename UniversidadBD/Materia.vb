@@ -1,13 +1,13 @@
 ﻿Imports Oracle.DataAccess.Client
 Public Class Materia
     Inherits Coneccion
-    Private pCarrera As Carrera
     Private pDescripcion As String
     Private pCodigo As String
-    Private pDireccion As String
     Private pCorrelativa As Boolean
     Private pOptativa As Boolean
-    Private pGrupo As String
+    Private pDescripcionOP As String
+    Private pCodigoOP As String
+    Private pRelacion As String
     'PROPIEDADES
     Public Property Descripcion() As String
         Get
@@ -23,14 +23,6 @@ Public Class Materia
         End Get
         Set(ByVal value As String)
             pCodigo = value
-        End Set
-    End Property
-    Public Property Direccion() As String
-        Get
-            Return pDireccion
-        End Get
-        Set(ByVal value As String)
-            pDireccion = value
         End Set
     End Property
     Public Property Correlativa() As Boolean
@@ -49,20 +41,28 @@ Public Class Materia
             pOptativa = value
         End Set
     End Property
-    Public Property Carrera() As Carrera
+    Public Property DescripcionOP() As String
         Get
-            Return pCarrera
-        End Get
-        Set(ByVal value As Carrera)
-            pCarrera = value
-        End Set
-    End Property
-    Public Property Grupo() As String
-        Get
-            Return pGrupo
+            Return pDescripcionOP
         End Get
         Set(ByVal value As String)
-            pGrupo = value
+            pDescripcionOP = value
+        End Set
+    End Property
+    Public Property CodigoOP() As String
+        Get
+            Return pCodigoOP
+        End Get
+        Set(ByVal value As String)
+            pCodigoOP = value
+        End Set
+    End Property
+    Public Property Relacion() As String
+        Get
+            Return pRelacion
+        End Get
+        Set(ByVal value As String)
+            pRelacion = value
         End Set
     End Property
     'INSERTAR LOS DATOS
@@ -70,17 +70,17 @@ Public Class Materia
         Dim Ultimo As Integer = 0
         Dim RELAOPTATIVA As String = ""
         Try
-            If F_Secundario.Materia.Optativa = True Then
+            If pOptativa = True Then
                 InsertarSQL("OPTATIVA")
                 Ultimo = (Almacenamiento.Tables("OPTATIVA").Rows.Count) - 1
                 RELAOPTATIVA = Almacenamiento.Tables("OPTATIVA").Rows(Ultimo)("ID_OPTATIVA").ToString
             End If
             InsertarSQL("MATERIA")
             Dim ID As String = CStr(F_Secundario.CMB_A_SeleccionarCarreraMateria.SelectedValue)
-            Fila("MATERIA_DESCRIPCION") = F_Secundario.Materia.Descripcion
-            Fila("MATERIA_CODIGO") = F_Secundario.Materia.Codigo
+            Fila("MATERIA_DESCRIPCION") = pDescripcion
+            Fila("MATERIA_CODIGO") = pCodigo
             Fila("MATERIA_RELA_CARRERA") = ID
-            If F_Secundario.Materia.Optativa = True Then
+            If pOptativa = True Then
                 Fila("MATERIA_RELA_OPTATIVA") = RELAOPTATIVA
             End If
             Insert("MATERIA")
@@ -99,8 +99,8 @@ Public Class Materia
     Friend Sub InsertarMateriaOptativa()
         Try
             InsertarSQL("OPTATIVA")
-            Fila("OPTATIVA_DESCRIPCION") = F_Secundario.TXT_A_DescripcionOptativaMateria.Text
-            Fila("OPTATIVA_CODIGO") = F_Secundario.TXT_A_CodigoOptativaMateria.Text
+            Fila("OPTATIVA_DESCRIPCION") = pDescripcionOP
+            Fila("OPTATIVA_CODIGO") = pCodigoOP
             Insert("OPTATIVA")
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Optativa VALUES(:idoptativa,:descripcion,:codigo)"
@@ -114,7 +114,7 @@ Public Class Materia
     End Sub
     Friend Sub InsertarMateria()
         Try
-            If F_Secundario.Materia.Optativa = True Then
+            If Optativa = True Then
                 InsertarMateriaOptativa()
                 InsertarMateriaNormal()
             Else
@@ -128,11 +128,9 @@ Public Class Materia
     Friend Sub RelacionarCorrelativa()
         Try
             Dim Tabla As String = "MATERIA_CORRELATIVA"
-            Dim MATERIA As Integer = F_Secundario.CMB_A_SeleccioneMateriasCorrelativa.SelectedValue
-            Dim CORRELATIVA As String = F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.SelectedValue
             InsertarSQL(Tabla)
-            Fila("MATE_CORRE_RELA_MATERIA") = MATERIA
-            Fila("MATE_CORRE_RELA_CORRELATIVA") = CORRELATIVA
+            Fila("MATE_CORRE_RELA_MATERIA") = pRelacion
+            Fila("MATE_CORRE_RELA_CORRELATIVA") = pCorrelativa
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Materia_Correlativa VALUES(:idmatecorre,:relamateria,:relacorrelativa)"
@@ -160,5 +158,4 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
 End Class

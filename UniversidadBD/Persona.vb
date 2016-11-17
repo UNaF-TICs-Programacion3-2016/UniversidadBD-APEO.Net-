@@ -8,7 +8,7 @@ Public Class Persona
     Protected pTelefono As String
     Protected pCorreo As String
     'PROPIEDADES
-    Friend Overridable Property Nombre() As String
+    Friend Property Nombre() As String
         Get
             Return pNombre
         End Get
@@ -16,7 +16,7 @@ Public Class Persona
             pNombre = value
         End Set
     End Property
-    Friend Overridable Property Apellido() As String
+    Friend Property Apellido() As String
         Get
             Return pApellido
         End Get
@@ -24,7 +24,7 @@ Public Class Persona
             pApellido = value
         End Set
     End Property
-    Friend Overridable Property CUIL() As String
+    Friend Property CUIL() As String
         Get
             Return pCUIL
         End Get
@@ -32,7 +32,7 @@ Public Class Persona
             pCUIL = value
         End Set
     End Property
-    Friend Overridable Property DNI() As String
+    Friend Property DNI() As String
         Get
             Return pDNI
         End Get
@@ -40,7 +40,7 @@ Public Class Persona
             pDNI = value
         End Set
     End Property
-    Friend Overridable Property Telefono() As String
+    Friend Property Telefono() As String
         Get
             Return pTelefono
         End Get
@@ -48,7 +48,7 @@ Public Class Persona
             pTelefono = value
         End Set
     End Property
-    Friend Overridable Property Correo() As String
+    Friend Property Correo() As String
         Get
             Return pCorreo
         End Get
@@ -60,10 +60,10 @@ Public Class Persona
     Friend Sub InsertarPersona()
         Dim Tabla As String = "PERSONA"
         InsertarSQL(Tabla)
-        Fila("PERSONA_NOMBRE") = F_Secundario.Persona.Nombre
-        Fila("PERSONA_APELLIDO") = F_Secundario.Persona.Apellido
-        Fila("PERSONA_CUIL") = F_Secundario.Persona.CUIL
-        Fila("PERSONA_DNI") = F_Secundario.Persona.DNI
+        Fila("PERSONA_NOMBRE") = pNombre
+        Fila("PERSONA_APELLIDO") = pApellido
+        Fila("PERSONA_CUIL") = pCUIL
+        Fila("PERSONA_DNI") = pDNI
         Insert(Tabla)
         Comando.Parameters.Clear()
         Comando.CommandText = "Insert Into Persona VALUES(:idpersona,:nombre,:apellido,:cuil,:dni)"
@@ -82,7 +82,7 @@ Public Class Persona
             Dim ID As String = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_PERSONA").ToString
             Tabla = "TELEFONO"
             InsertarSQL(Tabla)
-            Fila("TELEFONO_NUMERO") = F_Secundario.Persona.Telefono
+            Fila("TELEFONO_NUMERO") = pTelefono
             Fila("TELEFONO_RELA_PERSONA") = ID
             Insert(Tabla)
             Comando.Parameters.Clear()
@@ -103,7 +103,7 @@ Public Class Persona
             Dim ID As String = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_PERSONA").ToString
             Tabla = "CORREO"
             InsertarSQL(Tabla)
-            Fila("CORREO_DESCRIPCION") = F_Secundario.Persona.Correo
+            Fila("CORREO_DESCRIPCION") = pCorreo
             Fila("CORREO_RELA_PERSONA") = ID
             Insert(Tabla)
             Comando.Parameters.Clear()

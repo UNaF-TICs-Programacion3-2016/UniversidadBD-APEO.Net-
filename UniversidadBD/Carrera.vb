@@ -1,7 +1,6 @@
 ﻿Imports Oracle.DataAccess.Client
 Public Class Carrera
     Inherits Coneccion
-    Private pFacultad As Facultad
     Private pDescripcion As String
     Private pCodigo As String
     Private pDuracion As Integer
@@ -30,23 +29,15 @@ Public Class Carrera
             pDuracion = value
         End Set
     End Property
-    Public Property Facultad() As Facultad
-        Get
-            Return pFacultad
-        End Get
-        Set(ByVal value As Facultad)
-            pFacultad = value
-        End Set
-    End Property
     'INSERTAR CARRERA
     Friend Sub InsertarCarrera()
         Dim Tabla As String = "CARRERA"
         Dim ID As String = CStr(F_Secundario.CMB_A_SeleccionarFacultadCarrera.SelectedValue)
         Try
             InsertarSQL(Tabla)
-            Fila("CARRERA_DESCRIPCION") = F_Secundario.Carrera.Descripcion
-            Fila("CARRERA_DURACION") = F_Secundario.Carrera.Duracion
-            Fila("CARRERA_CODIGO") = F_Secundario.Carrera.Codigo
+            Fila("CARRERA_DESCRIPCION") = pDescripcion
+            Fila("CARRERA_DURACION") = pDuracion
+            Fila("CARRERA_CODIGO") = pCodigo
             Fila("CARRERA_RELA_FACULTAD") = ID
             Insert(Tabla)
             Comando.Parameters.Clear()

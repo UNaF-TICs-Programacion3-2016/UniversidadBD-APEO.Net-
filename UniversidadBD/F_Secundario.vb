@@ -29,6 +29,10 @@ Public Class F_Secundario
         PNL_A_Alumno.Visible = False
         oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Alumno2, TabControl1)
     End Sub
+    Private Sub BTN_A_CursoSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CursoSiguiente.Click
+        PNL_A_Curso.Visible = False
+        oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Curso2, TabControl1)
+    End Sub
     'CLICK PARA ACEPTAR
     Private Sub BTN_A_FacultadAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_FacultadAceptar.Click
         Facultad.Codigo = TXT_A_CodigoFacultad.Text
@@ -47,13 +51,21 @@ Public Class F_Secundario
         Me.Close()
     End Sub
     Private Sub BTN_A_MateriaSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_A_MateriaSiguiente.Click
-        Materia.Codigo = TXT_A_CodigoMateria.Text
-        Materia.Descripcion = TXT_A_DescripcionMateria.Text
-        Materia.InsertarMateria()
+        With Materia
+            .DescripcionOP = TXT_A_DescripcionOptativaMateria.Text
+            .CodigoOP = TXT_A_CodigoOptativaMateria.Text
+            .Codigo = TXT_A_CodigoMateria.Text
+            .Descripcion = TXT_A_DescripcionMateria.Text
+            .InsertarMateria()
+        End With
         Me.Close()
     End Sub
     Private Sub BTN_A_MateriaAgregar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_MateriaAgregar.Click
-        Materia.RelacionarCorrelativa()
+        With Materia
+            .Relacion = CMB_A_SeleccioneMateriasCorrelativa.SelectedValue
+            .Correlativa = CMB_A_SeleccioneCorrelativasCorrelativa.SelectedValue
+            .RelacionarCorrelativa()
+        End With
     End Sub
     Private Sub BTN_A_ProfesorSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ProfesorSiguiente.Click
         Persona.Nombre = TXT_A_NombreProfesor.Text
@@ -68,7 +80,6 @@ Public Class F_Secundario
         Me.Close()
     End Sub
     Private Sub BTN_A_AulaAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_AulaAceptar.Click
-        oAula.Codigo = TXT_A_CodigoAula.Text
         oAula.Descripcion = TXT_A_DescripcionAula.Text
         oAula.InsertarAula()
         Me.Close()
@@ -93,24 +104,44 @@ Public Class F_Secundario
         Persona.Correo = TXT_A_CorreoOtro.Text
         Persona.Telefono = TXT_A_TelefonoOtro.Text
         Otro.FechaDeIngreso = DTP_A_FechaIngresoOtro.Value
+        Otro.Puesto = CMB_A_OcupacionOtro.SelectedValue
         Otro.InsertarOtro()
         Me.Close()
     End Sub
     Private Sub BTN_A_ExamenFinalAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ExamenFinalAceptar.Click
-        Examen.Fecha = DTP_A_FechaExamenFinal.Value.Date
-        Examen.Tipo = RDB_A_FinalExamenFinal.Checked
-        Examen.Hora = CMB_A_HoraExamen.SelectedValue
-        Examen.Minuto = CMB_A_MinutoExamen.SelectedValue
-        Examen.InsertarExamen()
+        With Examen
+            .Materia = CMB_A_MateriaExamenFinal.SelectedValue
+            .Aula = CMB_A_AulaExamenFinal.SelectedValue
+            .Llamado = NUD_A_LlamadoExamenFinal.Value
+            .NumeroParcial = NUD_A_NParcialExamenFinal.Value
+            .Fecha = DTP_A_FechaExamenFinal.Value.Date
+            .Tipo = RDB_A_FinalExamenFinal.Checked
+            .Hora = CMB_A_HoraExamen.SelectedValue
+            .Minuto = CMB_A_MinutoExamen.SelectedValue
+            .InsertarExamen()
+        End With
     End Sub
     Private Sub BTN_A_ExamenAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenAgregar.Click
-        Examen.InsertarProfesorExamen()
+        With Examen
+            .Profesor = CMB_A_ProfesoresExamen.SelectedValue
+            .InsertarProfesorExamen()
+        End With
     End Sub
     Private Sub BTN_A_CursoAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_CursoAgregar.Click
-        Curso.Comision = TXT_A_ComisionCurso.Text
+        With Curso
+            .Materia = CMB_A_MateriaCurso.SelectedValue
+            .HoraD = CMB_A_DesdeHoraCurso.SelectedValue
+            .MinutoD = CMB_A_DesdeMinutosCurso.SelectedValue
+            .HoraH = CMB_A_HastaHoraCurso.SelectedValue
+            .MinutoH = CMB_A_HastaMinutosCurso.SelectedValue
+            .Dia = CMB_A_DiaCurso.SelectedValue
+            .Aula = CMB_A_AulaCurso.SelectedValue
+            .Comision = TXT_A_ComisionCurso.Text
+        End With
         Curso.InsertarCurso()
     End Sub
     Private Sub BTN_A_AgregarProfesorCurso_Click(sender As Object, e As EventArgs) Handles BTN_A_AgregarProfesorCurso.Click
+        Curso.Profesor = CMB_A_ProfesoresCurso.SelectedValue
         Curso.InsertarProfesorCurso()
     End Sub
     Private Sub BTN_A_ExamenBuscar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenBuscar.Click
@@ -119,7 +150,12 @@ Public Class F_Secundario
         oConfiguracion.CargarComboEspecifico(CMB_A_AlumnoExamen, PNL_A_Inscripcion, "PERSONA, ALUMNO", "PERSONA_APELLIDO", "ID_ALUMNO", "PERSONA_DNI = " & DNI & " AND ID_PERSONA = ALUMNO_RELA_PERSONA")
     End Sub
     Private Sub BTN_A_ExamenAceptar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenAceptar.Click
-        Examen.InscripcionExamen()
+        With Examen
+            .Relacion = CMB_A_LlamadoExamen.SelectedValue
+            .Alumno = CMB_A_AlumnoExamen.SelectedValue
+            .Condicion = CMB_A_CondiciónExamen.SelectedValue
+            .InscripcionExamen()
+        End With
         Me.Close()
     End Sub
     Private Sub BTN_E_FacultadAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadAceptar.Click
@@ -133,6 +169,10 @@ Public Class F_Secundario
         oConfiguracion.CargarComboEspecifico(CMB_A_AlumnoIC, PNL_A_InscripcionCursadas, "PERSONA, ALUMNO", "PERSONA_APELLIDO", "ID_ALUMNO", "PERSONA_DNI = " & DNI & " AND ID_PERSONA = ALUMNO_RELA_PERSONA")
     End Sub
     Private Sub BTN_A_InscribirIC_Click(sender As Object, e As EventArgs) Handles BTN_A_InscribirIC.Click
+        With Curso
+            .Relacion = CMB_A_CursoIC.SelectedValue
+            .Alumno = CMB_A_AlumnoIC.SelectedValue
+        End With
         Curso.InsertarAlumnoCurso()
         Me.Close()
     End Sub
@@ -142,7 +182,6 @@ Public Class F_Secundario
         Carrera.Codigo = TXT_E_CodigoCarrera.Text
         Carrera.EditarCarrera()
     End Sub
-
     Private Sub BTN_E_AulaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_AulaAceptar.Click
         oAula.Descripcion = TXT_E_DescripcionAula.Text
         oAula.EditarAula()
@@ -157,7 +196,6 @@ Public Class F_Secundario
     Private Sub BTN_S_AlumnoBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_AlumnoBorrar.Click
         Alumno.EliminarAlumno()
     End Sub
-
     Private Sub BTN_S_OtroEliminar_Click(sender As Object, e As EventArgs) Handles BTN_S_OtroEliminar.Click
         Otro.EliminarOtro()
     End Sub
@@ -176,7 +214,6 @@ Public Class F_Secundario
     Private Sub BTN_S_ProfesorBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_ProfesorBorrar.Click
         Profesor.EliminarProfesor()
     End Sub
-
     'PANELES
     Private Sub PNL_S_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Materia.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_S_SeleccionarCarreraMateria, PNL_S_Materia, "CARRERA", "DESCRIPCION")
@@ -261,17 +298,14 @@ Public Class F_Secundario
     Private Sub PNL_S_Curso_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Curso.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_S_SeleccionarFacultadCurso, PNL_S_Curso, "FACULTAD", "DESCRIPCION")
     End Sub
-
     'COMBOBOX
     Private Sub CMB_S_FacultadExamenFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_FacultadExamenFinal.SelectedIndexChanged
         oConfiguracion.CargarCombo(CMB_S_CarreraExamenFinal, PNL_S_ExamenFinal, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_S_FacultadExamenFinal)
     End Sub
-
     Private Sub CMB_S_CarreraExamenFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_CarreraExamenFinal.SelectedIndexChanged
         Dim CARRERA As Integer = CMB_S_CarreraExamenFinal.SelectedValue
         oConfiguracion.CargarComboEspecifico(CMB_S_SeleccionarFinalExamenFinal, PNL_S_ExamenFinal, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "MATERIA_RELA_CARRERA=" & CARRERA & "ID_MATERIA=EXAMEN_RELA_MATERIA")
     End Sub
-
     Private Sub CMB_S_SeleccionarMateriaCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarMateriaCurso.SelectedIndexChanged
         oConfiguracion.CargarComboSinRepetir(CMB_S_ComisionCurso, PNL_S_Curso, "CURSO", "CURSO_N_COMISION", "CURSO_N_COMISION")
     End Sub
@@ -344,7 +378,6 @@ Public Class F_Secundario
     Private Sub BTN_S_CarreraCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_CarreraCancelar.Click
         Me.Close()
     End Sub
-
     Private Sub BTN_S_AlumnoCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_AlumnoCancelar.Click
         Me.Close()
     End Sub
@@ -419,10 +452,6 @@ Public Class F_Secundario
         Me.Close()
 
     End Sub
-    Private Sub BTN_A_CursoSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CursoSiguiente.Click
-        PNL_A_Curso.Visible = False
-        oConfiguracion.EstablecerConfiguracion(Me, PNL_A_Curso2, TabControl1)
-    End Sub
     Private Sub PNL_A_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Materia.VisibleChanged
         oConfiguracion.CargarComboBox(CMB_A_SeleccionarCarreraMateria, PNL_A_Carrera, "CARRERA", "DESCRIPCION")
     End Sub
@@ -435,6 +464,4 @@ Public Class F_Secundario
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCorrelativasCorrelativa, PNL_A_Correlativa, "MATERIA", "DESCRIPCION")
         oConfiguracion.CargarComboBox(CMB_A_SeleccioneCarreraCorrelativa, PNL_A_Correlativa, "CARRERA", "DESCRIPCION")
     End Sub
-
-
 End Class

@@ -35,7 +35,6 @@ Partial Class F_Principal
         Me.AgregarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.AGREGARToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CuatrimestreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExamenFinalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,15 +46,14 @@ Partial Class F_Principal
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.InscripcionesAMateriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InscripcionesAExamenesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FinalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ParcialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.TSTXT_P_DNIAlumno = New System.Windows.Forms.ToolStripTextBox()
+        Me.TSBTN_P_Buscar = New System.Windows.Forms.ToolStripButton()
         Me.PNL_C_Cursos = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DGV_C_HyACursos = New System.Windows.Forms.DataGridView()
@@ -141,31 +139,31 @@ Partial Class F_Principal
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.LBL_F_NombreAlumno = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.ListBox7 = New System.Windows.Forms.ListBox()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.ListBox8 = New System.Windows.Forms.ListBox()
+        Me.PNL_P_Principal = New System.Windows.Forms.Panel()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.ListBox9 = New System.Windows.Forms.ListBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label45 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
-        Me.ListBox5 = New System.Windows.Forms.ListBox()
-        Me.ListBox6 = New System.Windows.Forms.ListBox()
+        Me.DGV_P_Notas = New System.Windows.Forms.DataGridView()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.LBX_P_InscripcionesExamen = New System.Windows.Forms.ListBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.LBX_P_MateriasAprobadas = New System.Windows.Forms.ListBox()
+        Me.LBX_P_MateriasCurso = New System.Windows.Forms.ListBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.LBX_P_Carrera = New System.Windows.Forms.ListBox()
+        Me.LBX_P_Facultad = New System.Windows.Forms.ListBox()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.LBX_P_NLegajo = New System.Windows.Forms.ListBox()
+        Me.LBX_P_CUIL = New System.Windows.Forms.ListBox()
+        Me.LBX_P_Apellido = New System.Windows.Forms.ListBox()
+        Me.LBX_P_Nombre = New System.Windows.Forms.ListBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.TSM_UNIVERSIDAD.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.PNL_C_Cursos.SuspendLayout()
@@ -179,12 +177,12 @@ Partial Class F_Principal
         Me.PNL_C_NotasExamen.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.NUD_C_NotaNotasExamen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.PNL_P_Principal.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_P_Notas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TSM_UNIVERSIDAD
@@ -194,7 +192,7 @@ Partial Class F_Principal
         Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem})
         Me.TSM_UNIVERSIDAD.Location = New System.Drawing.Point(0, 0)
         Me.TSM_UNIVERSIDAD.Name = "TSM_UNIVERSIDAD"
-        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1074, 33)
+        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1222, 33)
         Me.TSM_UNIVERSIDAD.TabIndex = 0
         Me.TSM_UNIVERSIDAD.Text = "MenuStrip1"
         '
@@ -248,7 +246,7 @@ Partial Class F_Principal
         '
         'PERSONASToolStripMenuItem
         '
-        Me.PERSONASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem1, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem1, Me.ToolStripSeparator6})
+        Me.PERSONASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem1, Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem1})
         Me.PERSONASToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PERSONASToolStripMenuItem.Name = "PERSONASToolStripMenuItem"
         Me.PERSONASToolStripMenuItem.Size = New System.Drawing.Size(116, 29)
@@ -274,11 +272,6 @@ Partial Class F_Principal
         Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
         Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(155, 30)
         Me.EliminarToolStripMenuItem1.Text = "Otro"
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(152, 6)
         '
         'AGREGARToolStripMenuItem2
         '
@@ -325,7 +318,7 @@ Partial Class F_Principal
         '
         'VERToolStripMenuItem
         '
-        Me.VERToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestiónDeAlumnosToolStripMenuItem, Me.ToolStripSeparator2, Me.InscripcionesAMateriasToolStripMenuItem, Me.InscripcionesAExamenesToolStripMenuItem, Me.ToolStripSeparator4})
+        Me.VERToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestiónDeAlumnosToolStripMenuItem, Me.ToolStripSeparator2, Me.InscripcionesAMateriasToolStripMenuItem, Me.InscripcionesAExamenesToolStripMenuItem})
         Me.VERToolStripMenuItem.Name = "VERToolStripMenuItem"
         Me.VERToolStripMenuItem.Size = New System.Drawing.Size(125, 29)
         Me.VERToolStripMenuItem.Text = "CONSULTAS"
@@ -351,39 +344,19 @@ Partial Class F_Principal
         '
         'InscripcionesAExamenesToolStripMenuItem
         '
-        Me.InscripcionesAExamenesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FinalesToolStripMenuItem, Me.ParcialesToolStripMenuItem})
         Me.InscripcionesAExamenesToolStripMenuItem.Image = CType(resources.GetObject("InscripcionesAExamenesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InscripcionesAExamenesToolStripMenuItem.Name = "InscripcionesAExamenesToolStripMenuItem"
         Me.InscripcionesAExamenesToolStripMenuItem.Size = New System.Drawing.Size(253, 30)
-        Me.InscripcionesAExamenesToolStripMenuItem.Text = "Exámenes"
-        '
-        'FinalesToolStripMenuItem
-        '
-        Me.FinalesToolStripMenuItem.Image = CType(resources.GetObject("FinalesToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.FinalesToolStripMenuItem.Name = "FinalesToolStripMenuItem"
-        Me.FinalesToolStripMenuItem.Size = New System.Drawing.Size(158, 30)
-        Me.FinalesToolStripMenuItem.Text = "Finales"
-        '
-        'ParcialesToolStripMenuItem
-        '
-        Me.ParcialesToolStripMenuItem.Image = CType(resources.GetObject("ParcialesToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ParcialesToolStripMenuItem.Name = "ParcialesToolStripMenuItem"
-        Me.ParcialesToolStripMenuItem.Size = New System.Drawing.Size(158, 30)
-        Me.ParcialesToolStripMenuItem.Text = "Parciales"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(250, 6)
+        Me.InscripcionesAExamenesToolStripMenuItem.Text = "Exámenes Finales"
         '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Window
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator3, Me.ToolStripLabel2, Me.ToolStripTextBox1, Me.ToolStripButton1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator4, Me.ToolStripButton1, Me.ToolStripSeparator3, Me.ToolStripLabel2, Me.TSTXT_P_DNIAlumno, Me.TSBTN_P_Buscar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 33)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.ToolStrip1.Size = New System.Drawing.Size(1074, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1222, 32)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -394,23 +367,10 @@ Partial Class F_Principal
         Me.ToolStripLabel1.Size = New System.Drawing.Size(95, 24)
         Me.ToolStripLabel1.Text = "BUSCANDO..."
         '
-        'ToolStripSeparator3
+        'ToolStripSeparator4
         '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(112, 24)
-        Me.ToolStripLabel2.Text = "BUSCAR PERSONAS"
-        '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe WP", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(100, 27)
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 27)
         '
         'ToolStripButton1
         '
@@ -419,7 +379,34 @@ Partial Class F_Principal
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
         Me.ToolStripButton1.Size = New System.Drawing.Size(23, 24)
-        Me.ToolStripButton1.Text = "Buscar"
+        Me.ToolStripButton1.Text = "ToolStripButton1"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 27)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(111, 24)
+        Me.ToolStripLabel2.Text = "BUSCAR ALUMNOS"
+        '
+        'TSTXT_P_DNIAlumno
+        '
+        Me.TSTXT_P_DNIAlumno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TSTXT_P_DNIAlumno.Font = New System.Drawing.Font("Segoe WP", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TSTXT_P_DNIAlumno.Name = "TSTXT_P_DNIAlumno"
+        Me.TSTXT_P_DNIAlumno.Size = New System.Drawing.Size(100, 27)
+        '
+        'TSBTN_P_Buscar
+        '
+        Me.TSBTN_P_Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TSBTN_P_Buscar.Image = CType(resources.GetObject("TSBTN_P_Buscar.Image"), System.Drawing.Image)
+        Me.TSBTN_P_Buscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TSBTN_P_Buscar.Name = "TSBTN_P_Buscar"
+        Me.TSBTN_P_Buscar.Size = New System.Drawing.Size(23, 24)
+        Me.TSBTN_P_Buscar.Text = "Buscar"
         '
         'PNL_C_Cursos
         '
@@ -427,9 +414,9 @@ Partial Class F_Principal
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox2)
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox1)
         Me.PNL_C_Cursos.Controls.Add(Me.Label1)
-        Me.PNL_C_Cursos.Location = New System.Drawing.Point(1147, 302)
+        Me.PNL_C_Cursos.Location = New System.Drawing.Point(1149, 372)
         Me.PNL_C_Cursos.Name = "PNL_C_Cursos"
-        Me.PNL_C_Cursos.Size = New System.Drawing.Size(27, 62)
+        Me.PNL_C_Cursos.Size = New System.Drawing.Size(99, 55)
         Me.PNL_C_Cursos.TabIndex = 4
         Me.PNL_C_Cursos.Visible = False
         '
@@ -711,9 +698,9 @@ Partial Class F_Principal
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label14)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.CMB_C_SeleccioneFacultadExamenesFinales)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label12)
-        Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(1152, 146)
+        Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(1140, 308)
         Me.PNL_C_ExamenesFinales.Name = "PNL_C_ExamenesFinales"
-        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(22, 65)
+        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(70, 48)
         Me.PNL_C_ExamenesFinales.TabIndex = 5
         Me.PNL_C_ExamenesFinales.Visible = False
         '
@@ -721,7 +708,7 @@ Partial Class F_Principal
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(483, 445)
+        Me.Label28.Location = New System.Drawing.Point(468, 445)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(24, 17)
         Me.Label28.TabIndex = 60
@@ -752,7 +739,8 @@ Partial Class F_Principal
         Me.LBX_C_HoraExamen.FormattingEnabled = True
         Me.LBX_C_HoraExamen.Location = New System.Drawing.Point(430, 445)
         Me.LBX_C_HoraExamen.Name = "LBX_C_HoraExamen"
-        Me.LBX_C_HoraExamen.Size = New System.Drawing.Size(47, 17)
+        Me.LBX_C_HoraExamen.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_C_HoraExamen.Size = New System.Drawing.Size(32, 17)
         Me.LBX_C_HoraExamen.TabIndex = 57
         '
         'LBX_C_FechaExamenExamen
@@ -760,6 +748,7 @@ Partial Class F_Principal
         Me.LBX_C_FechaExamenExamen.FormattingEnabled = True
         Me.LBX_C_FechaExamenExamen.Location = New System.Drawing.Point(253, 445)
         Me.LBX_C_FechaExamenExamen.Name = "LBX_C_FechaExamenExamen"
+        Me.LBX_C_FechaExamenExamen.SelectionMode = System.Windows.Forms.SelectionMode.None
         Me.LBX_C_FechaExamenExamen.Size = New System.Drawing.Size(168, 17)
         Me.LBX_C_FechaExamenExamen.TabIndex = 56
         '
@@ -1097,9 +1086,9 @@ Partial Class F_Principal
         Me.PNL_C_NotasExamen.BackColor = System.Drawing.Color.White
         Me.PNL_C_NotasExamen.Controls.Add(Me.GroupBox4)
         Me.PNL_C_NotasExamen.Controls.Add(Me.Label39)
-        Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(1159, 221)
+        Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(1134, 198)
         Me.PNL_C_NotasExamen.Name = "PNL_C_NotasExamen"
-        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(40, 62)
+        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(83, 69)
         Me.PNL_C_NotasExamen.TabIndex = 7
         Me.PNL_C_NotasExamen.Visible = False
         '
@@ -1257,202 +1246,39 @@ Partial Class F_Principal
         '
         Me.LBL_F_NombreAlumno.AutoSize = True
         Me.LBL_F_NombreAlumno.Font = New System.Drawing.Font("Segoe WP", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL_F_NombreAlumno.Location = New System.Drawing.Point(3, 1)
+        Me.LBL_F_NombreAlumno.Location = New System.Drawing.Point(14, 1)
         Me.LBL_F_NombreAlumno.Name = "LBL_F_NombreAlumno"
-        Me.LBL_F_NombreAlumno.Size = New System.Drawing.Size(207, 65)
+        Me.LBL_F_NombreAlumno.Size = New System.Drawing.Size(282, 65)
         Me.LBL_F_NombreAlumno.TabIndex = 8
-        Me.LBL_F_NombreAlumno.Text = "Alumno"
+        Me.LBL_F_NombreAlumno.Text = "Bienvenido"
         '
-        'Panel1
+        'PNL_P_Principal
         '
-        Me.Panel1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel1.Controls.Add(Me.GroupBox7)
-        Me.Panel1.Controls.Add(Me.GroupBox6)
-        Me.Panel1.Controls.Add(Me.GroupBox5)
-        Me.Panel1.Controls.Add(Me.GroupBox3)
-        Me.Panel1.Controls.Add(Me.LBL_F_NombreAlumno)
-        Me.Panel1.Location = New System.Drawing.Point(0, 68)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(15, 12)
-        Me.Panel1.TabIndex = 9
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.ListBox4)
-        Me.GroupBox3.Controls.Add(Me.ListBox3)
-        Me.GroupBox3.Controls.Add(Me.ListBox2)
-        Me.GroupBox3.Controls.Add(Me.ListBox1)
-        Me.GroupBox3.Controls.Add(Me.Label32)
-        Me.GroupBox3.Controls.Add(Me.Label31)
-        Me.GroupBox3.Controls.Add(Me.Label30)
-        Me.GroupBox3.Controls.Add(Me.Label29)
-        Me.GroupBox3.Location = New System.Drawing.Point(14, 69)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(271, 234)
-        Me.GroupBox3.TabIndex = 9
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Información"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(6, 26)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(68, 21)
-        Me.Label29.TabIndex = 10
-        Me.Label29.Text = "Nombre"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(6, 73)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(67, 21)
-        Me.Label30.TabIndex = 11
-        Me.Label30.Text = "Apellido"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(7, 120)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(43, 21)
-        Me.Label31.TabIndex = 13
-        Me.Label31.Text = "CUIL"
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(7, 171)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(139, 21)
-        Me.Label32.TabIndex = 15
-        Me.Label32.Text = "Número de Legajo"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(7, 29)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(67, 21)
-        Me.Label40.TabIndex = 17
-        Me.Label40.Text = "Facultad"
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.ListBox6)
-        Me.GroupBox5.Controls.Add(Me.ListBox5)
-        Me.GroupBox5.Controls.Add(Me.Label41)
-        Me.GroupBox5.Controls.Add(Me.Label40)
-        Me.GroupBox5.Location = New System.Drawing.Point(14, 306)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(271, 155)
-        Me.GroupBox5.TabIndex = 17
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Información"
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(7, 78)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(62, 21)
-        Me.Label41.TabIndex = 19
-        Me.Label41.Text = "Carrera"
-        '
-        'ListBox7
-        '
-        Me.ListBox7.FormattingEnabled = True
-        Me.ListBox7.Location = New System.Drawing.Point(6, 50)
-        Me.ListBox7.Name = "ListBox7"
-        Me.ListBox7.Size = New System.Drawing.Size(377, 160)
-        Me.ListBox7.TabIndex = 18
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.Label43)
-        Me.GroupBox6.Controls.Add(Me.Label42)
-        Me.GroupBox6.Controls.Add(Me.ListBox7)
-        Me.GroupBox6.Controls.Add(Me.ListBox8)
-        Me.GroupBox6.Location = New System.Drawing.Point(291, 69)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(389, 393)
-        Me.GroupBox6.TabIndex = 19
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Materias"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(6, 26)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(149, 21)
-        Me.Label42.TabIndex = 17
-        Me.Label42.Text = "Materias Aprobadas"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.Location = New System.Drawing.Point(6, 213)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(136, 21)
-        Me.Label43.TabIndex = 17
-        Me.Label43.Text = "Materias en Curso"
-        '
-        'ListBox8
-        '
-        Me.ListBox8.FormattingEnabled = True
-        Me.ListBox8.Location = New System.Drawing.Point(6, 237)
-        Me.ListBox8.Name = "ListBox8"
-        Me.ListBox8.Size = New System.Drawing.Size(377, 147)
-        Me.ListBox8.TabIndex = 18
+        Me.PNL_P_Principal.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PNL_P_Principal.Controls.Add(Me.GroupBox7)
+        Me.PNL_P_Principal.Controls.Add(Me.GroupBox6)
+        Me.PNL_P_Principal.Controls.Add(Me.GroupBox5)
+        Me.PNL_P_Principal.Controls.Add(Me.GroupBox3)
+        Me.PNL_P_Principal.Controls.Add(Me.LBL_F_NombreAlumno)
+        Me.PNL_P_Principal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PNL_P_Principal.Location = New System.Drawing.Point(34, 76)
+        Me.PNL_P_Principal.Name = "PNL_P_Principal"
+        Me.PNL_P_Principal.Size = New System.Drawing.Size(58, 57)
+        Me.PNL_P_Principal.TabIndex = 9
+        Me.PNL_P_Principal.Visible = False
         '
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.Label45)
-        Me.GroupBox7.Controls.Add(Me.DataGridView1)
+        Me.GroupBox7.Controls.Add(Me.DGV_P_Notas)
         Me.GroupBox7.Controls.Add(Me.Label44)
-        Me.GroupBox7.Controls.Add(Me.ListBox9)
-        Me.GroupBox7.Location = New System.Drawing.Point(686, 69)
+        Me.GroupBox7.Controls.Add(Me.LBX_P_InscripcionesExamen)
+        Me.GroupBox7.Location = New System.Drawing.Point(614, 69)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(371, 393)
+        Me.GroupBox7.Size = New System.Drawing.Size(460, 393)
         Me.GroupBox7.TabIndex = 20
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Examenes"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(6, 29)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(185, 21)
-        Me.Label44.TabIndex = 19
-        Me.Label44.Text = "Inscripciones a Exámenes"
-        '
-        'ListBox9
-        '
-        Me.ListBox9.FormattingEnabled = True
-        Me.ListBox9.Location = New System.Drawing.Point(6, 53)
-        Me.ListBox9.Name = "ListBox9"
-        Me.ListBox9.Size = New System.Drawing.Size(359, 160)
-        Me.ListBox9.TabIndex = 20
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(10, 241)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(355, 142)
-        Me.DataGridView1.TabIndex = 21
         '
         'Label45
         '
@@ -1464,73 +1290,253 @@ Partial Class F_Principal
         Me.Label45.TabIndex = 22
         Me.Label45.Text = "Notas de Exámenes Finales"
         '
-        'ListBox1
+        'DGV_P_Notas
         '
-        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 20
-        Me.ListBox1.Location = New System.Drawing.Point(6, 50)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(254, 24)
-        Me.ListBox1.TabIndex = 21
+        Me.DGV_P_Notas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_P_Notas.Location = New System.Drawing.Point(10, 241)
+        Me.DGV_P_Notas.Name = "DGV_P_Notas"
+        Me.DGV_P_Notas.Size = New System.Drawing.Size(444, 142)
+        Me.DGV_P_Notas.TabIndex = 21
         '
-        'ListBox2
+        'Label44
         '
-        Me.ListBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.ItemHeight = 20
-        Me.ListBox2.Location = New System.Drawing.Point(8, 96)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(254, 24)
-        Me.ListBox2.TabIndex = 22
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(6, 29)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(185, 21)
+        Me.Label44.TabIndex = 19
+        Me.Label44.Text = "Inscripciones a Exámenes"
         '
-        'ListBox3
+        'LBX_P_InscripcionesExamen
         '
-        Me.ListBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.ItemHeight = 20
-        Me.ListBox3.Location = New System.Drawing.Point(8, 144)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(254, 24)
-        Me.ListBox3.TabIndex = 23
+        Me.LBX_P_InscripcionesExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_InscripcionesExamen.FormattingEnabled = True
+        Me.LBX_P_InscripcionesExamen.ItemHeight = 16
+        Me.LBX_P_InscripcionesExamen.Location = New System.Drawing.Point(6, 53)
+        Me.LBX_P_InscripcionesExamen.Name = "LBX_P_InscripcionesExamen"
+        Me.LBX_P_InscripcionesExamen.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_InscripcionesExamen.Size = New System.Drawing.Size(448, 148)
+        Me.LBX_P_InscripcionesExamen.TabIndex = 20
         '
-        'ListBox4
+        'GroupBox6
         '
-        Me.ListBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.ItemHeight = 20
-        Me.ListBox4.Location = New System.Drawing.Point(6, 195)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(254, 24)
-        Me.ListBox4.TabIndex = 23
+        Me.GroupBox6.Controls.Add(Me.Label43)
+        Me.GroupBox6.Controls.Add(Me.Label42)
+        Me.GroupBox6.Controls.Add(Me.LBX_P_MateriasAprobadas)
+        Me.GroupBox6.Controls.Add(Me.LBX_P_MateriasCurso)
+        Me.GroupBox6.Location = New System.Drawing.Point(291, 69)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(317, 393)
+        Me.GroupBox6.TabIndex = 19
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Materias"
         '
-        'ListBox5
+        'Label43
         '
-        Me.ListBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox5.FormattingEnabled = True
-        Me.ListBox5.ItemHeight = 20
-        Me.ListBox5.Location = New System.Drawing.Point(10, 51)
-        Me.ListBox5.Name = "ListBox5"
-        Me.ListBox5.Size = New System.Drawing.Size(254, 24)
-        Me.ListBox5.TabIndex = 24
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(6, 213)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(136, 21)
+        Me.Label43.TabIndex = 17
+        Me.Label43.Text = "Materias en Curso"
         '
-        'ListBox6
+        'Label42
         '
-        Me.ListBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox6.FormattingEnabled = True
-        Me.ListBox6.ItemHeight = 20
-        Me.ListBox6.Location = New System.Drawing.Point(11, 102)
-        Me.ListBox6.Name = "ListBox6"
-        Me.ListBox6.Size = New System.Drawing.Size(254, 24)
-        Me.ListBox6.TabIndex = 25
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(6, 26)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(149, 21)
+        Me.Label42.TabIndex = 17
+        Me.Label42.Text = "Materias Aprobadas"
+        '
+        'LBX_P_MateriasAprobadas
+        '
+        Me.LBX_P_MateriasAprobadas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_MateriasAprobadas.FormattingEnabled = True
+        Me.LBX_P_MateriasAprobadas.ItemHeight = 16
+        Me.LBX_P_MateriasAprobadas.Location = New System.Drawing.Point(6, 50)
+        Me.LBX_P_MateriasAprobadas.Name = "LBX_P_MateriasAprobadas"
+        Me.LBX_P_MateriasAprobadas.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_MateriasAprobadas.Size = New System.Drawing.Size(300, 148)
+        Me.LBX_P_MateriasAprobadas.TabIndex = 18
+        '
+        'LBX_P_MateriasCurso
+        '
+        Me.LBX_P_MateriasCurso.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_MateriasCurso.FormattingEnabled = True
+        Me.LBX_P_MateriasCurso.ItemHeight = 16
+        Me.LBX_P_MateriasCurso.Location = New System.Drawing.Point(6, 237)
+        Me.LBX_P_MateriasCurso.Name = "LBX_P_MateriasCurso"
+        Me.LBX_P_MateriasCurso.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_MateriasCurso.Size = New System.Drawing.Size(300, 148)
+        Me.LBX_P_MateriasCurso.TabIndex = 18
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.LBX_P_Carrera)
+        Me.GroupBox5.Controls.Add(Me.LBX_P_Facultad)
+        Me.GroupBox5.Controls.Add(Me.Label41)
+        Me.GroupBox5.Controls.Add(Me.Label40)
+        Me.GroupBox5.Location = New System.Drawing.Point(14, 306)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(271, 155)
+        Me.GroupBox5.TabIndex = 17
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Información"
+        '
+        'LBX_P_Carrera
+        '
+        Me.LBX_P_Carrera.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_Carrera.FormattingEnabled = True
+        Me.LBX_P_Carrera.ItemHeight = 20
+        Me.LBX_P_Carrera.Location = New System.Drawing.Point(11, 102)
+        Me.LBX_P_Carrera.Name = "LBX_P_Carrera"
+        Me.LBX_P_Carrera.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_Carrera.Size = New System.Drawing.Size(254, 24)
+        Me.LBX_P_Carrera.TabIndex = 25
+        '
+        'LBX_P_Facultad
+        '
+        Me.LBX_P_Facultad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_Facultad.FormattingEnabled = True
+        Me.LBX_P_Facultad.ItemHeight = 20
+        Me.LBX_P_Facultad.Location = New System.Drawing.Point(10, 51)
+        Me.LBX_P_Facultad.Name = "LBX_P_Facultad"
+        Me.LBX_P_Facultad.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_Facultad.Size = New System.Drawing.Size(254, 24)
+        Me.LBX_P_Facultad.TabIndex = 24
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.Location = New System.Drawing.Point(7, 78)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(62, 21)
+        Me.Label41.TabIndex = 19
+        Me.Label41.Text = "Carrera"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(7, 29)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(67, 21)
+        Me.Label40.TabIndex = 17
+        Me.Label40.Text = "Facultad"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.LBX_P_NLegajo)
+        Me.GroupBox3.Controls.Add(Me.LBX_P_CUIL)
+        Me.GroupBox3.Controls.Add(Me.LBX_P_Apellido)
+        Me.GroupBox3.Controls.Add(Me.LBX_P_Nombre)
+        Me.GroupBox3.Controls.Add(Me.Label32)
+        Me.GroupBox3.Controls.Add(Me.Label31)
+        Me.GroupBox3.Controls.Add(Me.Label30)
+        Me.GroupBox3.Controls.Add(Me.Label29)
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 69)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(271, 234)
+        Me.GroupBox3.TabIndex = 9
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Información"
+        '
+        'LBX_P_NLegajo
+        '
+        Me.LBX_P_NLegajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_NLegajo.FormattingEnabled = True
+        Me.LBX_P_NLegajo.ItemHeight = 20
+        Me.LBX_P_NLegajo.Location = New System.Drawing.Point(6, 195)
+        Me.LBX_P_NLegajo.Name = "LBX_P_NLegajo"
+        Me.LBX_P_NLegajo.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_NLegajo.Size = New System.Drawing.Size(254, 24)
+        Me.LBX_P_NLegajo.TabIndex = 23
+        '
+        'LBX_P_CUIL
+        '
+        Me.LBX_P_CUIL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_CUIL.FormattingEnabled = True
+        Me.LBX_P_CUIL.ItemHeight = 20
+        Me.LBX_P_CUIL.Location = New System.Drawing.Point(8, 144)
+        Me.LBX_P_CUIL.Name = "LBX_P_CUIL"
+        Me.LBX_P_CUIL.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_CUIL.Size = New System.Drawing.Size(254, 24)
+        Me.LBX_P_CUIL.TabIndex = 23
+        '
+        'LBX_P_Apellido
+        '
+        Me.LBX_P_Apellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_Apellido.FormattingEnabled = True
+        Me.LBX_P_Apellido.ItemHeight = 20
+        Me.LBX_P_Apellido.Location = New System.Drawing.Point(8, 96)
+        Me.LBX_P_Apellido.Name = "LBX_P_Apellido"
+        Me.LBX_P_Apellido.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_Apellido.Size = New System.Drawing.Size(254, 24)
+        Me.LBX_P_Apellido.TabIndex = 22
+        '
+        'LBX_P_Nombre
+        '
+        Me.LBX_P_Nombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBX_P_Nombre.FormattingEnabled = True
+        Me.LBX_P_Nombre.ItemHeight = 20
+        Me.LBX_P_Nombre.Location = New System.Drawing.Point(6, 50)
+        Me.LBX_P_Nombre.Name = "LBX_P_Nombre"
+        Me.LBX_P_Nombre.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.LBX_P_Nombre.Size = New System.Drawing.Size(254, 24)
+        Me.LBX_P_Nombre.TabIndex = 21
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(7, 171)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(139, 21)
+        Me.Label32.TabIndex = 15
+        Me.Label32.Text = "Número de Legajo"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Location = New System.Drawing.Point(7, 120)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(43, 21)
+        Me.Label31.TabIndex = 13
+        Me.Label31.Text = "CUIL"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(6, 73)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(67, 21)
+        Me.Label30.TabIndex = 11
+        Me.Label30.Text = "Apellido"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(6, 26)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(68, 21)
+        Me.Label29.TabIndex = 10
+        Me.Label29.Text = "Nombre"
         '
         'F_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1074, 541)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(1222, 541)
+        Me.Controls.Add(Me.PNL_P_Principal)
         Me.Controls.Add(Me.PNL_C_NotasExamen)
         Me.Controls.Add(Me.PNL_C_ExamenesParciales)
         Me.Controls.Add(Me.PNL_C_ExamenesFinales)
@@ -1565,17 +1571,17 @@ Partial Class F_Principal
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.NUD_C_NotaNotasExamen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
+        Me.PNL_P_Principal.ResumeLayout(False)
+        Me.PNL_P_Principal.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_P_Notas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1603,9 +1609,6 @@ Partial Class F_Principal
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents FinalesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ParcialesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PNL_C_Cursos As System.Windows.Forms.Panel
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents CMB_C_SeleccioneMateriaCursos As System.Windows.Forms.ComboBox
@@ -1622,9 +1625,9 @@ Partial Class F_Principal
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents CMB_C_SeleccioneComisiónCursos As System.Windows.Forms.ComboBox
     Friend WithEvents BTN_C_CursosCargarFP As System.Windows.Forms.Button
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TSBTN_P_Buscar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripLabel2 As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents ToolStripTextBox1 As System.Windows.Forms.ToolStripTextBox
+    Friend WithEvents TSTXT_P_DNIAlumno As System.Windows.Forms.ToolStripTextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents LTB_C_CursosActivosCursos As System.Windows.Forms.ListBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -1669,7 +1672,6 @@ Partial Class F_Principal
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents CMB_C_SeleccioneFacultadExamenParcial As System.Windows.Forms.ComboBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents NotasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents CMB_C_NParcialExamenesParciales As System.Windows.Forms.ComboBox
@@ -1698,18 +1700,18 @@ Partial Class F_Principal
     Friend WithEvents LBX_C_HoraExamen As ListBox
     Friend WithEvents LBX_C_FechaExamenExamen As ListBox
     Friend WithEvents LBL_F_NombreAlumno As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PNL_P_Principal As Panel
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents Label45 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGV_P_Notas As DataGridView
     Friend WithEvents Label44 As Label
-    Friend WithEvents ListBox9 As ListBox
+    Friend WithEvents LBX_P_InscripcionesExamen As ListBox
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents Label43 As Label
     Friend WithEvents Label42 As Label
-    Friend WithEvents ListBox7 As ListBox
-    Friend WithEvents ListBox8 As ListBox
+    Friend WithEvents LBX_P_MateriasAprobadas As ListBox
+    Friend WithEvents LBX_P_MateriasCurso As ListBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label41 As Label
     Friend WithEvents Label40 As Label
@@ -1717,12 +1719,14 @@ Partial Class F_Principal
     Friend WithEvents Label31 As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents Label29 As Label
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ListBox6 As ListBox
-    Friend WithEvents ListBox5 As ListBox
-    Friend WithEvents ListBox4 As ListBox
-    Friend WithEvents ListBox3 As ListBox
-    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents LBX_P_Nombre As ListBox
+    Friend WithEvents LBX_P_Carrera As ListBox
+    Friend WithEvents LBX_P_Facultad As ListBox
+    Friend WithEvents LBX_P_NLegajo As ListBox
+    Friend WithEvents LBX_P_CUIL As ListBox
+    Friend WithEvents LBX_P_Apellido As ListBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     '' Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     ''Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class

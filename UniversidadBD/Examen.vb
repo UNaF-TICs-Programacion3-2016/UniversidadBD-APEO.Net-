@@ -8,6 +8,12 @@ Public Class Examen
     Private pMinuto As String
     Private pLlamado As Integer
     Private pNumeroParcial As Integer
+    Private pAula As String
+    Private pMateria As String
+    Private pProfesor As String
+    Private pAlumno As String
+    Private pRelacion As String
+    Private pNota As String
     'PROPIEDADES
     Public Property Fecha() As Date
         Get
@@ -65,26 +71,71 @@ Public Class Examen
             pNumeroParcial = value
         End Set
     End Property
+    Public Property Aula() As String
+        Get
+            Return pAula
+        End Get
+        Set(ByVal value As String)
+            pAula = value
+        End Set
+    End Property
+    Public Property Materia() As String
+        Get
+            Return pMateria
+        End Get
+        Set(ByVal value As String)
+            pMateria = value
+        End Set
+    End Property
+    Public Property Profesor() As String
+        Get
+            Return pProfesor
+        End Get
+        Set(ByVal value As String)
+            pProfesor = value
+        End Set
+    End Property
+    Public Property Relacion() As String
+        Get
+            Return pRelacion
+        End Get
+        Set(ByVal value As String)
+            pRelacion = value
+        End Set
+    End Property
+    Public Property Alumno() As String
+        Get
+            Return pAlumno
+        End Get
+        Set(ByVal value As String)
+            pAlumno = value
+        End Set
+    End Property
+    Public Property Nota() As String
+        Get
+            Return pNota
+        End Get
+        Set(ByVal value As String)
+            pNota = value
+        End Set
+    End Property
     'INSERTAR EXAMEN
     Friend Sub InsertarExamen()
         Try
-
             Dim Tabla As String = "EXAMEN"
             InsertarSQL(Tabla)
-            Dim RELAMATERIA As String = F_Secundario.CMB_A_MateriaExamenFinal.SelectedValue
-            Dim RELAAULA As String = F_Secundario.CMB_A_AulaExamenFinal.SelectedValue
-            Fila("EXAMEN_RELA_MATERIA") = RELAMATERIA
-            Fila("EXAMEN_FECHA") = F_Secundario.Examen.Fecha
-            Fila("EXAMEN_RELA_HORA") = F_Secundario.Examen.Hora
-            If F_Secundario.Examen.Tipo = True Then
+            Fila("EXAMEN_RELA_MATERIA") = pMateria
+            Fila("EXAMEN_FECHA") = Fecha
+            Fila("EXAMEN_RELA_HORA") = Hora
+            If Tipo = True Then
                 Fila("EXAMEN_RELA_TIPO_EXAMEN") = 2
             Else
                 Fila("EXAMEN_RELA_TIPO_EXAMEN") = 1
             End If
-            Fila("EXAMEN_RELA_MINUTO") = F_Secundario.Examen.Minuto
-            Fila("EXAMEN_LLAMADO") = F_Secundario.NUD_A_LlamadoExamenFinal.Value
-            Fila("EXAMEN_NUMERO_PARCIAL") = F_Secundario.NUD_A_NParcialExamenFinal.Value
-            Fila("EXAMEN_RELA_AULA") = RELAAULA
+            Fila("EXAMEN_RELA_MINUTO") = pMinuto
+            Fila("EXAMEN_LLAMADO") = pLlamado
+            Fila("EXAMEN_NUMERO_PARCIAL") = pNumeroParcial
+            Fila("EXAMEN_RELA_AULA") = pAula
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Examen VALUES(:idexamen,:relamateria,:fecha,:hora,:tipo,:minuto,:llamado,:numeroparcial,:aula)"
@@ -109,11 +160,10 @@ Public Class Examen
             InsertarSQL(Tabla)
             Dim Ultimo As Integer = (Almacenamiento.Tables(Tabla).Rows.Count) - 1
             Dim ID As String = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_EXAMEN").ToString
-            Dim Profesor As String = F_Secundario.CMB_A_ProfesoresExamen.SelectedValue
             Tabla = "EXAMEN_PROFESOR"
             InsertarSQL(Tabla)
             Fila("EXA_PROFE_RELA_EXAMEN") = ID
-            Fila("EXA_PROFE_RELA_PROFESORES") = Profesor
+            Fila("EXA_PROFE_RELA_PROFESORES") = pProfesor
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Examen_Profesor VALUES(:idexaprofe,:relaexamen,:relaprofe)"
@@ -130,13 +180,10 @@ Public Class Examen
     Friend Sub InscripcionExamen()
         Try
             Dim Tabla As String = "ALUMNO_EXAMEN"
-            Dim Examen As String = F_Secundario.CMB_A_LlamadoExamen.SelectedValue
-            Dim Alumno As String = F_Secundario.CMB_A_AlumnoExamen.SelectedValue
-            Dim Condicion As String = F_Secundario.CMB_A_CondiciónExamen.SelectedValue
             InsertarSQL(Tabla)
-            Fila("ALU_EXA_RELA_EXAMEN") = Examen
-            Fila("ALU_EXA_RELA_ALUMNO") = Alumno
-            Fila("ALU_EXA_RELA_CONDICION") = Condicion
+            Fila("ALU_EXA_RELA_EXAMEN") = pRelacion
+            Fila("ALU_EXA_RELA_ALUMNO") = pAlumno
+            Fila("ALU_EXA_RELA_CONDICION") = pCondicion
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Alumno_Examen VALUES(:idexaalumno,:examen,:alumno,:condicion)"
@@ -153,11 +200,9 @@ Public Class Examen
     Friend Sub NotaExamenFinal()
         Try
             Dim Tabla As String = "NOTA"
-            Dim Nota As String = F_Principal.NUD_C_NotaNotasExamen.Value
-            Dim Relacion As String = F_Principal.CMB_C_SeleccionarAlumnoNotasExamen.SelectedValue
             InsertarSQL(Tabla)
-            Fila("NOTA_NOTA") = Nota
-            Fila("NOTA_RELA_ALUMNO_EXAMEN") = Relacion
+            Fila("NOTA_NOTA") = pNota
+            Fila("NOTA_RELA_ALUMNO_EXAMEN") = pRelacion
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Nota VALUES(:idnota,:nota,:alumnoexa)"

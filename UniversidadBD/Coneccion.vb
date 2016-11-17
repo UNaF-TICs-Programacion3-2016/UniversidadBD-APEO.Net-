@@ -5,7 +5,6 @@ Public Class Coneccion
     Protected Almacenamiento As New DataSet()
     Protected Transaccion As OracleTransaction
     Protected Fila As DataRow
-    Protected Tabla As DataTable
     Sub New()
         Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=balditofc42;"
         Almacenamiento.Tables.Clear()
