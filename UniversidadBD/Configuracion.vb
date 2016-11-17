@@ -75,7 +75,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
-    'CARGAR DATOS A UNA LISTA CON CONDICIONES
+    'CARGAR DATOS A UNA LISTA
     Sub CargarListBox(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try

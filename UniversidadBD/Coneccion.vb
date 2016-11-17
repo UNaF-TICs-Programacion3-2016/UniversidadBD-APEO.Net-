@@ -99,5 +99,6 @@ Public Class Coneccion
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
         Datos.DataSource = Almacenamiento.Tables(Tabla)
+        Datos.Columns("ID_" & Tabla).Visible = False
     End Sub
 End Class

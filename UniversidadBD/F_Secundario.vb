@@ -338,11 +338,11 @@ Public Class F_Secundario
     End Sub
     'COMBOBOX
     Private Sub CMB_S_FacultadExamenFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_FacultadExamenFinal.SelectedIndexChanged
-        'oConfiguracion.CargarComboBox(CMB_S_CarreraExamenFinal, PNL_S_ExamenFinal, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_S_FacultadExamenFinal)
+        oConfiguracion.CargarComboBox(CMB_S_CarreraExamenFinal, PNL_S_ExamenFinal, "CARRERA", "DESCRIPCION", "RELA_FACULTAD", CMB_S_FacultadExamenFinal)
     End Sub
     Private Sub CMB_S_CarreraExamenFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_CarreraExamenFinal.SelectedIndexChanged
         Dim CARRERA As Integer = CMB_S_CarreraExamenFinal.SelectedValue
-        oConfiguracion.CargarComboBox(CMB_S_SeleccionarFinalExamenFinal, PNL_S_ExamenFinal, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "MATERIA_RELA_CARRERA=" & CARRERA & "ID_MATERIA=EXAMEN_RELA_MATERIA")
+        oConfiguracion.CargarComboBox(CMB_S_SeleccionarFinalExamenFinal, PNL_S_ExamenFinal, "MATERIA, EXAMEN", "MATERIA_DESCRIPCION", "ID_EXAMEN", "MATERIA_RELA_CARRERA=" & CARRERA & " AND ID_MATERIA = EXAMEN_RELA_MATERIA")
     End Sub
     Private Sub CMB_S_SeleccionarMateriaCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarMateriaCurso.SelectedIndexChanged
         oConfiguracion.EliminarRepetidos(CMB_S_ComisionCurso, PNL_S_Curso, "CURSO", "CURSO_N_COMISION", "CURSO_N_COMISION")
@@ -489,4 +489,7 @@ Public Class F_Secundario
         Me.Close()
     End Sub
 
+    Private Sub PNL_S_ExamenFinal_Paint(sender As Object, e As PaintEventArgs) Handles PNL_S_ExamenFinal.Paint
+
+    End Sub
 End Class
