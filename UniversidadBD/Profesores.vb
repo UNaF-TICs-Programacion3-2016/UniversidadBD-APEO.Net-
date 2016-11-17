@@ -63,4 +63,20 @@ Public NotInheritable Class Profesores
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'EDITAR PROFESOR
+    Friend Sub EditarProfesor()
+        Try
+            Dim ID As Integer = F_Secundario.CMB_E_SeleccionarProfesorProfesor.SelectedValue
+            Comando.Connection = Conexion
+            Comando.CommandText = "UPDATE PERSONA SET PERSONA_CUIL = '" & pCUIL & "', PERSONA_NOMBRE = '" & pNombre & "',PERSONA_APELLIDO = '" & pApellido & "' WHERE ID_PERSONA = '" & ID & "'"
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MessageBox.Show("Los datos se editaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End Try
+
+    End Sub
 End Class

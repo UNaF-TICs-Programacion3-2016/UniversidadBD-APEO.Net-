@@ -6,7 +6,7 @@ Public Class Coneccion
     Protected Transaccion As OracleTransaction
     Protected Fila As DataRow
     Sub New()
-        Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=balditofc42;"
+        Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=Eze140995;"
         Almacenamiento.Tables.Clear()
         Comando.Parameters.Clear()
     End Sub
