@@ -36,8 +36,8 @@ Public Class Coneccion
         Adaptador.Update(Almacenamiento, Tabla)
         Almacenamiento.Tables.Clear()
     End Sub
-    'CARGAR EN LOS COMBO SIN CONDICION
-    Protected Sub CargarFilaSQL(Tabla As String, Columna As String, Combo As ComboBox)
+    'CARGAR EN LOS COMBO
+    Protected Sub CargarFila(Tabla As String, Columna As String, Combo As ComboBox)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
@@ -45,8 +45,7 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    'CARGAR EN LOS COMBO CON CONDICION SENCILLA
-    Protected Sub InsertarSQLC(Tabla As String, Columna As String, Condicion As String, Combo As ComboBox, Referencia As ComboBox)
+    Protected Sub CargarFila(Tabla As String, Columna As String, Condicion As String, Combo As ComboBox, Referencia As ComboBox)
         Dim ID As Integer = Referencia.SelectedValue
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion & " = " & ID, Conexion)
         Almacenamiento.Tables.Clear()
@@ -55,8 +54,7 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    'CARGAR EN LOS COMBO CON CONDICIONES COMPLEJAS
-    Protected Sub InsertarSQLE(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
+    Protected Sub CargarFila(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
@@ -64,8 +62,7 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    'CARGAR EN LOS COMBO DATOS SIN SER REPETIDOS
-    Protected Sub CargarSinRepetir(Combo As ComboBox, Tabla As String, Columna As String, Valor As String)
+    Protected Sub CargarFilaSinRepetir(Combo As ComboBox, Tabla As String, Columna As String, Valor As String)
         Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
@@ -73,8 +70,7 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    'CARGAR EN LOS COMBO DATOS SIN SER REPETIDOS CON CONDICIONES
-    Protected Sub CargarSinRepetirC(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
+    Protected Sub CargarFilaSinRepetir(Combo As ComboBox, Tabla As String, Columna As String, Valor As String, Condicion As String)
         Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
@@ -82,23 +78,15 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    'METODO PARA EDITAR DATOS
-    Public Sub EditarSQL(Tabla As String, Columna As String, Valor As String, Condicion As String, Referencia As String)
-        Dim Adaptador = New OracleDataAdapter("Update " & Tabla & " Set " & Columna & " = " & Valor & " Where " & Condicion & " = " & Referencia, Conexion)
-        Almacenamiento.Tables.Clear()
-        Adaptador.Fill(Almacenamiento, Tabla)
-        ActualizarSQL(Tabla)
-    End Sub
     'CARGAR A UNA LISTA CON CONDICION
-    Protected Sub CargarListaSQLC(Tabla As String, Columna As String, Condicion As String, Lista As ListBox)
+    Protected Sub CargarLista(Tabla As String, Columna As String, Condicion As String, Lista As ListBox)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
         Lista.DisplayMember = Columna
         Lista.DataSource = Almacenamiento.Tables(Tabla)
     End Sub
-    'CARGAR A UNA LISTA DATOS SIN SER REPETIDOS CON CONDICION
-    Protected Sub CargarListaSinRepetirSQLC(Tabla As String, Columna As String, Condicion As String, Lista As ListBox, Referencia As ComboBox)
+    Protected Sub CargarLista(Tabla As String, Columna As String, Condicion As String, Lista As ListBox, Referencia As ComboBox)
         Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
@@ -106,7 +94,7 @@ Public Class Coneccion
         Lista.DataSource = Almacenamiento.Tables(Tabla)
     End Sub
     'CARGAR A UN DATAGRID CON CONDICION
-    Protected Sub CargarDGV_SQLC(Tabla As String, Columna As String, Condicion As String, Datos As DataGridView)
+    Protected Sub CargarColumnas(Tabla As String, Columna As String, Condicion As String, Datos As DataGridView)
         Dim Adaptador = New OracleDataAdapter("Select " & Columna & " From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)

@@ -1,105 +1,104 @@
 ﻿Imports Oracle.DataAccess.Client
 Public Class Configuracion
     Inherits Coneccion
-    Private X As Integer
-    Private Y As Integer
-    Private Alto As Integer
-    Private Ancho As Integer
     'CONFIGURACIÓN DE INTERFAZ
-    Sub EstablecerConfiguracion(Formulario As Form, Panel As Panel, Pestañas As TabControl)
-        Formulario.Width = 587
-        Formulario.Height = 485
-        Panel.Width = 532
-        Panel.Height = 390
-        Panel.Top = 6
-        Panel.Left = 6
-        Pestañas.Width = 552
-        Pestañas.Height = 428
+    Public Shared Sub EstablecerConfiguracion(Formulario As Form, Panel As Panel, Pestañas As TabControl)
+        With Formulario
+            .Width = 587
+            .Height = 485
+        End With
+        With Panel
+            .Width = 532
+            .Height = 390
+            .Top = 6
+            .Left = 6
+        End With
+        With Pestañas
+            .Width = 552
+            .Height = 428
+        End With
         Formulario.Show()
         Panel.Visible = True
     End Sub
-    Sub EstablecerPanel(Panel As Panel)
-        Panel.Left = 3
-        Panel.Top = 68
-        Panel.Width = 1069
-        Panel.Height = 488
-        Panel.Visible = True
+    Public Shared Sub EstablecerPanel(Panel As Panel)
+        With Panel
+            .Left = 3
+            .Top = 68
+            .Width = 1100
+            .Height = 488
+            .Visible = True
+        End With
     End Sub
     'CARGAR DATOS AL COMBO
     Sub CargarComboBox(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String)
         If Panel.Visible = True Then
             Try
-                CargarFilaSQL(Tabla, Tabla & "_" & Columna, Combo)
+                CargarFila(Tabla, Tabla & "_" & Columna, Combo)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
-    'CARGAR DATOS AL COMBO CON CONDICIONES SIMPLES
-    Sub CargarCombo(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
+    Sub CargarComboBox(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
         If Panel.Visible = True Then
             Try
-                InsertarSQLC(Tabla, Tabla & "_" & Columna, Tabla & "_" & Condicion, Combo, Referencia)
+                CargarFila(Tabla, Tabla & "_" & Columna, Tabla & "_" & Condicion, Combo, Referencia)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
-    'CARGAR DATOS AL COMBO CON CONDICIONES COMPLEJAS
-    Sub CargarComboEspecifico(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String, Condicion As String)
+    Sub CargarComboBox(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String, Condicion As String)
         If Panel.Visible = True Then
             Try
-                InsertarSQLE(Combo, Tabla, Columna, Valor, Condicion)
+                CargarFila(Combo, Tabla, Columna, Valor, Condicion)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
-    'CARGAR DATOS AL COMBO SIN QUE SE REPITAN
-    Sub CargarComboSinRepetir(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String)
+    Sub EliminarRepetidos(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String)
         If Panel.Visible = True Then
             Try
-                CargarSinRepetir(Combo, Tabla, Columna, Valor)
+                CargarFilaSinRepetir(Combo, Tabla, Columna, Valor)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
-    'CARGAR DATOS AL COMBO SIN QUE SE REPITAN CUMPLIENDO UNA CONDICION
-    Sub CargarComboSinRepetirC(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String, Condicion As String)
+    Sub EliminarRepetidos(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String, Condicion As String)
         If Panel.Visible = True Then
             Try
-                CargarSinRepetirC(Combo, Tabla, Columna, Valor, Condicion)
+                CargarFilaSinRepetir(Combo, Tabla, Columna, Valor, Condicion)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
     'CARGAR DATOS A UNA LISTA CON CONDICIONES
-    Sub CargarListaCondicion(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
+    Sub CargarListBox(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try
-                CargarListaSQLC(Tabla, Columna, Condicion, Lista)
+                CargarLista(Tabla, Columna, Condicion, Lista)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
-    'CARGAR DATOS A UNA LISTA SIN QUE SE REPITAN CUMPLIENDO UNA CONDICION
-    Sub CargarListaSinRepetirC(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
+    Sub CargarListBox(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String, Referencia As ComboBox)
         If Panel.Visible = True Then
             Try
-                CargarListaSinRepetirSQLC(Tabla, Columna, Condicion, Lista, Referencia)
+                CargarLista(Tabla, Columna, Condicion, Lista, Referencia)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub
     'CARGAR DATOS AL DATAGRID
-    Sub CargarDGVCondicion(Datos As DataGridView, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
+    Sub CargarDGV(Datos As DataGridView, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try
-                CargarDGV_SQLC(Tabla, Columna, Condicion, Datos)
+                CargarColumnas(Tabla, Columna, Condicion, Datos)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try

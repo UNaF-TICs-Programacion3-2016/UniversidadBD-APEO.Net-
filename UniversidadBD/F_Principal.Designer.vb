@@ -192,7 +192,7 @@ Partial Class F_Principal
         Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem})
         Me.TSM_UNIVERSIDAD.Location = New System.Drawing.Point(0, 0)
         Me.TSM_UNIVERSIDAD.Name = "TSM_UNIVERSIDAD"
-        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1222, 33)
+        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1107, 33)
         Me.TSM_UNIVERSIDAD.TabIndex = 0
         Me.TSM_UNIVERSIDAD.Text = "MenuStrip1"
         '
@@ -356,7 +356,7 @@ Partial Class F_Principal
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 33)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.ToolStrip1.Size = New System.Drawing.Size(1222, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1107, 32)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -1261,9 +1261,9 @@ Partial Class F_Principal
         Me.PNL_P_Principal.Controls.Add(Me.GroupBox3)
         Me.PNL_P_Principal.Controls.Add(Me.LBL_F_NombreAlumno)
         Me.PNL_P_Principal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PNL_P_Principal.Location = New System.Drawing.Point(34, 76)
+        Me.PNL_P_Principal.Location = New System.Drawing.Point(0, 68)
         Me.PNL_P_Principal.Name = "PNL_P_Principal"
-        Me.PNL_P_Principal.Size = New System.Drawing.Size(58, 57)
+        Me.PNL_P_Principal.Size = New System.Drawing.Size(1105, 471)
         Me.PNL_P_Principal.TabIndex = 9
         Me.PNL_P_Principal.Visible = False
         '
@@ -1273,9 +1273,9 @@ Partial Class F_Principal
         Me.GroupBox7.Controls.Add(Me.DGV_P_Notas)
         Me.GroupBox7.Controls.Add(Me.Label44)
         Me.GroupBox7.Controls.Add(Me.LBX_P_InscripcionesExamen)
-        Me.GroupBox7.Location = New System.Drawing.Point(614, 69)
+        Me.GroupBox7.Location = New System.Drawing.Point(600, 69)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(460, 393)
+        Me.GroupBox7.Size = New System.Drawing.Size(488, 393)
         Me.GroupBox7.TabIndex = 20
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Examenes"
@@ -1284,7 +1284,7 @@ Partial Class F_Principal
         '
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(6, 216)
+        Me.Label45.Location = New System.Drawing.Point(18, 213)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(197, 21)
         Me.Label45.TabIndex = 22
@@ -1293,16 +1293,16 @@ Partial Class F_Principal
         'DGV_P_Notas
         '
         Me.DGV_P_Notas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_P_Notas.Location = New System.Drawing.Point(10, 241)
+        Me.DGV_P_Notas.Location = New System.Drawing.Point(22, 238)
         Me.DGV_P_Notas.Name = "DGV_P_Notas"
-        Me.DGV_P_Notas.Size = New System.Drawing.Size(444, 142)
+        Me.DGV_P_Notas.Size = New System.Drawing.Size(458, 142)
         Me.DGV_P_Notas.TabIndex = 21
         '
         'Label44
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Segoe WP", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.Location = New System.Drawing.Point(6, 29)
+        Me.Label44.Location = New System.Drawing.Point(18, 26)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(185, 21)
         Me.Label44.TabIndex = 19
@@ -1313,10 +1313,10 @@ Partial Class F_Principal
         Me.LBX_P_InscripcionesExamen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBX_P_InscripcionesExamen.FormattingEnabled = True
         Me.LBX_P_InscripcionesExamen.ItemHeight = 16
-        Me.LBX_P_InscripcionesExamen.Location = New System.Drawing.Point(6, 53)
+        Me.LBX_P_InscripcionesExamen.Location = New System.Drawing.Point(18, 50)
         Me.LBX_P_InscripcionesExamen.Name = "LBX_P_InscripcionesExamen"
         Me.LBX_P_InscripcionesExamen.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.LBX_P_InscripcionesExamen.Size = New System.Drawing.Size(448, 148)
+        Me.LBX_P_InscripcionesExamen.Size = New System.Drawing.Size(462, 148)
         Me.LBX_P_InscripcionesExamen.TabIndex = 20
         '
         'GroupBox6
@@ -1327,7 +1327,7 @@ Partial Class F_Principal
         Me.GroupBox6.Controls.Add(Me.LBX_P_MateriasCurso)
         Me.GroupBox6.Location = New System.Drawing.Point(291, 69)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(317, 393)
+        Me.GroupBox6.Size = New System.Drawing.Size(303, 393)
         Me.GroupBox6.TabIndex = 19
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Materias"
@@ -1360,7 +1360,7 @@ Partial Class F_Principal
         Me.LBX_P_MateriasAprobadas.Location = New System.Drawing.Point(6, 50)
         Me.LBX_P_MateriasAprobadas.Name = "LBX_P_MateriasAprobadas"
         Me.LBX_P_MateriasAprobadas.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.LBX_P_MateriasAprobadas.Size = New System.Drawing.Size(300, 148)
+        Me.LBX_P_MateriasAprobadas.Size = New System.Drawing.Size(281, 148)
         Me.LBX_P_MateriasAprobadas.TabIndex = 18
         '
         'LBX_P_MateriasCurso
@@ -1371,7 +1371,7 @@ Partial Class F_Principal
         Me.LBX_P_MateriasCurso.Location = New System.Drawing.Point(6, 237)
         Me.LBX_P_MateriasCurso.Name = "LBX_P_MateriasCurso"
         Me.LBX_P_MateriasCurso.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.LBX_P_MateriasCurso.Size = New System.Drawing.Size(300, 148)
+        Me.LBX_P_MateriasCurso.Size = New System.Drawing.Size(281, 148)
         Me.LBX_P_MateriasCurso.TabIndex = 18
         '
         'GroupBox5
@@ -1535,7 +1535,7 @@ Partial Class F_Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1222, 541)
+        Me.ClientSize = New System.Drawing.Size(1107, 541)
         Me.Controls.Add(Me.PNL_P_Principal)
         Me.Controls.Add(Me.PNL_C_NotasExamen)
         Me.Controls.Add(Me.PNL_C_ExamenesParciales)

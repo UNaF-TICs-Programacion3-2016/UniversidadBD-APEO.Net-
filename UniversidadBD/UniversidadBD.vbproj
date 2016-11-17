@@ -125,6 +125,7 @@
     <Compile Include="Otros.vb" />
     <Compile Include="Persona.vb" />
     <Compile Include="Profesores.vb" />
+    <Compile Include="Recarga.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="F_GestionAlumnos.resx">
