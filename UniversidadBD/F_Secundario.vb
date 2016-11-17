@@ -181,13 +181,6 @@ Public Class F_Secundario
         End With
         Me.Close()
     End Sub
-    Private Sub BTN_E_FacultadAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadAceptar.Click
-        With Facultad
-            .Codigo = TXT_E_CodigoFacultad.Text
-            .Descripcion = TXT_E_DescripcionFacultad.Text
-            .EditarFacultad()
-        End With
-    End Sub
     Private Sub BTN_A_BuscarIC_Click(sender As Object, e As EventArgs) Handles BTN_A_BuscarIC.Click
         Recarga.BuscarAlumno(CMB_A_AlumnoIC, PNL_A_InscripcionCursadas, TXT_A_BuscarIC.Text)
     End Sub
@@ -198,6 +191,13 @@ Public Class F_Secundario
             .InsertarAlumnoCurso()
         End With
         Me.Close()
+    End Sub
+    Private Sub BTN_E_FacultadAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadAceptar.Click
+        With Facultad
+            .Codigo = TXT_E_CodigoFacultad.Text
+            .Descripcion = TXT_E_DescripcionFacultad.Text
+            .EditarFacultad()
+        End With
     End Sub
     Private Sub BTN_E_CarreraAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_CarreraAceptar.Click
         With Carrera
@@ -250,6 +250,24 @@ Public Class F_Secundario
     End Sub
     Private Sub PNL_S_Aula_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Aula.VisibleChanged
         Recarga.CargarAula(CMB_S_SeleccionarAulaAula, PNL_S_Aula)
+    End Sub
+    Private Sub PNL_S_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Facultad.VisibleChanged
+        Recarga.CargarFacultad(CMB_S_FacultadSeleccionar, PNL_S_Facultad)
+    End Sub
+    Private Sub PNL_S_Carrera_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Carrera.VisibleChanged
+        Recarga.CargarCarrera(CMB_S_SeleccionarCarreraCarrera, PNL_S_Carrera)
+    End Sub
+    Private Sub PNL_S_Alumno_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Alumno.VisibleChanged
+        Recarga.CargarAlumno(CMB_S_SeleccionarAlumno, PNL_S_Alumno)
+    End Sub
+    Private Sub PNL_S_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Otro.VisibleChanged
+        Recarga.CargarOtro(CMB_S_SeleccionePersonaOtro, PNL_S_Otro)
+    End Sub
+    Private Sub PNL_S_Profesor_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Profesor.VisibleChanged
+        Recarga.CargarProfesor(CMB_S_SeleccionarProfesorProfesor, PNL_S_Profesor)
+    End Sub
+    Private Sub PNL_S_Curso_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Curso.VisibleChanged
+        Recarga.CargarFacultad(CMB_S_SeleccionarFacultadCurso, PNL_S_Curso)
     End Sub
     Private Sub PNL_E_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Facultad.VisibleChanged
         Recarga.CargarFacultad(CMB_E_SeleccionarFacultad, PNL_E_Facultad)
@@ -305,24 +323,6 @@ Public Class F_Secundario
     Private Sub Panel1_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_InscripcionCursadas.VisibleChanged
         Recarga.CargarFacultad(CMB_A_FacultadIC, PNL_A_InscripcionCursadas)
         Recarga.CargarCarrera(CMB_A_CarreraIC, PNL_A_InscripcionCursadas)
-    End Sub
-    Private Sub PNL_S_Facultad_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Facultad.VisibleChanged
-        Recarga.CargarFacultad(CMB_S_FacultadSeleccionar, PNL_S_Facultad)
-    End Sub
-    Private Sub PNL_S_Carrera_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Carrera.VisibleChanged
-        Recarga.CargarCarrera(CMB_S_SeleccionarCarreraCarrera, PNL_S_Carrera)
-    End Sub
-    Private Sub PNL_S_Alumno_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Alumno.VisibleChanged
-        Recarga.CargarAlumno(CMB_S_SeleccionarAlumno, PNL_S_Alumno)
-    End Sub
-    Private Sub PNL_S_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Otro.VisibleChanged
-        Recarga.CargarOtro(CMB_S_SeleccionePersonaOtro, PNL_S_Otro)
-    End Sub
-    Private Sub PNL_S_Profesor_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Profesor.VisibleChanged
-        Recarga.CargarProfesor(CMB_S_SeleccionarProfesorProfesor, PNL_S_Profesor)
-    End Sub
-    Private Sub PNL_S_Curso_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Curso.VisibleChanged
-        Recarga.CargarFacultad(CMB_S_SeleccionarFacultadCurso, PNL_S_Curso)
     End Sub
     Private Sub PNL_A_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Materia.VisibleChanged
         Recarga.CargarCarrera(CMB_A_SeleccionarCarreraMateria, PNL_A_Carrera)
@@ -437,6 +437,9 @@ Public Class F_Secundario
     Private Sub BTN_S_ExamenFinalCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_ExamenFinalCancelar.Click
         Me.Close()
     End Sub
+    Private Sub BTN_S_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_FacultadCancelar.Click
+        Me.Close()
+    End Sub
     Private Sub BTN_A_ExamenFinalCancelar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ExamenFinalCancelar.Click
         Me.Close()
     End Sub
@@ -473,19 +476,17 @@ Public Class F_Secundario
     Private Sub BTN_A_ExamenCancelar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenCancelar.Click
         Me.Close()
     End Sub
-    Private Sub BTN_E_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadCancelar.Click
-        Me.Close()
-    End Sub
-    Private Sub BTN_A_TerminarIC_Click(sender As Object, e As EventArgs) Handles BTN_A_TerminarIC.Click
-        Me.Close()
-    End Sub
-    Private Sub BTN_S_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_FacultadCancelar.Click
-        Me.Close()
-    End Sub
     Private Sub BTN_A_CorrelativaSalir_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CorrelativaSalir.Click
         Me.Close()
     End Sub
     Private Sub BTN_A_CorrelativaAceptar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
+    Private Sub BTN_A_TerminarIC_Click(sender As Object, e As EventArgs) Handles BTN_A_TerminarIC.Click
+        Me.Close()
+    End Sub
+    Private Sub BTN_E_FacultadCancelar_Click(sender As Object, e As EventArgs) Handles BTN_E_FacultadCancelar.Click
+        Me.Close()
+    End Sub
+
 End Class
