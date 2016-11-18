@@ -4,7 +4,6 @@ Public Class F_Secundario
     Public Carrera As New Carrera()
     Public Materia As New Materia()
     Public Examen As New Examen()
-    Private oConeccion As New Coneccion()
     Public Alumno As New Alumnos()
     Public Profesor As New Profesores()
     Public Persona As New Persona()
@@ -506,7 +505,6 @@ Public Class F_Secundario
     End Sub
     Private Sub BTN_E_MateriaCancelar_Click(sender As Object, e As EventArgs) Handles BTN_E_MateriaCancelar.Click
         Me.Close()
-
     End Sub
     Private Sub BTN_E_ProfesorCancelar_Click(sender As Object, e As EventArgs) Handles BTN_E_ProfesorCancelar.Click
         Me.Close()

@@ -159,7 +159,7 @@ Public Class Examen
             Dim Tabla As String = "EXAMEN"
             InsertarSQL(Tabla)
             Dim Ultimo As Integer = (Almacenamiento.Tables(Tabla).Rows.Count) - 1
-            Dim ID As String = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_EXAMEN").ToString
+            Dim ID As Integer = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_EXAMEN")
             Tabla = "EXAMEN_PROFESOR"
             InsertarSQL(Tabla)
             Fila("EXA_PROFE_RELA_EXAMEN") = ID

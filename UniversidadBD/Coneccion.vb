@@ -6,7 +6,7 @@ Public Class Coneccion
     Protected Transaccion As OracleTransaction
     Protected Fila As DataRow
     Sub New()
-        Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=Eze140995;"
+        Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=balditofc42;"
         Almacenamiento.Tables.Clear()
         Comando.Parameters.Clear()
     End Sub
@@ -78,7 +78,7 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
-    'CARGAR A UNA LISTA CON CONDICION
+    'CARGAR A UNA LISTA
     Protected Sub CargarLista(Tabla As String, Columna As String, Condicion As String, Lista As ListBox)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
@@ -99,6 +99,5 @@ Public Class Coneccion
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
         Datos.DataSource = Almacenamiento.Tables(Tabla)
-        Datos.Columns("ID_" & Tabla).Visible = False
     End Sub
 End Class

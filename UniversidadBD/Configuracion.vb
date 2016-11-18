@@ -22,11 +22,12 @@ Public Class Configuracion
     End Sub
     Public Shared Sub EstablecerPanel(Panel As Panel)
         With Panel
-            .Left = 3
-            .Top = 68
+            .Left = 0
+            .Top = 64
             .Width = 1100
             .Height = 488
             .Visible = True
+            .BackColor = Color.WhiteSmoke
         End With
     End Sub
     'CARGAR DATOS AL COMBO
