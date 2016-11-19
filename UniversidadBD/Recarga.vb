@@ -178,7 +178,7 @@
         Condicion = "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = CURSO_RELA_MATERIA"
         Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
     End Sub
-    Public Shared Sub CargarCurso(Combo As ComboBox, Panel As Panel, Carrera As Integer, Comision As Integer)
+    Public Shared Sub CargarCurso1(Combo As ComboBox, Panel As Panel, Carrera As Integer, Comision As Integer)
         Tabla = "MATERIA, CURSO"
         Columna = "MATERIA_DESCRIPCION"
         Valor = "ID_CURSO"

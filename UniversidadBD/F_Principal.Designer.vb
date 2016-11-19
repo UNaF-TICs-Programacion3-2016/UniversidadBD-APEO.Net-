@@ -138,6 +138,7 @@ Partial Class F_Principal
         Me.Label39 = New System.Windows.Forms.Label()
         Me.LBL_F_NombreAlumno = New System.Windows.Forms.Label()
         Me.PNL_P_Principal = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.DGV_P_Notas = New System.Windows.Forms.DataGridView()
@@ -162,7 +163,6 @@ Partial Class F_Principal
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TSM_UNIVERSIDAD.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.PNL_C_Cursos.SuspendLayout()
@@ -177,12 +177,12 @@ Partial Class F_Principal
         Me.GroupBox4.SuspendLayout()
         CType(Me.NUD_C_NotaNotasExamen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PNL_P_Principal.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox7.SuspendLayout()
         CType(Me.DGV_P_Notas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TSM_UNIVERSIDAD
@@ -192,7 +192,7 @@ Partial Class F_Principal
         Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem})
         Me.TSM_UNIVERSIDAD.Location = New System.Drawing.Point(0, 0)
         Me.TSM_UNIVERSIDAD.Name = "TSM_UNIVERSIDAD"
-        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1090, 33)
+        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1089, 33)
         Me.TSM_UNIVERSIDAD.TabIndex = 0
         Me.TSM_UNIVERSIDAD.Text = "MenuStrip1"
         '
@@ -326,20 +326,20 @@ Partial Class F_Principal
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(250, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(228, 6)
         '
         'InscripcionesAMateriasToolStripMenuItem
         '
         Me.InscripcionesAMateriasToolStripMenuItem.Image = CType(resources.GetObject("InscripcionesAMateriasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InscripcionesAMateriasToolStripMenuItem.Name = "InscripcionesAMateriasToolStripMenuItem"
-        Me.InscripcionesAMateriasToolStripMenuItem.Size = New System.Drawing.Size(253, 30)
+        Me.InscripcionesAMateriasToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
         Me.InscripcionesAMateriasToolStripMenuItem.Text = "Cursos"
         '
         'InscripcionesAExamenesToolStripMenuItem
         '
         Me.InscripcionesAExamenesToolStripMenuItem.Image = CType(resources.GetObject("InscripcionesAExamenesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InscripcionesAExamenesToolStripMenuItem.Name = "InscripcionesAExamenesToolStripMenuItem"
-        Me.InscripcionesAExamenesToolStripMenuItem.Size = New System.Drawing.Size(253, 30)
+        Me.InscripcionesAExamenesToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
         Me.InscripcionesAExamenesToolStripMenuItem.Text = "Exámenes Finales"
         '
         'ToolStrip1
@@ -349,7 +349,7 @@ Partial Class F_Principal
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 33)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.ToolStrip1.Size = New System.Drawing.Size(1090, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1089, 32)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -407,9 +407,9 @@ Partial Class F_Principal
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox2)
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox1)
         Me.PNL_C_Cursos.Controls.Add(Me.Label1)
-        Me.PNL_C_Cursos.Location = New System.Drawing.Point(1143, 388)
+        Me.PNL_C_Cursos.Location = New System.Drawing.Point(128, 92)
         Me.PNL_C_Cursos.Name = "PNL_C_Cursos"
-        Me.PNL_C_Cursos.Size = New System.Drawing.Size(95, 65)
+        Me.PNL_C_Cursos.Size = New System.Drawing.Size(778, 424)
         Me.PNL_C_Cursos.TabIndex = 4
         Me.PNL_C_Cursos.Visible = False
         '
@@ -1246,9 +1246,19 @@ Partial Class F_Principal
         Me.PNL_P_Principal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PNL_P_Principal.Location = New System.Drawing.Point(0, 68)
         Me.PNL_P_Principal.Name = "PNL_P_Principal"
-        Me.PNL_P_Principal.Size = New System.Drawing.Size(1090, 477)
+        Me.PNL_P_Principal.Size = New System.Drawing.Size(97, 80)
         Me.PNL_P_Principal.TabIndex = 9
         Me.PNL_P_Principal.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 21
+        Me.PictureBox1.TabStop = False
         '
         'GroupBox7
         '
@@ -1513,22 +1523,12 @@ Partial Class F_Principal
         Me.Label29.TabIndex = 10
         Me.Label29.Text = "Nombre"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(20, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 21
-        Me.PictureBox1.TabStop = False
-        '
         'F_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1090, 557)
+        Me.ClientSize = New System.Drawing.Size(1089, 557)
         Me.Controls.Add(Me.PNL_P_Principal)
         Me.Controls.Add(Me.PNL_C_NotasExamen)
         Me.Controls.Add(Me.PNL_C_ExamenesParciales)
@@ -1566,6 +1566,7 @@ Partial Class F_Principal
         CType(Me.NUD_C_NotaNotasExamen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PNL_P_Principal.ResumeLayout(False)
         Me.PNL_P_Principal.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
         CType(Me.DGV_P_Notas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1575,7 +1576,6 @@ Partial Class F_Principal
         Me.GroupBox5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

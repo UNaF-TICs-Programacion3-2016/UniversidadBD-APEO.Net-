@@ -76,14 +76,14 @@ Public Class F_Secundario
         End With
     End Sub
     Private Sub BTN_A_ProfesorSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ProfesorSiguiente.Click
-        With Persona
-            .Nombre = TXT_A_NombreProfesor.Text
-            .Apellido = TXT_A_ApellidoProfesor.Text
-            .CUIL = TXT_A_CUILProfesor.Text
-            .DNI = TXT_A_DNIProfesor.Text
-            .Telefono = TXT_A_TelefonoProfesor.Text
-            .Correo = TXT_A_CorreoProfesor.Text
-        End With
+        'With Persona
+        '.Nombre = TXT_A_NombreProfesor.Text
+        '.Apellido = TXT_A_ApellidoProfesor.Text
+        '.CUIL = TXT_A_CUILProfesor.Text
+        '.DNI = TXT_A_DNIProfesor.Text
+        '.Telefono = TXT_A_TelefonoProfesor.Text
+        '.Correo = TXT_A_CorreoProfesor.Text
+        'End With
         With Profesor
             .FechaDeIngreso = DTP_A_FechaIngresoProfesor.Value
             .Matricula = TXT_A_MatriculaProfesor.Text
@@ -102,8 +102,8 @@ Public Class F_Secundario
         With Persona
             .Nombre = TXT_A_NombreAlumno.Text
             .Apellido = TXT_A_ApellidoAlumno.Text
-            .CUIL = TXT_A_CUILAlumno.Text
-            .DNI = TXT_A_DNIAlumno.Text
+            .CUIL = Val(TXT_A_CUILAlumno.Text)
+            .DNI = Val(TXT_A_DNIAlumno.Text)
             .Telefono = TXT_A_TelefonoAlumno.Text
             .Correo = TXT_A_CorreoAlumno.Text
         End With

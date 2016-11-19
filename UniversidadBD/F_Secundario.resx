@@ -118,14 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BTN_A_ExamenAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        VAAAAFQBo63EFQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABBSURBVDhP7c4x
-        CgAgDEPRHt2jebOo0L+luHWq8JakBENS6b71uA42xAx0DXBU2Ml1sCH+A+5b4Mh1sCFmoGVAcQDxdWjT
-        STPnYAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="BTN_A_BuscarIC.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
@@ -136,6 +128,14 @@
         YDP7xAnJnR64243nSiBvYe8kI2XIWF/4c8/nwPrk8U5k/EPkG68RX61ZrhmwQbNsrWPsRUa6ozgcm7BQ
         rSm4AD0wJ17B8050SaxJg1Ox+Sgwge3EFmvN7FRi3omMTjUxr634L7BJrv9bbLDTn61Jm/g7gnwDUKkY
         mJutQj4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BTN_A_ExamenAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        VAAAAFQBo63EFQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABBSURBVDhP7c4x
+        CgAgDEPRHt2jebOo0L+luHWq8JakBENS6b71uA42xAx0DXBU2Ml1sCH+A+5b4Mh1sCFmoGVAcQDxdWjT
+        STPnYAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="BTN_A_ExamenBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

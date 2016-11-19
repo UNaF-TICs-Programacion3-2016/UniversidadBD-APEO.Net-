@@ -3,7 +3,7 @@ Public Class Materia
     Inherits Coneccion
     Private pDescripcion As String
     Private pCodigo As String
-    Private pCorrelativa As Boolean
+    Private pCorrelativa As String
     Private pOptativa As Boolean
     Private pDescripcionOP As String
     Private pCodigoOP As String
@@ -25,11 +25,11 @@ Public Class Materia
             pCodigo = value
         End Set
     End Property
-    Public Property Correlativa() As Boolean
+    Public Property Correlativa() As String
         Get
             Return pCorrelativa
         End Get
-        Set(ByVal value As Boolean)
+        Set(ByVal value As String)
             pCorrelativa = value
         End Set
     End Property

@@ -24,9 +24,9 @@ Public NotInheritable Class Profesores
     Friend Sub InsertarProfesor()
         Dim Tabla As String = "PERSONA"
         Try
-            InsertarPersona()
-            InsertarCorreo()
-            InsertarTelefono()
+            InsertarPersonaProfesor()
+            InsertarCorreoProfesor()
+            InsertarTelefonoProfesor()
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
             Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
@@ -68,7 +68,7 @@ Public NotInheritable Class Profesores
         Try
             Dim ID As Integer = F_Secundario.CMB_E_SeleccionarProfesorProfesor.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "UPDATE PERSONA SET PERSONA_CUIL = '" & pCUIL & "', PERSONA_NOMBRE = '" & pNombre & "',PERSONA_APELLIDO = '" & pApellido & "' WHERE ID_PERSONA = '" & ID & "'"
+            Comando.CommandText = "UPDATE PERSONA SET PERSONA_CUIL = '" & CUIL & "', PERSONA_NOMBRE = '" & Nombre & "',PERSONA_APELLIDO = '" & Apellido & "' WHERE ID_PERSONA = '" & ID & "'"
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()

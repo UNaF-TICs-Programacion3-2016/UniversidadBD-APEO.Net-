@@ -4,6 +4,14 @@ Public NotInheritable Class Alumnos
     Private pNumeroDeLegajo As String
     Private pFechaDeIngreso As Date
     'Propiedades especiales
+    Friend Overrides Property Nombre As String
+        Get
+            Return MyBase.Nombre
+        End Get
+        Set(value As String)
+            MyBase.Nombre = value
+        End Set
+    End Property
     Friend Property NumeroDeLegajo() As String
         Get
             Return pNumeroDeLegajo
@@ -38,20 +46,21 @@ Public NotInheritable Class Alumnos
             Fila("ALUMNO_RELA_PERSONA") = IDPERSONA
             Insert(Tabla)
             Comando.Parameters.Clear()
-            Comando.CommandText = "Insert Into Alumno VALUES(:idalumno,:numerolegajo,:fechaingreso,:relapersona)"
+            Comando.CommandText = "Insert Into Alumno VALUES(:idalumno,:numerolegajo,:fechaingreso,:relapersona) RETURNING id_Alumno INTO :Last_id"
             Comando.Parameters.Add(New OracleParameter(":idalumno", OracleDbType.Int64, 10, "ID_ALUMNO"))
             Comando.Parameters.Add(New OracleParameter(":numerolegajo", OracleDbType.Int64, 10, "ALUMNO_NUMERO_LEGAJO"))
             Comando.Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date, 0, "ALUMNO_FECHA_INGRESO"))
             Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "ALUMNO_RELA_PERSONA"))
+            Comando.Parameters.Add(New OracleParameter(":Last_id", OracleDbType.Int64, ParameterDirection.ReturnValue))
             ActualizarSQL(Tabla)
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             InsertarSQL(Tabla)
-            Dim ULTIMOID As Integer = (Almacenamiento.Tables("ALUMNO").Rows.Count) - 1
-            Dim IDALUMNO As String = Almacenamiento.Tables("ALUMNO").Rows(ULTIMOID)("ID_ALUMNO").ToString
+            Dim ULTIMOID As Integer = Integer.Parse((Comando.Parameters(":Last_id").ToString))
+            'Dim IDALUMNO As String = Almacenamiento.Tables("ALUMNO").Rows(ULTIMOID)("ID_ALUMNO").ToString
             Tabla = "ALUMNO_CARRERA"
             InsertarSQL(Tabla)
             Dim RELACARRERA As Integer = F_Secundario.CMB_A_SeleccioneCarrreraAlumno.SelectedValue
-            Fila("ALU_CARRE_RELA_ALUMNO") = IDALUMNO
+            Fila("ALU_CARRE_RELA_ALUMNO") = ULTIMOID
             Fila("ALU_CARRE_RELA_CARRERA") = RELACARRERA
             Insert(Tabla)
             Comando.Parameters.Clear()
