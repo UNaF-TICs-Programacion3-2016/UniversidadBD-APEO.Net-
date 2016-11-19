@@ -8,6 +8,8 @@ Public Class Materia
     Private pDescripcionOP As String
     Private pCodigoOP As String
     Private pRelacion As String
+    Private pCarrera As String
+    Private pHistorial As String
     'PROPIEDADES
     Public Property Descripcion() As String
         Get
@@ -65,23 +67,31 @@ Public Class Materia
             pRelacion = value
         End Set
     End Property
+    Public Property Carrera() As String
+        Get
+            Return pCarrera
+        End Get
+        Set(ByVal value As String)
+            pCarrera = value
+        End Set
+    End Property
+    Public Property Historial() As String
+        Get
+            Return pHistorial
+        End Get
+        Set(ByVal value As String)
+            pHistorial = value
+        End Set
+    End Property
     'INSERTAR LOS DATOS
-    Friend Sub InsertarMateriaNormal()
-        Dim Ultimo As Integer = 0
-        Dim RELAOPTATIVA As String = ""
+    Friend Sub InsertarMateriaNormal(ID As String)
         Try
-            If pOptativa = True Then
-                InsertarSQL("OPTATIVA")
-                Ultimo = (Almacenamiento.Tables("OPTATIVA").Rows.Count) - 1
-                RELAOPTATIVA = Almacenamiento.Tables("OPTATIVA").Rows(Ultimo)("ID_OPTATIVA").ToString
-            End If
             InsertarSQL("MATERIA")
-            Dim ID As String = CStr(F_Secundario.CMB_A_SeleccionarCarreraMateria.SelectedValue)
             Fila("MATERIA_DESCRIPCION") = pDescripcion
             Fila("MATERIA_CODIGO") = pCodigo
-            Fila("MATERIA_RELA_CARRERA") = ID
+            Fila("MATERIA_RELA_CARRERA") = pCarrera
             If pOptativa = True Then
-                Fila("MATERIA_RELA_OPTATIVA") = RELAOPTATIVA
+                Fila("MATERIA_RELA_OPTATIVA") = ID
             End If
             Insert("MATERIA")
             Comando.Parameters.Clear()
@@ -97,28 +107,32 @@ Public Class Materia
         End Try
     End Sub
     Friend Sub InsertarMateriaOptativa()
+        Dim Tabla As String = "OPTATIVA"
         Try
-            InsertarSQL("OPTATIVA")
+            InsertarSQL(Tabla)
             Fila("OPTATIVA_DESCRIPCION") = pDescripcionOP
             Fila("OPTATIVA_CODIGO") = pCodigoOP
-            Insert("OPTATIVA")
+            Insert(Tabla)
             Comando.Parameters.Clear()
-            Comando.CommandText = "Insert Into Optativa VALUES(:idoptativa,:descripcion,:codigo)"
+            Comando.CommandText = "Insert Into Optativa VALUES(:idoptativa,:descripcion,:codigo) RETURNING ID_OPTATIVA INTO :last_id"
             Comando.Parameters.Add(New OracleParameter(":idoptativa", OracleDbType.Int64, 10, "ID_OPTATIVA"))
             Comando.Parameters.Add(New OracleParameter(":descripcion", OracleDbType.Varchar2, 100, "OPTATIVA_DESCRIPCION"))
             Comando.Parameters.Add(New OracleParameter(":codigo", OracleDbType.Varchar2, 20, "OPTATIVA_CODIGO"))
-            ActualizarSQL("OPTATIVA")
+            Comando.Parameters.Add(New OracleParameter(":last_id", OracleDbType.Int64, ParameterDirection.ReturnValue))
+            ActualizarSQL(Tabla)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+        Dim ID As String = (Comando.Parameters(":last_id").Value).ToString
+        InsertarMateriaNormal(ID)
     End Sub
     Friend Sub InsertarMateria()
+        Dim ID As String = ""
         Try
-            If Optativa = True Then
+            If pOptativa = True Then
                 InsertarMateriaOptativa()
-                InsertarMateriaNormal()
             Else
-                InsertarMateriaNormal()
+                InsertarMateriaNormal(ID)
             End If
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
@@ -138,7 +152,6 @@ Public Class Materia
             Comando.Parameters.Add(New OracleParameter(":relamateria", OracleDbType.Long, 10, "MATE_CORRE_RELA_MATERIA"))
             Comando.Parameters.Add(New OracleParameter(":relacorrelativa", OracleDbType.Long, 10, "MATE_CORRE_RELA_CORRELATIVA"))
             ActualizarSQL(Tabla)
-            F_Secundario.LBX_A_CorrelativasMateria.Items.Add(F_Secundario.CMB_A_SeleccioneCorrelativasCorrelativa.Text)
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)

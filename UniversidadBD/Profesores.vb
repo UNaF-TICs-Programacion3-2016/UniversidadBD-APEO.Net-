@@ -3,7 +3,56 @@ Public NotInheritable Class Profesores
     Inherits Persona
     Private pMatricula As String
     Private pFechaDeIngreso As Date
-    'Propiedades especiales
+    'PROPIEDADES HEREDADAS
+    Friend Overrides Property Nombre As String
+        Get
+            Return MyBase.Nombre
+        End Get
+        Set(value As String)
+            MyBase.Nombre = value
+        End Set
+    End Property
+    Friend Overrides Property Apellido As String
+        Get
+            Return MyBase.Apellido
+        End Get
+        Set(value As String)
+            MyBase.Apellido = value
+        End Set
+    End Property
+    Friend Overrides Property CUIL As String
+        Get
+            Return MyBase.CUIL
+        End Get
+        Set(value As String)
+            MyBase.CUIL = value
+        End Set
+    End Property
+    Friend Overrides Property DNI As String
+        Get
+            Return MyBase.DNI
+        End Get
+        Set(value As String)
+            MyBase.DNI = value
+        End Set
+    End Property
+    Friend Overrides Property Telefono As String
+        Get
+            Return MyBase.Telefono
+        End Get
+        Set(value As String)
+            MyBase.Telefono = value
+        End Set
+    End Property
+    Friend Overrides Property Correo As String
+        Get
+            Return MyBase.Correo
+        End Get
+        Set(value As String)
+            MyBase.Correo = value
+        End Set
+    End Property
+    'PROPIEDADES ESPECIALES
     Friend Property Matricula() As String
         Get
             Return pMatricula
@@ -20,21 +69,24 @@ Public NotInheritable Class Profesores
             pFechaDeIngreso = value
         End Set
     End Property
+    'METODOS HEREDADOS
+    Protected Overrides Function InsertarPersona() As String
+        Return MyBase.InsertarPersona()
+    End Function
+    Protected Overrides Sub InsertarTelefono(ID As String)
+        MyBase.InsertarTelefono(ID)
+    End Sub
+    Protected Overrides Sub InsertarCorreo(ID As String)
+        MyBase.InsertarCorreo(ID)
+    End Sub
     'INSERTAR PROFESOR
     Friend Sub InsertarProfesor()
-        Dim Tabla As String = "PERSONA"
+        Dim Tabla As String = "PROFESOR"
+        Dim ID As String = InsertarPersona()
         Try
-            InsertarPersonaProfesor()
-            InsertarCorreoProfesor()
-            InsertarTelefonoProfesor()
-            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            InsertarSQL(Tabla)
-            Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
-            Dim IDPERSONA As String = Almacenamiento.Tables("PERSONA").Rows(Ultimo)("ID_PERSONA").ToString
-            Tabla = "PROFESOR"
             InsertarSQL(Tabla)
             Fila("PROFESOR_FECHA_INGRESO") = pFechaDeIngreso
-            Fila("PROFESOR_RELA_PERSONA") = IDPERSONA
+            Fila("PROFESOR_RELA_PERSONA") = ID
             Fila("PROFESOR_MATRICULA") = pMatricula
             Insert(Tabla)
             Comando.Parameters.Clear()

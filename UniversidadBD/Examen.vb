@@ -14,6 +14,7 @@ Public Class Examen
     Private pAlumno As String
     Private pRelacion As String
     Private pNota As String
+    Private pID As String
     'PROPIEDADES
     Public Property Fecha() As Date
         Get
@@ -119,6 +120,14 @@ Public Class Examen
             pNota = value
         End Set
     End Property
+    Public Property ID() As String
+        Get
+            Return pID
+        End Get
+        Set(ByVal value As String)
+            pID = value
+        End Set
+    End Property
     'INSERTAR EXAMEN
     Friend Sub InsertarExamen()
         Try
@@ -138,7 +147,7 @@ Public Class Examen
             Fila("EXAMEN_RELA_AULA") = pAula
             Insert(Tabla)
             Comando.Parameters.Clear()
-            Comando.CommandText = "Insert Into Examen VALUES(:idexamen,:relamateria,:fecha,:hora,:tipo,:minuto,:llamado,:numeroparcial,:aula)"
+            Comando.CommandText = "Insert Into Examen VALUES(:idexamen,:relamateria,:fecha,:hora,:tipo,:minuto,:llamado,:numeroparcial,:aula) RETURNING ID_EXAMEN INTO :last_id"
             Comando.Parameters.Add(New OracleParameter(":idexamen", OracleDbType.Int64, 10, "ID_EXAMEN"))
             Comando.Parameters.Add(New OracleParameter(":relamateria", OracleDbType.Int64, 10, "EXAMEN_RELA_MATERIA"))
             Comando.Parameters.Add(New OracleParameter(":fecha", OracleDbType.Date, 0, "EXAMEN_FECHA"))
@@ -148,21 +157,20 @@ Public Class Examen
             Comando.Parameters.Add(New OracleParameter(":llamado", OracleDbType.Int64, 2, "EXAMEN_LLAMADO"))
             Comando.Parameters.Add(New OracleParameter(":numeroparcial", OracleDbType.Int64, 2, "EXAMEN_NUMERO_PARCIAL"))
             Comando.Parameters.Add(New OracleParameter(":aula", OracleDbType.Int64, 10, "EXAMEN_RELA_AULA"))
+            Comando.Parameters.Add(New OracleParameter(":last_id", OracleDbType.Int64, ParameterDirection.ReturnValue))
             ActualizarSQL(Tabla)
+            Dim ID As String = (Comando.Parameters(":last_id").Value).ToString
+            Me.pID = ID
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Friend Sub InsertarProfesorExamen()
+        Dim Tabla As String = "EXAMEN_PROFESOR"
         Try
-            Dim Tabla As String = "EXAMEN"
             InsertarSQL(Tabla)
-            Dim Ultimo As Integer = (Almacenamiento.Tables(Tabla).Rows.Count) - 1
-            Dim ID As Integer = Almacenamiento.Tables(Tabla).Rows(Ultimo)("ID_EXAMEN")
-            Tabla = "EXAMEN_PROFESOR"
-            InsertarSQL(Tabla)
-            Fila("EXA_PROFE_RELA_EXAMEN") = ID
+            Fila("EXA_PROFE_RELA_EXAMEN") = pID
             Fila("EXA_PROFE_RELA_PROFESORES") = pProfesor
             Insert(Tabla)
             Comando.Parameters.Clear()
@@ -171,7 +179,6 @@ Public Class Examen
             Comando.Parameters.Add(New OracleParameter(":relaexamen", OracleDbType.Long, 10, "EXA_PROFE_RELA_EXAMEN"))
             Comando.Parameters.Add(New OracleParameter(":relaprofe", OracleDbType.Long, 10, "EXA_PROFE_RELA_PROFESORES"))
             ActualizarSQL(Tabla)
-            F_Secundario.LTB_A_ProfesoresExamen.Items.Add(F_Secundario.CMB_A_ProfesoresExamen.Text)
             MessageBox.Show("Los datos se guardaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)

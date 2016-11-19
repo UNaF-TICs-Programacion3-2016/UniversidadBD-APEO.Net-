@@ -4,6 +4,7 @@ Public Class Carrera
     Private pDescripcion As String
     Private pCodigo As String
     Private pDuracion As Integer
+    Private pFacultad As String
     'PROPIEDADES
     Public Property Descripcion() As String
         Get
@@ -29,16 +30,23 @@ Public Class Carrera
             pDuracion = value
         End Set
     End Property
+    Public Property Facultad() As String
+        Get
+            Return pFacultad
+        End Get
+        Set(ByVal value As String)
+            pFacultad = value
+        End Set
+    End Property
     'INSERTAR CARRERA
     Friend Sub InsertarCarrera()
         Dim Tabla As String = "CARRERA"
-        Dim ID As String = CStr(F_Secundario.CMB_A_SeleccionarFacultadCarrera.SelectedValue)
         Try
             InsertarSQL(Tabla)
             Fila("CARRERA_DESCRIPCION") = pDescripcion
             Fila("CARRERA_DURACION") = pDuracion
             Fila("CARRERA_CODIGO") = pCodigo
-            Fila("CARRERA_RELA_FACULTAD") = ID
+            Fila("CARRERA_RELA_FACULTAD") = pFacultad
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Carrera VALUES(:idcarrera,:descripcion,:duracion,:codigo,:relafacultad)"

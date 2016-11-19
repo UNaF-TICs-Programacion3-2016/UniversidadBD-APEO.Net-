@@ -4,7 +4,7 @@ Public Class Facultad
     Private pDescripcion As String
     Private pCodigo As String
     'PROPIEDADES
-    Public Property Descripcion() As String
+    Friend Property Descripcion() As String
         Get
             Return pDescripcion
         End Get
@@ -12,7 +12,7 @@ Public Class Facultad
             pDescripcion = value
         End Set
     End Property
-    Public Property Codigo() As String
+    Friend Property Codigo() As String
         Get
             Return pCodigo
         End Get

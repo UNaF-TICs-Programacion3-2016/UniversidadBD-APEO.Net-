@@ -3,7 +3,8 @@ Public NotInheritable Class Alumnos
     Inherits Persona
     Private pNumeroDeLegajo As String
     Private pFechaDeIngreso As Date
-    'Propiedades especiales
+    Private pCarrera As String
+    'PROPIEDADES HEREDADAS
     Friend Overrides Property Nombre As String
         Get
             Return MyBase.Nombre
@@ -12,6 +13,47 @@ Public NotInheritable Class Alumnos
             MyBase.Nombre = value
         End Set
     End Property
+    Friend Overrides Property Apellido As String
+        Get
+            Return MyBase.Apellido
+        End Get
+        Set(value As String)
+            MyBase.Apellido = value
+        End Set
+    End Property
+    Friend Overrides Property CUIL As String
+        Get
+            Return MyBase.CUIL
+        End Get
+        Set(value As String)
+            MyBase.CUIL = value
+        End Set
+    End Property
+    Friend Overrides Property DNI As String
+        Get
+            Return MyBase.DNI
+        End Get
+        Set(value As String)
+            MyBase.DNI = value
+        End Set
+    End Property
+    Friend Overrides Property Telefono As String
+        Get
+            Return MyBase.Telefono
+        End Get
+        Set(value As String)
+            MyBase.Telefono = value
+        End Set
+    End Property
+    Friend Overrides Property Correo As String
+        Get
+            Return MyBase.Correo
+        End Get
+        Set(value As String)
+            MyBase.Correo = value
+        End Set
+    End Property
+    'PROPIEDADES ESPECIALES
     Friend Property NumeroDeLegajo() As String
         Get
             Return pNumeroDeLegajo
@@ -28,22 +70,33 @@ Public NotInheritable Class Alumnos
             pFechaDeIngreso = value
         End Set
     End Property
+    Friend Property Carrera() As String
+        Get
+            Return pCarrera
+        End Get
+        Set(value As String)
+            pCarrera = value
+        End Set
+    End Property
+    'METODOS HEREDADOS
+    Protected Overrides Function InsertarPersona() As String
+        Return MyBase.InsertarPersona()
+    End Function
+    Protected Overrides Sub InsertarTelefono(ID As String)
+        MyBase.InsertarTelefono(ID)
+    End Sub
+    Protected Overrides Sub InsertarCorreo(ID As String)
+        MyBase.InsertarCorreo(ID)
+    End Sub
     'INSERTAR ALUMNO
     Friend Sub InsertarAlumno()
-        Dim Tabla As String = "PERSONA"
+        Dim Tabla As String = "ALUMNO"
+        Dim ID As String = InsertarPersona()
         Try
-            InsertarPersona()
-            InsertarCorreo()
-            InsertarTelefono()
-            '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            InsertarSQL(Tabla)
-            Dim Ultimo As Integer = (Almacenamiento.Tables("PERSONA").Rows.Count) - 1
-            Dim IDPERSONA As String = Almacenamiento.Tables("PERSONA").Rows(Ultimo)("ID_PERSONA").ToString
-            Tabla = "ALUMNO"
             InsertarSQL(Tabla)
             Fila("ALUMNO_NUMERO_LEGAJO") = pNumeroDeLegajo
             Fila("ALUMNO_FECHA_INGRESO") = pFechaDeIngreso
-            Fila("ALUMNO_RELA_PERSONA") = IDPERSONA
+            Fila("ALUMNO_RELA_PERSONA") = ID
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Alumno VALUES(:idalumno,:numerolegajo,:fechaingreso,:relapersona) RETURNING id_Alumno INTO :Last_id"
@@ -51,17 +104,14 @@ Public NotInheritable Class Alumnos
             Comando.Parameters.Add(New OracleParameter(":numerolegajo", OracleDbType.Int64, 10, "ALUMNO_NUMERO_LEGAJO"))
             Comando.Parameters.Add(New OracleParameter(":fechaingreso", OracleDbType.Date, 0, "ALUMNO_FECHA_INGRESO"))
             Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "ALUMNO_RELA_PERSONA"))
-            Comando.Parameters.Add(New OracleParameter(":Last_id", OracleDbType.Int64, ParameterDirection.ReturnValue))
+            Comando.Parameters.Add(New OracleParameter(":Last_id", OracleDbType.Int32, ParameterDirection.ReturnValue))
             ActualizarSQL(Tabla)
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            InsertarSQL(Tabla)
-            Dim ULTIMOID As Integer = Integer.Parse((Comando.Parameters(":Last_id").ToString))
-            'Dim IDALUMNO As String = Almacenamiento.Tables("ALUMNO").Rows(ULTIMOID)("ID_ALUMNO").ToString
+            ID = (Comando.Parameters(":Last_id").Value).ToString
             Tabla = "ALUMNO_CARRERA"
             InsertarSQL(Tabla)
-            Dim RELACARRERA As Integer = F_Secundario.CMB_A_SeleccioneCarrreraAlumno.SelectedValue
-            Fila("ALU_CARRE_RELA_ALUMNO") = ULTIMOID
-            Fila("ALU_CARRE_RELA_CARRERA") = RELACARRERA
+            Fila("ALU_CARRE_RELA_ALUMNO") = ID
+            Fila("ALU_CARRE_RELA_CARRERA") = pCarrera
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Alumno_Carrera VALUES(:idalucarre,:relaalumno,:relacarrera)"

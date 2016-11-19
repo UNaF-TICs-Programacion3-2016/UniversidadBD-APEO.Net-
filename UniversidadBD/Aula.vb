@@ -2,8 +2,9 @@
 Public Class Aula
     Inherits Coneccion
     Private pDescripcion As String
+    Private pFacultad As String
     'PROPIEDADES
-    Public Property Descripcion() As String
+    Friend Property Descripcion() As String
         Get
             Return pDescripcion
         End Get
@@ -11,14 +12,21 @@ Public Class Aula
             pDescripcion = value
         End Set
     End Property
+    Friend Property Facultad() As String
+        Get
+            Return pFacultad
+        End Get
+        Set(value As String)
+            pFacultad = value
+        End Set
+    End Property
     'INSERTAR AULA
     Friend Sub InsertarAula()
         Dim Tabla As String = "AULA"
         Try
-            Dim ID As String = CStr(F_Secundario.CMB_A_SeleccionarAulaFacultad.SelectedValue)
             InsertarSQL(Tabla)
             Fila("AULA_DESCRIPCION") = pDescripcion
-            Fila("AULA_RELA_FACULTAD") = ID
+            Fila("AULA_RELA_FACULTAD") = pFacultad
             Insert(Tabla)
             Comando.Parameters.Clear()
             Comando.CommandText = "Insert Into Aula VALUES(:idaula,:descripcion,:relafacultad)"

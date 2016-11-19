@@ -6,7 +6,6 @@ Public Class F_Secundario
     Public Examen As New Examen()
     Public Alumno As New Alumnos()
     Public Profesor As New Profesores()
-    Public Persona As New Persona()
     Public Aula As New Aula()
     Public Curso As New Cursos()
     Public Otro As New Otros()
@@ -54,6 +53,7 @@ Public Class F_Secundario
             .Codigo = TXT_A_CodigoCarrera.Text
             .Descripcion = TXT_A_DescripcionCarrera.Text
             .Duracion = TXT_A_DuracionCarrera.Text
+            .Facultad = CMB_A_SeleccionarFacultadCarrera.SelectedValue
             .InsertarCarrera()
         End With
         Me.Close()
@@ -64,6 +64,8 @@ Public Class F_Secundario
             .CodigoOP = TXT_A_CodigoOptativaMateria.Text
             .Codigo = TXT_A_CodigoMateria.Text
             .Descripcion = TXT_A_DescripcionMateria.Text
+            .Carrera = CMB_A_SeleccionarCarreraMateria.SelectedValue
+            .Optativa = CBX_A_OptativaMateria.Checked
             .InsertarMateria()
         End With
         Me.Close()
@@ -72,19 +74,19 @@ Public Class F_Secundario
         With Materia
             .Relacion = CMB_A_SeleccioneMateriasCorrelativa.SelectedValue
             .Correlativa = CMB_A_SeleccioneCorrelativasCorrelativa.SelectedValue
+            .Historial = CMB_A_SeleccioneCorrelativasCorrelativa.Text
+            LBX_A_CorrelativasMateria.Items.Add(.Historial)
             .RelacionarCorrelativa()
         End With
     End Sub
     Private Sub BTN_A_ProfesorSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_ProfesorSiguiente.Click
-        'With Persona
-        '.Nombre = TXT_A_NombreProfesor.Text
-        '.Apellido = TXT_A_ApellidoProfesor.Text
-        '.CUIL = TXT_A_CUILProfesor.Text
-        '.DNI = TXT_A_DNIProfesor.Text
-        '.Telefono = TXT_A_TelefonoProfesor.Text
-        '.Correo = TXT_A_CorreoProfesor.Text
-        'End With
         With Profesor
+            .Nombre = TXT_A_NombreProfesor.Text
+            .Apellido = TXT_A_ApellidoProfesor.Text
+            .CUIL = TXT_A_CUILProfesor.Text
+            .DNI = TXT_A_DNIProfesor.Text
+            .Telefono = TXT_A_TelefonoProfesor.Text
+            .Correo = TXT_A_CorreoProfesor.Text
             .FechaDeIngreso = DTP_A_FechaIngresoProfesor.Value
             .Matricula = TXT_A_MatriculaProfesor.Text
             .InsertarProfesor()
@@ -94,38 +96,37 @@ Public Class F_Secundario
     Private Sub BTN_A_AulaAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_AulaAceptar.Click
         With Aula
             .Descripcion = TXT_A_DescripcionAula.Text
+            .Facultad = CMB_A_SeleccionarAulaFacultad.SelectedValue
             .InsertarAula()
         End With
         Me.Close()
     End Sub
     Private Sub BTN_A_AlumnoAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_AlumnoAceptar.Click
-        With Persona
+        With Alumno
             .Nombre = TXT_A_NombreAlumno.Text
             .Apellido = TXT_A_ApellidoAlumno.Text
-            .CUIL = Val(TXT_A_CUILAlumno.Text)
-            .DNI = Val(TXT_A_DNIAlumno.Text)
+            .CUIL = TXT_A_CUILAlumno.Text
+            .DNI = TXT_A_DNIAlumno.Text
             .Telefono = TXT_A_TelefonoAlumno.Text
             .Correo = TXT_A_CorreoAlumno.Text
-        End With
-        With Alumno
             .FechaDeIngreso = DTP_A_FechaIngresoAlumno.Value
             .NumeroDeLegajo = TXT_A_NumeroLegajoAlumno.Text
+            .Carrera = CMB_A_SeleccioneCarrreraAlumno.SelectedValue
             .InsertarAlumno()
         End With
         Me.Close()
     End Sub
     Private Sub BTN_A_OtroAceptar_Click_1(sender As Object, e As EventArgs) Handles BTN_A_OtroAceptar.Click
-        With Persona
+        With Otro
             .Nombre = TXT_A_NombreOtro.Text
             .Apellido = TXT_A_ApellidoOtro.Text
             .CUIL = TXT_A_CUILOtro.Text
             .DNI = TXT_A_DNIOtro.Text
             .Correo = TXT_A_CorreoOtro.Text
             .Telefono = TXT_A_TelefonoOtro.Text
-        End With
-        With Otro
             .FechaDeIngreso = DTP_A_FechaIngresoOtro.Value
             .Puesto = CMB_A_OcupacionOtro.SelectedValue
+            .Facultad = CMB_A_FacultadOtro.SelectedValue
             .InsertarOtro()
         End With
         Me.Close()
@@ -141,12 +142,15 @@ Public Class F_Secundario
             .Hora = CMB_A_HoraExamen.SelectedValue
             .Minuto = CMB_A_MinutoExamen.SelectedValue
             .InsertarExamen()
+            CMB_A_CapturarID.Text = .ID
         End With
     End Sub
     Private Sub BTN_A_ExamenAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenAgregar.Click
         With Examen
             .Profesor = CMB_A_ProfesoresExamen.SelectedValue
+            .ID = CMB_A_CapturarID.Text
             .InsertarProfesorExamen()
+            LTB_A_ProfesoresExamen.Items.Add(CMB_A_ProfesoresExamen.Text)
         End With
     End Sub
     Private Sub BTN_A_CursoAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_CursoAgregar.Click
@@ -160,12 +164,15 @@ Public Class F_Secundario
             .Aula = CMB_A_AulaCurso.SelectedValue
             .Comision = TXT_A_ComisionCurso.Text
             .InsertarCurso()
+            CMB_A_CapturaID.Text = .ID
         End With
     End Sub
     Private Sub BTN_A_AgregarProfesorCurso_Click(sender As Object, e As EventArgs) Handles BTN_A_AgregarProfesorCurso.Click
         With Curso
             .Profesor = CMB_A_ProfesoresCurso.SelectedValue
+            .ID = CMB_A_CapturaID.Text
             .InsertarProfesorCurso()
+            LTB_A_ProfesoresCurso.Items.Add(CMB_A_ProfesoresCurso.Text)
         End With
     End Sub
     Private Sub BTN_A_ExamenBuscar_Click(sender As Object, e As EventArgs) Handles BTN_A_ExamenBuscar.Click

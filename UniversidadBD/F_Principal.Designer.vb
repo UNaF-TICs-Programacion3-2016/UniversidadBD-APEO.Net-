@@ -42,7 +42,6 @@ Partial Class F_Principal
         Me.InscripcionesAExamenesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.InscripcionesACursosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.InscripcionesAMateriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InscripcionesAExamenesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -318,15 +317,10 @@ Partial Class F_Principal
         '
         'VERToolStripMenuItem
         '
-        Me.VERToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator2, Me.InscripcionesAMateriasToolStripMenuItem, Me.InscripcionesAExamenesToolStripMenuItem})
+        Me.VERToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InscripcionesAMateriasToolStripMenuItem, Me.InscripcionesAExamenesToolStripMenuItem})
         Me.VERToolStripMenuItem.Name = "VERToolStripMenuItem"
         Me.VERToolStripMenuItem.Size = New System.Drawing.Size(125, 29)
         Me.VERToolStripMenuItem.Text = "CONSULTAS"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(228, 6)
         '
         'InscripcionesAMateriasToolStripMenuItem
         '
@@ -1598,7 +1592,6 @@ Partial Class F_Principal
     Friend WithEvents InscripcionesAExamenesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InscripcionesAMateriasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
