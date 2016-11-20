@@ -97,6 +97,15 @@ Public NotInheritable Class Alumnos
     Protected Overrides Sub EditarTelefono(ID As String)
         MyBase.EditarTelefono(ID)
     End Sub
+    Protected Overrides Sub EliminarPersona(ID As String)
+        MyBase.EliminarPersona(ID)
+    End Sub
+    Protected Overrides Sub EliminarTelefono(ID As String)
+        MyBase.EliminarTelefono(ID)
+    End Sub
+    Protected Overrides Sub EliminarCorreo(ID As String)
+        MyBase.EliminarCorreo(ID)
+    End Sub
     'INSERTAR ALUMNO
     Friend Sub InsertarAlumno()
         Dim Tabla As String = "ALUMNO"
@@ -149,17 +158,30 @@ Public NotInheritable Class Alumnos
         End Try
     End Sub
     'ELIMINAR ALUMNO
-    Friend Sub EliminarAlumno()
+    Friend Sub EliminarInscripcion(ID As String)
         Try
-            Dim ID = F_Secundario.CMB_S_SeleccionarAlumno.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "DELETE FROM ALUMNO WHERE ID_ALUMNO=" & ID
+            Comando.CommandText = "DELETE FROM ALUMNO_CARRERA WHERE ALU_CARRE_RELA_ALUMNO = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
-            MsgBox("Los datos han sido eliminados correctamente.")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Friend Sub EliminarAlumno(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM ALUMNO WHERE ALUMNO_RELA_PERSONA = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            EliminarTelefono(ID)
+            EliminarCorreo(ID)
+            EliminarPersona(ID)
+            MessageBox.Show("Los datos han sido eliminados correctamente")
+        Catch ex As Exception
+            MessageBox.Show("No se puede realizar la acción, primero elimine las dependencias de esta entidad.", "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

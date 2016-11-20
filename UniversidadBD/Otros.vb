@@ -97,6 +97,15 @@ Public NotInheritable Class Otros
     Protected Overrides Sub EditarTelefono(ID As String)
         MyBase.EditarTelefono(ID)
     End Sub
+    Protected Overrides Sub EliminarPersona(ID As String)
+        MyBase.EliminarPersona(ID)
+    End Sub
+    Protected Overrides Sub EliminarTelefono(ID As String)
+        MyBase.EliminarTelefono(ID)
+    End Sub
+    Protected Overrides Sub EliminarCorreo(ID As String)
+        MyBase.EliminarCorreo(ID)
+    End Sub
     'INSERTAR OTRO
     Friend Sub InsertarOtro()
         Dim Tabla As String = "ADMINISTRACION"
@@ -137,17 +146,19 @@ Public NotInheritable Class Otros
         End Try
     End Sub
     'ELIMINAR OTRO
-    Friend Sub EliminarOtro()
+    Friend Sub EliminarOtro(ID As String)
         Try
-            Dim ID = F_Secundario.CMB_S_SeleccionePersonaOtro.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "DELETE FROM ADMINISTRACION WHERE ID_ADMINISTRACION=" & ID
+            Comando.CommandText = "DELETE FROM ADMINISTRACION WHERE ADMIN_RELA_PERSONA = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
-            MsgBox("Los datos han sido eliminados correctamente.")
+            EliminarCorreo(ID)
+            EliminarTelefono(ID)
+            EliminarPersona(ID)
+            MessageBox.Show("Los datos han sido eliminados correctamente.")
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No se puede realizar la acción, primero elimine las dependencias de esta entidad.", "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

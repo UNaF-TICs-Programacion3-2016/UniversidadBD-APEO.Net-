@@ -187,6 +187,13 @@
         Condicion = "ID_PERSONA = ALUMNO_RELA_PERSONA"
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
     End Sub
+    Public Shared Sub CargarAlumno2(Combo As ComboBox, Panel As Panel)
+        Tabla = "ALUMNO,PERSONA"
+        Columna = "PERSONA_APELLIDO"
+        Valor = "ID_PERSONA"
+        Condicion = "ID_PERSONA = ALUMNO_RELA_PERSONA"
+        Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
+    End Sub
     Public Shared Sub CargarAlumnoExamen(Combo As ComboBox, Panel As Panel, Examen As Integer)
         Tabla = "PERSONA, ALUMNO, ALUMNO_EXAMEN"
         Columna = "PERSONA_APELLIDO"
@@ -239,6 +246,13 @@
         Condicion = "ID_PERSONA = PROFESOR_RELA_PERSONA"
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
     End Sub
+    Public Shared Sub CargarProfesor2(Combo As ComboBox, Panel As Panel)
+        Tabla = "PERSONA, PROFESOR"
+        Columna = "PERSONA_APELLIDO"
+        Valor = "ID_PERSONA"
+        Condicion = "ID_PERSONA = PROFESOR_RELA_PERSONA"
+        Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
+    End Sub
     Public Shared Sub CargarProfesorCurso(Lista As ListBox, Panel As Panel, Materia As Integer, Comision As Integer)
         Tabla = "PERSONA, PROFESOR, CURSO_PROFESOR"
         Columna = "PERSONA_APELLIDO"
@@ -284,6 +298,13 @@
         Tabla = "PERSONA, ADMINISTRACION"
         Columna = "PERSONA_APELLIDO"
         Valor = "ID_ADMINISTRACION"
+        Condicion = "ID_PERSONA=ADMIN_RELA_PERSONA"
+        Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
+    End Sub
+    Public Shared Sub CargarOtro2(Combo As ComboBox, Panel As Panel)
+        Tabla = "PERSONA, ADMINISTRACION"
+        Columna = "PERSONA_APELLIDO"
+        Valor = "ID_PERSONA"
         Condicion = "ID_PERSONA=ADMIN_RELA_PERSONA"
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
     End Sub

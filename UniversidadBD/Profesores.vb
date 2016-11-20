@@ -88,6 +88,15 @@ Public NotInheritable Class Profesores
     Protected Overrides Sub EditarCorreo(ID As String)
         MyBase.EditarCorreo(ID)
     End Sub
+    Protected Overrides Sub EliminarPersona(ID As String)
+        MyBase.EliminarPersona(ID)
+    End Sub
+    Protected Overrides Sub EliminarTelefono(ID As String)
+        MyBase.EliminarTelefono(ID)
+    End Sub
+    Protected Overrides Sub EliminarCorreo(ID As String)
+        MyBase.EliminarCorreo(ID)
+    End Sub
     'INSERTAR PROFESOR
     Friend Sub InsertarProfesor()
         Dim Tabla As String = "PROFESOR"
@@ -110,20 +119,6 @@ Public NotInheritable Class Profesores
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    'ELIMINAR PROFESOR
-    Friend Sub EliminarProfesor()
-        Try
-            Dim ID = F_Secundario.CMB_S_SeleccionarProfesorProfesor.SelectedValue
-            Comando.Connection = Conexion
-            Comando.CommandText = "DELETE FROM PROFESOR WHERE ID_PROFESOR=" & ID
-            Conexion.Open()
-            Comando.ExecuteNonQuery()
-            Conexion.Close()
-            MsgBox("Los datos han sido eliminados correctamente.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
     'EDITAR PROFESOR
     Friend Sub EditarProfesor(ID As String)
         Try
@@ -135,6 +130,22 @@ Public NotInheritable Class Profesores
             Comando.ExecuteNonQuery()
             Conexion.Close()
             MessageBox.Show("Los datos han sido editados correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    'ELIMINAR PROFESOR
+    Friend Sub EliminarProfesor(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM PROFESOR WHERE PROFESOR_RELA_PERSONA = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            EliminarTelefono(ID)
+            EliminarCorreo(ID)
+            EliminarPersona(ID)
+            MsgBox("Los datos han sido eliminados correctamente.")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

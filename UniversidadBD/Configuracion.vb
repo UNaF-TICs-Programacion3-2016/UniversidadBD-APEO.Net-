@@ -6,12 +6,14 @@ Public Class Configuracion
         With Formulario
             .Width = 587
             .Height = 485
+            .BackColor = Color.DeepSkyBlue
         End With
         With Panel
             .Width = 532
             .Height = 390
             .Top = 6
             .Left = 6
+            .BackColor = Color.WhiteSmoke
         End With
         With Pestañas
             .Width = 552
@@ -25,9 +27,10 @@ Public Class Configuracion
             .Left = 0
             .Top = 64
             .Width = 1100
-            .Height = 488
+            .Height = 505
             .Visible = True
-            .BackColor = Color.WhiteSmoke
+            .BackColor = Color.PaleTurquoise
+            .BorderStyle = BorderStyle.FixedSingle
         End With
     End Sub
     'CARGAR DATOS AL COMBO

@@ -20,7 +20,6 @@ Public Class Facultad
             pCodigo = value
         End Set
     End Property
-    Friend Property ID() As String
     'INSERTAR FACULTAD
     Friend Sub InsertarFacultad()
         Try
@@ -53,16 +52,15 @@ Public Class Facultad
         End Try
     End Sub
     'ELIMINAR FACULTAD
-    Friend Sub EliminarFacultad()
+    Friend Sub EliminarFacultad(ID As String)
         Try
-            Dim ID As Integer = F_Secundario.CMB_S_FacultadSeleccionar.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "DELETE FROM FACULTAD WHERE ID_FACULTAD=" & ID
+            Comando.CommandText = "DELETE FROM FACULTAD WHERE ID_FACULTAD = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No se puede realizar la acción, primero elimine las dependencias de esta entidad.", "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Class

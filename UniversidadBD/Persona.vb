@@ -149,4 +149,38 @@ Public MustInherit Class Persona
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'METODOS ELIMINAR
+    Protected Overridable Sub EliminarPersona(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM PERSONA WHERE ID_PERSONA = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show("No se puede realizar la acción, primero elimine las dependencias de esta entidad.", "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Protected Overridable Sub EliminarTelefono(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM TELEFONO WHERE TELEFONO_RELA_PERSONA = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show("No se puede realizar la acción, primero elimine las dependencias de esta entidad.", "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Protected Overridable Sub EliminarCorreo(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "DELETE FROM CORREO WHERE CORREO_RELA_PERSONA = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show("No se puede realizar la acción, primero elimine las dependencias de esta entidad.", "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
