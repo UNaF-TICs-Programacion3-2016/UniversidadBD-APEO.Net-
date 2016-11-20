@@ -202,37 +202,50 @@ Public Class F_Secundario
         With Facultad
             .Codigo = TXT_E_CodigoFacultad.Text
             .Descripcion = TXT_E_DescripcionFacultad.Text
-            .EditarFacultad()
+            .EditarFacultad(CMB_E_SeleccionarFacultad.SelectedValue)
         End With
+        Me.Close()
     End Sub
     Private Sub BTN_E_CarreraAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_CarreraAceptar.Click
         With Carrera
             .Descripcion = TXT_E_DescripcionCarrera.Text
             .Duracion = TXT_E_DuracionCarrera.Text
             .Codigo = TXT_E_CodigoCarrera.Text
-            .EditarCarrera()
+            .Facultad = CMB_E_SeleccionarFacultadCarrera.SelectedValue
+            .EditarCarrera(CMB_E_SeleccionarCarreraCarrera.SelectedValue)
         End With
+        Me.Close()
     End Sub
     Private Sub BTN_E_MateriaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_MateriaAceptar.Click
         With Materia
             .Codigo = TXT_E_CodigoMateria.Text
             .Descripcion = TXT_E_DescripcionMateria.Text
-            .EditarMateria()
+            .Carrera = CMB_E_SeleccionarCarreraMateria.SelectedValue
+            .EditarMateria(CMB_E_SeleccionarMateriaMateria.SelectedValue)
         End With
+        Me.Close()
     End Sub
     Private Sub BTN_E_ProfesorAceptar2_Click(sender As Object, e As EventArgs) Handles BTN_E_ProfesorAceptar2.Click
         With Profesor
+            .DNI = TXT_E_DNIProfesor.Text
             .CUIL = TXT_E_CUILProfesor.Text
             .Nombre = TXT_E_NombreProfesor.Text
             .Apellido = TXT_E_ApellidoProfesor.Text
-            .EditarProfesor()
+            .Correo = TXT_E_CorreoProfesor.Text
+            .Matricula = TXT_E_MatriculaProfesor.Text
+            .Telefono = TXT_E_TelefonoProfesor.Text
+            .FechaDeIngreso = DTP_E_FechaIngresoProfesor.Value
+            .EditarProfesor(CMB_E_SeleccionarProfesorProfesor.SelectedValue)
         End With
+        Me.Close()
     End Sub
     Private Sub BTN_E_AulaAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_AulaAceptar.Click
         With Aula
             .Descripcion = TXT_E_DescripcionAula.Text
-            .EditarAula()
+            .Facultad = CMB_E_SeleccionarFacultadAula.SelectedValue
+            .EditarAula(CMB_E_SeleccionarAulaAula.SelectedValue)
         End With
+        Me.Close()
     End Sub
     Private Sub BTN_S_FacultadBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_FacultadBorrar.Click
         Facultad.EliminarFacultad()
@@ -261,6 +274,29 @@ Public Class F_Secundario
     End Sub
     Private Sub BTN_S_ProfesorBorrar_Click(sender As Object, e As EventArgs) Handles BTN_S_ProfesorBorrar.Click
         Profesor.EliminarProfesor()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Recarga.BuscarProfesor(CMB_E_SeleccionarProfesorProfesor, PNL_E_Profesor, TXT_E_BuscarProfesor.Text)
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Recarga.BuscarAlumno2(CMB_E_SelecAlumno, PNL_E_Alumno, TXT_E_BuscarAlumno.Text)
+    End Sub
+    Private Sub BTN_E_AlumnoSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_E_AlumnoSiguiente.Click
+        With Alumno
+            .DNI = TXT_E_DNIAlumno.Text
+            .CUIL = TXT_E_CUILAlumno.Text
+            .NumeroDeLegajo = TXT_E_NLegajoAlumno.Text
+            .Nombre = TXT_E_NombreAlumno.Text
+            .Apellido = TXT_E_ApellidoAlumno.Text
+            .Telefono = TXT_E_TelefonoAlumno.Text
+            .Correo = TXT_E_CorreoAlumno.Text
+            .FechaDeIngreso = DTP_E_IngresoAlumno.Value
+            .EditarAlumno(CMB_E_SelecAlumno.SelectedValue)
+        End With
+        Me.Close()
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Recarga.BuscarOtro(CMB_E_SeleccionePersonaOtro, PNL_E_Otro, TXT_E_IngresarDNIOtro.Text)
     End Sub
     'PANELES
     Private Sub PNL_S_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Materia.VisibleChanged
@@ -299,9 +335,7 @@ Public Class F_Secundario
     End Sub
     Private Sub PNL_E_Materia_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Materia.VisibleChanged
         Recarga.CargarMateria(CMB_E_SeleccionarMateriaMateria, PNL_E_Materia)
-    End Sub
-    Private Sub PNL_E_Profesor_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Profesor.VisibleChanged
-        oConfiguracion.CargarComboBox(CMB_E_SeleccionarProfesorProfesor, PNL_E_Profesor, "PERSONA, PROFESOR", "PERSONA_APELLIDO", "ID_PERSONA", "ID_PERSONA = PROFESOR_RELA_PERSONA")
+        Recarga.CargarCarrera(CMB_E_SeleccionarCarreraMateria, PNL_E_Materia)
     End Sub
     Private Sub PNL_E_Aula_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Aula.VisibleChanged
         Recarga.CargarAula(CMB_E_SeleccionarAulaAula, PNL_E_Aula)
@@ -340,7 +374,7 @@ Public Class F_Secundario
         Recarga.CargarMinuto(CMB_A_HastaMinutosCurso, PNL_A_Curso2)
         Recarga.CargarDia(CMB_A_DiaCurso, PNL_A_Curso2)
         Recarga.CargarAula(CMB_A_AulaCurso, PNL_A_Curso2, CMB_A_FacultadCurso)
-        Recarga.AgregarProfesor(CMB_A_ProfesoresCurso, PNL_A_Curso2)
+        Recarga.CargarProfesor(CMB_A_ProfesoresCurso, PNL_A_Curso2)
     End Sub
     Private Sub PNL_A_Inscripcion_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_A_Inscripcion.VisibleChanged
         Recarga.CargarFacultad(CMB_A_FacultadExamen, PNL_A_Inscripcion)
@@ -515,5 +549,24 @@ Public Class F_Secundario
     End Sub
     Private Sub BTN_E_ProfesorCancelar_Click(sender As Object, e As EventArgs) Handles BTN_E_ProfesorCancelar.Click
         Me.Close()
+    End Sub
+    Private Sub BTN_E_OtroAceptar_Click(sender As Object, e As EventArgs) Handles BTN_E_OtroAceptar.Click
+        With Otro
+            .DNI = TXT_E_DNIOtro.Text
+            .CUIL = TXT_E_CUILOtro.Text
+            .Nombre = TXT_E_NombreOtro.Text
+            .Apellido = TXT_E_ApellidoOtro.Text
+            .Correo = TXT_E_CorreoOtro.Text
+            .Telefono = TXT_E_TelefonoOtro.Text
+            .Facultad = CMB_E_FacultadOtro.SelectedValue
+            .Puesto = CMB_E_OcupacionOtro.SelectedValue
+            .FechaDeIngreso = DTP_E_IngresoOtro.Value
+            .EditarOtro(CMB_E_SeleccionePersonaOtro.SelectedValue)
+        End With
+        Me.Close()
+    End Sub
+    Private Sub PNL_E_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_E_Otro.VisibleChanged
+        Recarga.CargarPuesto(CMB_E_OcupacionOtro, PNL_E_Otro)
+        Recarga.CargarFacultad(CMB_E_FacultadOtro, PNL_E_Otro)
     End Sub
 End Class

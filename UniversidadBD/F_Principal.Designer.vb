@@ -162,6 +162,8 @@ Partial Class F_Principal
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.DGV_C_AluInscrip = New System.Windows.Forms.DataGridView()
+        Me.Label46 = New System.Windows.Forms.Label()
         Me.TSM_UNIVERSIDAD.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.PNL_C_Cursos.SuspendLayout()
@@ -182,6 +184,7 @@ Partial Class F_Principal
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.DGV_C_AluInscrip, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TSM_UNIVERSIDAD
@@ -191,7 +194,7 @@ Partial Class F_Principal
         Me.TSM_UNIVERSIDAD.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSM_ACCIONES, Me.PERSONASToolStripMenuItem, Me.AGREGARToolStripMenuItem2, Me.VERToolStripMenuItem})
         Me.TSM_UNIVERSIDAD.Location = New System.Drawing.Point(0, 0)
         Me.TSM_UNIVERSIDAD.Name = "TSM_UNIVERSIDAD"
-        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1089, 33)
+        Me.TSM_UNIVERSIDAD.Size = New System.Drawing.Size(1179, 33)
         Me.TSM_UNIVERSIDAD.TabIndex = 0
         Me.TSM_UNIVERSIDAD.Text = "MenuStrip1"
         '
@@ -343,7 +346,7 @@ Partial Class F_Principal
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 33)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
-        Me.ToolStrip1.Size = New System.Drawing.Size(1089, 32)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1179, 32)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -401,9 +404,9 @@ Partial Class F_Principal
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox2)
         Me.PNL_C_Cursos.Controls.Add(Me.GroupBox1)
         Me.PNL_C_Cursos.Controls.Add(Me.Label1)
-        Me.PNL_C_Cursos.Location = New System.Drawing.Point(128, 92)
+        Me.PNL_C_Cursos.Location = New System.Drawing.Point(103, 89)
         Me.PNL_C_Cursos.Name = "PNL_C_Cursos"
-        Me.PNL_C_Cursos.Size = New System.Drawing.Size(778, 424)
+        Me.PNL_C_Cursos.Size = New System.Drawing.Size(1027, 444)
         Me.PNL_C_Cursos.TabIndex = 4
         Me.PNL_C_Cursos.Visible = False
         '
@@ -465,9 +468,9 @@ Partial Class F_Principal
         Me.Label4.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(268, 25)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(168, 17)
+        Me.Label4.Size = New System.Drawing.Size(137, 17)
         Me.Label4.TabIndex = 27
-        Me.Label4.Text = "Alumnos inscriptos al curso"
+        Me.Label4.Text = "Notas de los Alumnos"
         '
         'Label7
         '
@@ -655,6 +658,8 @@ Partial Class F_Principal
         'PNL_C_ExamenesFinales
         '
         Me.PNL_C_ExamenesFinales.BackColor = System.Drawing.Color.White
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label46)
+        Me.PNL_C_ExamenesFinales.Controls.Add(Me.DGV_C_AluInscrip)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label28)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label27)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label26)
@@ -674,9 +679,9 @@ Partial Class F_Principal
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label14)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.CMB_C_SeleccioneFacultadExamenesFinales)
         Me.PNL_C_ExamenesFinales.Controls.Add(Me.Label12)
-        Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(1148, 308)
+        Me.PNL_C_ExamenesFinales.Location = New System.Drawing.Point(330, 71)
         Me.PNL_C_ExamenesFinales.Name = "PNL_C_ExamenesFinales"
-        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(118, 61)
+        Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(126, 67)
         Me.PNL_C_ExamenesFinales.TabIndex = 5
         Me.PNL_C_ExamenesFinales.Visible = False
         '
@@ -759,16 +764,16 @@ Partial Class F_Principal
         'DGV_C_AlumnosInscriptosExamenesFinales
         '
         Me.DGV_C_AlumnosInscriptosExamenesFinales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_C_AlumnosInscriptosExamenesFinales.Location = New System.Drawing.Point(253, 89)
+        Me.DGV_C_AlumnosInscriptosExamenesFinales.Location = New System.Drawing.Point(612, 89)
         Me.DGV_C_AlumnosInscriptosExamenesFinales.Name = "DGV_C_AlumnosInscriptosExamenesFinales"
-        Me.DGV_C_AlumnosInscriptosExamenesFinales.Size = New System.Drawing.Size(345, 322)
+        Me.DGV_C_AlumnosInscriptosExamenesFinales.Size = New System.Drawing.Size(435, 322)
         Me.DGV_C_AlumnosInscriptosExamenesFinales.TabIndex = 52
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(250, 69)
+        Me.Label16.Location = New System.Drawing.Point(252, 69)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(118, 17)
         Me.Label16.TabIndex = 51
@@ -1062,9 +1067,9 @@ Partial Class F_Principal
         Me.PNL_C_NotasExamen.BackColor = System.Drawing.Color.White
         Me.PNL_C_NotasExamen.Controls.Add(Me.GroupBox4)
         Me.PNL_C_NotasExamen.Controls.Add(Me.Label39)
-        Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(1134, 198)
+        Me.PNL_C_NotasExamen.Location = New System.Drawing.Point(211, 75)
         Me.PNL_C_NotasExamen.Name = "PNL_C_NotasExamen"
-        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(83, 69)
+        Me.PNL_C_NotasExamen.Size = New System.Drawing.Size(83, 56)
         Me.PNL_C_NotasExamen.TabIndex = 7
         Me.PNL_C_NotasExamen.Visible = False
         '
@@ -1240,7 +1245,7 @@ Partial Class F_Principal
         Me.PNL_P_Principal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PNL_P_Principal.Location = New System.Drawing.Point(0, 68)
         Me.PNL_P_Principal.Name = "PNL_P_Principal"
-        Me.PNL_P_Principal.Size = New System.Drawing.Size(97, 80)
+        Me.PNL_P_Principal.Size = New System.Drawing.Size(97, 63)
         Me.PNL_P_Principal.TabIndex = 9
         Me.PNL_P_Principal.Visible = False
         '
@@ -1262,7 +1267,7 @@ Partial Class F_Principal
         Me.GroupBox7.Controls.Add(Me.LBX_P_InscripcionesExamen)
         Me.GroupBox7.Location = New System.Drawing.Point(600, 69)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(488, 393)
+        Me.GroupBox7.Size = New System.Drawing.Size(461, 393)
         Me.GroupBox7.TabIndex = 20
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Examenes"
@@ -1282,7 +1287,7 @@ Partial Class F_Principal
         Me.DGV_P_Notas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_P_Notas.Location = New System.Drawing.Point(6, 238)
         Me.DGV_P_Notas.Name = "DGV_P_Notas"
-        Me.DGV_P_Notas.Size = New System.Drawing.Size(474, 147)
+        Me.DGV_P_Notas.Size = New System.Drawing.Size(446, 147)
         Me.DGV_P_Notas.TabIndex = 21
         '
         'Label44
@@ -1303,7 +1308,7 @@ Partial Class F_Principal
         Me.LBX_P_InscripcionesExamen.Location = New System.Drawing.Point(6, 50)
         Me.LBX_P_InscripcionesExamen.Name = "LBX_P_InscripcionesExamen"
         Me.LBX_P_InscripcionesExamen.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.LBX_P_InscripcionesExamen.Size = New System.Drawing.Size(474, 148)
+        Me.LBX_P_InscripcionesExamen.Size = New System.Drawing.Size(446, 148)
         Me.LBX_P_InscripcionesExamen.TabIndex = 20
         '
         'GroupBox6
@@ -1517,12 +1522,30 @@ Partial Class F_Principal
         Me.Label29.TabIndex = 10
         Me.Label29.Text = "Nombre"
         '
+        'DGV_C_AluInscrip
+        '
+        Me.DGV_C_AluInscrip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_C_AluInscrip.Location = New System.Drawing.Point(253, 89)
+        Me.DGV_C_AluInscrip.Name = "DGV_C_AluInscrip"
+        Me.DGV_C_AluInscrip.Size = New System.Drawing.Size(350, 322)
+        Me.DGV_C_AluInscrip.TabIndex = 61
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.Location = New System.Drawing.Point(609, 69)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(137, 17)
+        Me.Label46.TabIndex = 62
+        Me.Label46.Text = "Notas de los Alumnos"
+        '
         'F_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1089, 557)
+        Me.ClientSize = New System.Drawing.Size(1179, 557)
         Me.Controls.Add(Me.PNL_P_Principal)
         Me.Controls.Add(Me.PNL_C_NotasExamen)
         Me.Controls.Add(Me.PNL_C_ExamenesParciales)
@@ -1570,6 +1593,7 @@ Partial Class F_Principal
         Me.GroupBox5.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.DGV_C_AluInscrip, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1713,6 +1737,8 @@ Partial Class F_Principal
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DGV_C_AluInscrip As DataGridView
+    Friend WithEvents Label46 As Label
     '' Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     ''Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class

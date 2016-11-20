@@ -79,6 +79,15 @@ Public NotInheritable Class Profesores
     Protected Overrides Sub InsertarCorreo(ID As String)
         MyBase.InsertarCorreo(ID)
     End Sub
+    Protected Overrides Sub EditarPersona(ID As String)
+        MyBase.EditarPersona(ID)
+    End Sub
+    Protected Overrides Sub EditarTelefono(ID As String)
+        MyBase.EditarTelefono(ID)
+    End Sub
+    Protected Overrides Sub EditarCorreo(ID As String)
+        MyBase.EditarCorreo(ID)
+    End Sub
     'INSERTAR PROFESOR
     Friend Sub InsertarProfesor()
         Dim Tabla As String = "PROFESOR"
@@ -116,19 +125,18 @@ Public NotInheritable Class Profesores
         End Try
     End Sub
     'EDITAR PROFESOR
-    Friend Sub EditarProfesor()
+    Friend Sub EditarProfesor(ID As String)
         Try
-            Dim ID As Integer = F_Secundario.CMB_E_SeleccionarProfesorProfesor.SelectedValue
-            Comando.Connection = Conexion
-            Comando.CommandText = "UPDATE PERSONA SET PERSONA_CUIL = '" & CUIL & "', PERSONA_NOMBRE = '" & Nombre & "',PERSONA_APELLIDO = '" & Apellido & "' WHERE ID_PERSONA = '" & ID & "'"
+            EditarPersona(ID)
+            EditarTelefono(ID)
+            EditarCorreo(ID)
+            Comando.CommandText = "UPDATE PROFESOR SET PROFESOR_FECHA_INGRESO = '" & pFechaDeIngreso.Date & "', PROFESOR_MATRICULA = '" & pMatricula & "' WHERE PROFESOR_RELA_PERSONA = '" & ID & "'"
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
-            MessageBox.Show("Los datos se editaron correctamente")
+            MessageBox.Show("Los datos han sido editados correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
         End Try
-
     End Sub
 End Class

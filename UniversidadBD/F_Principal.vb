@@ -131,7 +131,7 @@
         Recarga.CargarCarrera(CMB_C_SeleccioneCarreraCursos, PNL_C_Cursos, CMB_C_SeleccioneFacultadCursos)
     End Sub
     Private Sub CMB_C_SeleccioneCarreraCursos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccioneCarreraCursos.SelectedIndexChanged
-        Recarga.CargarMateriasCurso(LTB_C_CursosActivosCursos, PNL_C_Cursos, CMB_C_SeleccioneCarreraCursos.SelectedValue, CMB_C_SeleccioneCarreraCursos)
+        Recarga.CargarMateriasCurso2(LTB_C_CursosActivosCursos, PNL_C_Cursos, CMB_C_SeleccioneCarreraCursos.SelectedValue)
     End Sub
     Private Sub CMB_C_SeleccioneComisiónCursos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_C_SeleccioneComisiónCursos.SelectedIndexChanged
         Recarga.CargarCurso1(CMB_C_SeleccioneMateriaCursos, PNL_C_Cursos, CMB_C_SeleccioneCarreraCursosFP.SelectedValue, CMB_C_SeleccioneComisiónCursos.SelectedValue)
@@ -150,22 +150,21 @@
     End Sub
     'BOTONES ACEPTAR
     Private Sub BTN_C_CursosCargarFP_Click(sender As Object, e As EventArgs) Handles BTN_C_CursosCargarFP.Click
-        'Recarga.CargarFiltroPersonas(LTB_C_AlumnosInscriptosCursos, LTB_C_ProfesoresCursoCursos, PNL_C_Cursos, CMB_C_SeleccioneMateriaCursos.SelectedValue, CMB_C_SeleccioneComisiónCursos.SelectedValue, CMB_C_SeleccioneMateriaCursos)
-        'Recarga.CargarAulaYHorarios(DGV_C_HyACursos, PNL_C_Cursos, CMB_C_SeleccioneMateriaCursos.SelectedValue, CMB_C_SeleccioneComisiónCursos.SelectedValue, CMB_C_SeleccioneMateriaCursos)
         CMB_C_SeleccioneMateriaCursos.ValueMember = "ID_CURSO"
         Dim Materia As Integer = CMB_C_SeleccioneMateriaCursos.SelectedValue
         Dim Comision As Integer = CMB_C_SeleccioneComisiónCursos.SelectedValue
-        oConfiguracion.CargarListBox(LTB_C_AlumnosInscriptosCursos, PNL_C_Cursos, "PERSONA, ALUMNO, CURSO_ALUMNO", "PERSONA_APELLIDO", "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = CUR_ALU_RELA_ALUMNO AND CUR_ALU_RELA_CURSO = " & Materia)
-        oConfiguracion.CargarListBox(LTB_C_ProfesoresCursoCursos, PNL_C_Cursos, "PERSONA, PROFESOR, CURSO_PROFESOR", "PERSONA_APELLIDO", "ID_PERSONA = PROFESOR_RELA_PERSONA AND ID_PROFESOR = CURSO_PROFESOR_RELA_PROFESOR AND CURSO_PROFESOR_RELA_CURSO = " & Materia)
+        Recarga.CargarAlumnoCurso(LTB_C_AlumnosInscriptosCursos, PNL_C_Cursos, Materia, Comision)
+        Recarga.CargarProfesorCurso(LTB_C_ProfesoresCursoCursos, PNL_C_Cursos, Materia, Comision)
         CMB_C_SeleccioneMateriaCursos.ValueMember = "ID_MATERIA"
         Materia = CMB_C_SeleccioneMateriaCursos.SelectedValue
-        oConfiguracion.CargarDGV(DGV_C_HyACursos, PNL_C_Cursos, "CURSO, HORA, MINUTO, DIA, AULA", "HORA_NUMERO, MINUTO_NUMERO, DIA_DESCRIPCION, AULA_DESCRIPCION", "CURSO_RELA_MATERIA = " & Materia & " AND CURSO_N_COMISION = " & Comision & " AND ID_HORA = CURSO_RELA_HORA_DESDE AND ID_MINUTO = CURSO_RELA_MINUTO_DESDE AND ID_DIA = CURSO_RELA_DIA AND ID_AULA = CURSO_RELA_AULA")
+        Recarga.CargarAulaYHorarios(DGV_C_HyACursos, PNL_C_Cursos, Materia, Comision)
     End Sub
     Private Sub BTN_C_ExamenesFinalesCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_ExamenesFinalesCargar.Click
         Recarga.CargarProfeExamenFinal(LTB_C_ProfesoresExamenesFinales, PNL_C_ExamenesFinales, CMB_C_SeleccioneMateriaExamenesFinales.SelectedValue)
         Recarga.CargarAlumnosInscriptosEF(DGV_C_AlumnosInscriptosExamenesFinales, PNL_C_ExamenesFinales, CMB_C_SeleccioneMateriaExamenesFinales.SelectedValue)
         Recarga.CargarExamenFecha(LBX_C_FechaExamenExamen, PNL_C_ExamenesFinales, CMB_C_SeleccioneMateriaExamenesFinales.SelectedValue)
         Recarga.CargarExamenHora(LBX_C_HoraExamen, PNL_C_ExamenesFinales, CMB_C_SeleccioneMateriaExamenesFinales.SelectedValue)
+        Recarga.CargarAlumnosInscriptos(DGV_C_AluInscrip, PNL_C_ExamenesFinales, CMB_C_SeleccioneMateriaExamenesFinales.SelectedValue)
     End Sub
     Private Sub BTN_C_NotasExamenFinalCargar_Click(sender As Object, e As EventArgs) Handles BTN_C_NotasExamenFinalCargar.Click
         With Examen
@@ -178,7 +177,7 @@
         Recarga.DatosAlumno(LBX_P_Nombre, LBX_P_Apellido, LBX_P_CUIL, LBX_P_NLegajo, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
         Recarga.CargarFacultadAlumnos(LBX_P_Facultad, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
         Recarga.CargarCarreraAlumnos(LBX_P_Carrera, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
-        Recarga.CargarMateriasCurso(LBX_P_MateriasCurso, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
+        Recarga.CargarMateriasCurso2(LBX_P_MateriasCurso, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
         Recarga.CargarMateriasAprobadas(LBX_P_MateriasAprobadas, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
         Recarga.CargarInscripcionesExamen(LBX_P_InscripcionesExamen, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)
         Recarga.CargarNotas(DGV_P_Notas, PNL_P_Principal, TSTXT_P_DNIAlumno.Text)

@@ -86,7 +86,7 @@ Public Class Coneccion
         Lista.DisplayMember = Columna
         Lista.DataSource = Almacenamiento.Tables(Tabla)
     End Sub
-    Protected Sub CargarLista(Tabla As String, Columna As String, Condicion As String, Lista As ListBox, Referencia As ComboBox)
+    Protected Sub CargarListaSinRepetir(Tabla As String, Columna As String, Condicion As String, Lista As ListBox)
         Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)

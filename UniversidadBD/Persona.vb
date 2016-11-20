@@ -56,7 +56,7 @@ Public MustInherit Class Persona
             pCorreo = value
         End Set
     End Property
-    'METODOS
+    'METODOS INSERTAR
     Protected Overridable Function InsertarPersona() As String
         Try
             Dim Tabla As String = "PERSONA"
@@ -113,6 +113,38 @@ Public MustInherit Class Persona
             Comando.Parameters.Add(New OracleParameter(":descripcion", OracleDbType.Varchar2, 100, "CORREO_DESCRIPCION"))
             Comando.Parameters.Add(New OracleParameter(":relapersona", OracleDbType.Int64, 10, "CORREO_RELA_PERSONA"))
             ActualizarSQL(Tabla)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    'METODOS EDITAR
+    Protected Overridable Sub EditarPersona(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "UPDATE PERSONA SET PERSONA_CUIL = '" & pCUIL & "', PERSONA_NOMBRE = '" & pNombre & "', PERSONA_APELLIDO = '" & pApellido & "', PERSONA_DNI = '" & pDNI & "' WHERE ID_PERSONA = '" & ID & "'"
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Protected Overridable Sub EditarTelefono(ID As String)
+        Try
+            Comando.CommandText = "UPDATE TELEFONO SET TELEFONO_NUMERO = '" & pTelefono & "' WHERE TELEFONO_RELA_PERSONA = '" & ID & "'"
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Protected Overridable Sub EditarCorreo(ID As String)
+        Try
+            Comando.CommandText = "UPDATE CORREO SET CORREO_DESCRIPCION = '" & pCorreo & "' WHERE CORREO_RELA_PERSONA = '" & ID & "'"
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

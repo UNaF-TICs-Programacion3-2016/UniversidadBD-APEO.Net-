@@ -88,6 +88,15 @@ Public NotInheritable Class Otros
     Protected Overrides Sub InsertarCorreo(ID As String)
         MyBase.InsertarCorreo(ID)
     End Sub
+    Protected Overrides Sub EditarPersona(ID As String)
+        MyBase.EditarPersona(ID)
+    End Sub
+    Protected Overrides Sub EditarCorreo(ID As String)
+        MyBase.EditarCorreo(ID)
+    End Sub
+    Protected Overrides Sub EditarTelefono(ID As String)
+        MyBase.EditarTelefono(ID)
+    End Sub
     'INSERTAR OTRO
     Friend Sub InsertarOtro()
         Dim Tabla As String = "ADMINISTRACION"
@@ -108,6 +117,21 @@ Public NotInheritable Class Otros
             Comando.Parameters.Add(New OracleParameter(":facultad", OracleDbType.Int64, 10, "ADMIN_RELA_FACULTAD"))
             ActualizarSQL(Tabla)
             MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    'EDITAR OTRO
+    Friend Sub EditarOtro(ID As String)
+        Try
+            EditarPersona(ID)
+            EditarCorreo(ID)
+            EditarTelefono(ID)
+            Comando.CommandText = "UPDATE ADMINISTRACION SET ADMIN_FECHA_INGRESO = '" & pFechaDeIngreso.Date & "', ADMIN_RELA_PUESTO = '" & pPuesto & "', ADMIN_RELA_FACULTAD = '" & pFacultad & "' WHERE ADMIN_RELA_PERSONA = '" & ID & "'"
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MessageBox.Show("Los datos han sido editados correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

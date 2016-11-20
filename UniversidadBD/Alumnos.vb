@@ -88,6 +88,15 @@ Public NotInheritable Class Alumnos
     Protected Overrides Sub InsertarCorreo(ID As String)
         MyBase.InsertarCorreo(ID)
     End Sub
+    Protected Overrides Sub EditarPersona(ID As String)
+        MyBase.EditarPersona(ID)
+    End Sub
+    Protected Overrides Sub EditarCorreo(ID As String)
+        MyBase.EditarCorreo(ID)
+    End Sub
+    Protected Overrides Sub EditarTelefono(ID As String)
+        MyBase.EditarTelefono(ID)
+    End Sub
     'INSERTAR ALUMNO
     Friend Sub InsertarAlumno()
         Dim Tabla As String = "ALUMNO"
@@ -120,6 +129,21 @@ Public NotInheritable Class Alumnos
             Comando.Parameters.Add(New OracleParameter(":relacarrera", OracleDbType.Int64, 10, "ALU_CARRE_RELA_CARRERA"))
             ActualizarSQL(Tabla)
             MessageBox.Show("Los datos se guardaron correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    'EDITAR ALUMNO
+    Friend Sub EditarAlumno(ID As String)
+        Try
+            EditarPersona(ID)
+            EditarTelefono(ID)
+            EditarCorreo(ID)
+            Comando.CommandText = "UPDATE ALUMNO SET ALUMNO_FECHA_INGRESO = '" & pFechaDeIngreso.Date & "', ALUMNO_NUMERO_LEGAJO = '" & pNumeroDeLegajo & "' WHERE ALUMNO_RELA_PERSONA = '" & ID & "'"
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MessageBox.Show("Los datos han sido editados correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

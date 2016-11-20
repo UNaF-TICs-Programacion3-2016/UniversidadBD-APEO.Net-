@@ -157,6 +157,19 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'EDITAR MATERIA
+    Friend Sub EditarMateria(ID As String)
+        Try
+            Comando.Connection = Conexion
+            Comando.CommandText = "UPDATE MATERIA SET MATERIA_DESCRIPCION = '" & pDescripcion & "', MATERIA_CODIGO = '" & pCodigo & "', MATERIA_RELA_CARRERA = '" & pCarrera & "' WHERE ID_MATERIA = " & ID
+            Conexion.Open()
+            Comando.ExecuteNonQuery()
+            Conexion.Close()
+            MessageBox.Show("Los datos han sido editados correctamente")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
     'ELIMINAR MATERIA
     Friend Sub EliminarMateria()
         Try
@@ -167,21 +180,6 @@ Public Class Materia
             Comando.ExecuteNonQuery()
             Conexion.Close()
             MsgBox("Los datos han sido eliminados correctamente.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-    'EDITAR MATERIA
-    Friend Sub EditarMateria()
-
-        Try
-            Dim ID As Integer = F_Secundario.CMB_E_SeleccionarMateriaMateria.SelectedValue
-            Comando.Connection = Conexion
-            Comando.CommandText = "UPDATE MATERIA SET MATERIA_DESCRIPCION = '" & pDescripcion & "', MATERIA_CODIGO = '" & pCodigo & "' WHERE ID_MATERIA = " & ID
-            Conexion.Open()
-            Comando.ExecuteNonQuery()
-            Conexion.Close()
-            MessageBox.Show("Los datos se editaron correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

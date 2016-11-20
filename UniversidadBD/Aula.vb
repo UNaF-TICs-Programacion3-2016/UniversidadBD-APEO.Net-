@@ -40,15 +40,14 @@ Public Class Aula
         End Try
     End Sub
     'EDITAR AULA
-    Friend Sub EditarAula()
+    Friend Sub EditarAula(ID As String)
         Try
-            Dim ID As Integer = F_Secundario.CMB_E_SeleccionarAulaAula.SelectedValue
-            Dim ID2 As Integer = F_Secundario.CMB_E_SeleccionarFacultadAula.SelectedValue
             Comando.Connection = Conexion
-            Comando.CommandText = "UPDATE AULA SET AULA_DESCRIPCION = '" & pDescripcion & "', AULA_RELA_FACULTAD = '" & ID2 & "' WHERE ID_AULA = " & ID
+            Comando.CommandText = "UPDATE AULA SET AULA_DESCRIPCION = '" & pDescripcion & "', AULA_RELA_FACULTAD = '" & pFacultad & "' WHERE ID_AULA = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
+            MessageBox.Show("Los datos han sido editados correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

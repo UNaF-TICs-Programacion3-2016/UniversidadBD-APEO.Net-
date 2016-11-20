@@ -20,6 +20,7 @@ Public Class Facultad
             pCodigo = value
         End Set
     End Property
+    Friend Property ID() As String
     'INSERTAR FACULTAD
     Friend Sub InsertarFacultad()
         Try
@@ -39,14 +40,14 @@ Public Class Facultad
         End Try
     End Sub
     'EDITAR FACULTAD
-    Friend Sub EditarFacultad()
+    Friend Sub EditarFacultad(ID As String)
         Try
-            Dim ID As Integer = F_Secundario.CMB_E_SeleccionarFacultad.SelectedValue
             Comando.Connection = Conexion
             Comando.CommandText = "UPDATE FACULTAD SET FACULTAD_DESCRIPCION = '" & pDescripcion & "', FACULTAD_CODIGO = '" & pCodigo & "' WHERE ID_FACULTAD = " & ID
             Conexion.Open()
             Comando.ExecuteNonQuery()
             Conexion.Close()
+            MessageBox.Show("Los datos han sido editados correctamente")
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
