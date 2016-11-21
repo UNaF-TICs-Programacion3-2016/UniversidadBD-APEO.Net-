@@ -28,6 +28,11 @@ Public Class F_Secundario
         Configuracion.EstablecerConfiguracion(Me, PNL_A_Alumno2, TabControl1)
     End Sub
     Private Sub BTN_A_CursoSiguiente_Click_1(sender As Object, e As EventArgs) Handles BTN_A_CursoSiguiente.Click
+        With Curso
+            .Materia = CMB_A_MateriaCurso.SelectedValue
+            .Comision = TXT_A_ComisionCurso.Text
+            .InsertarCursada()
+        End With
         PNL_A_Curso.Visible = False
         Configuracion.EstablecerConfiguracion(Me, PNL_A_Curso2, TabControl1)
     End Sub
@@ -155,23 +160,21 @@ Public Class F_Secundario
     End Sub
     Private Sub BTN_A_CursoAgregar_Click(sender As Object, e As EventArgs) Handles BTN_A_CursoAgregar.Click
         With Curso
-            .Materia = CMB_A_MateriaCurso.SelectedValue
             .HoraD = CMB_A_DesdeHoraCurso.SelectedValue
             .MinutoD = CMB_A_DesdeMinutosCurso.SelectedValue
             .HoraH = CMB_A_HastaHoraCurso.SelectedValue
             .MinutoH = CMB_A_HastaMinutosCurso.SelectedValue
             .Dia = CMB_A_DiaCurso.SelectedValue
             .Aula = CMB_A_AulaCurso.SelectedValue
-            .Comision = TXT_A_ComisionCurso.Text
-            .InsertarCurso()
             CMB_A_CapturaID.Text = .ID
+            .InsertarHorario()
         End With
     End Sub
     Private Sub BTN_A_AgregarProfesorCurso_Click(sender As Object, e As EventArgs) Handles BTN_A_AgregarProfesorCurso.Click
         With Curso
             .Profesor = CMB_A_ProfesoresCurso.SelectedValue
             .ID = CMB_A_CapturaID.Text
-            .InsertarProfesorCurso()
+            .InsertarProfesorCursada()
             LTB_A_ProfesoresCurso.Items.Add(CMB_A_ProfesoresCurso.Text)
         End With
     End Sub
@@ -194,7 +197,7 @@ Public Class F_Secundario
         With Curso
             .Relacion = CMB_A_CursoIC.SelectedValue
             .Alumno = CMB_A_AlumnoIC.SelectedValue
-            .InsertarAlumnoCurso()
+            .InsertarAlumnoCursada()
         End With
         Me.Close()
     End Sub
@@ -473,10 +476,11 @@ Public Class F_Secundario
         Recarga.CargarCarrera(CMB_A_CarreraIC, PNL_A_InscripcionCursadas, CMB_A_FacultadIC)
     End Sub
     Private Sub CMB_A_ComisionIC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_ComisionIC.SelectedIndexChanged
-        Recarga.CargarCurso(CMB_A_CursoIC, PNL_A_InscripcionCursadas, CMB_A_CarreraIC.SelectedValue, CMB_A_ComisionIC.Text)
+        Recarga.CargarCursada(CMB_A_CursoIC, PNL_A_InscripcionCursadas, CMB_A_CarreraIC.SelectedValue, CMB_A_ComisionIC.Text)
     End Sub
     Private Sub CMB_A_CarreraIC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_CarreraIC.SelectedIndexChanged
-        Recarga.CargarComisiones(CMB_A_ComisionIC, PNL_A_InscripcionCursadas)
+        Recarga.CargarComision(CMB_A_ComisionIC, PNL_A_InscripcionCursadas)
+        Recarga.CargarCursada(CMB_A_CursoIC, PNL_A_InscripcionCursadas, CMB_A_CarreraIC.SelectedValue)
     End Sub
     'CANCELAR
     Private Sub BTN_S_CarreraCancelar_Click(sender As Object, e As EventArgs) Handles BTN_S_CarreraCancelar.Click

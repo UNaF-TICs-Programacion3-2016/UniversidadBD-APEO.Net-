@@ -52,6 +52,12 @@
         Condicion = "CURSO_RELA_MATERIA = " & Materia & " AND CURSO_N_COMISION = " & Comision & " AND ID_HORA = CURSO_RELA_HORA_DESDE AND ID_MINUTO = CURSO_RELA_MINUTO_DESDE AND ID_DIA = CURSO_RELA_DIA AND ID_AULA = CURSO_RELA_AULA"
         Configuracion.CargarDGV(Datos, Panel, Tabla, Columna, Condicion)
     End Sub
+    Public Shared Sub CargarAulaYHorarios2(Datos As DataGridView, Panel As Panel, Materia As Integer)
+        Tabla = "HORARIO, HORA, MINUTO, DIA, AULA"
+        Columna = "HORA_NUMERO, MINUTO_NUMERO, DIA_DESCRIPCION, AULA_DESCRIPCION"
+        Condicion = "HORARIO_RELA_CURSADA = " & Materia & " AND ID_HORA = HORARIO_RELA_HORA_DESDE AND ID_MINUTO = HORARIO_RELA_MINUTO_DESDE AND ID_DIA = HORARIO_RELA_DIA AND ID_AULA = HORARIO_RELA_AULA"
+        Configuracion.CargarDGV(Datos, Panel, Tabla, Columna, Condicion)
+    End Sub
     'MATERIA
     Public Shared Sub CargarMateria(Combo As ComboBox, Panel As Panel)
         Tabla = "MATERIA"
@@ -71,12 +77,6 @@
         Condicion = "MATERIA_RELA_CARRERA = " & ID & " AND EXAMEN_RELA_MATERIA = ID_MATERIA"
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
     End Sub
-    Public Shared Sub CargarMateriasCurso2(Lista As ListBox, Panel As Panel, Carrera As String)
-        Tabla = "MATERIA, CURSO"
-        Columna = "MATERIA_DESCRIPCION"
-        Condicion = "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = CURSO_RELA_MATERIA"
-        Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
-    End Sub
     Public Shared Sub CargarMateriasCurso(Lista As ListBox, Panel As Panel, DNI As String)
         Tabla = "PERSONA, ALUMNO, MATERIA, CURSO, CURSO_ALUMNO"
         Columna = "MATERIA_DESCRIPCION"
@@ -89,7 +89,7 @@
         Condicion = "ID_PERSONA = ALUMNO_RELA_PERSONA AND PERSONA_DNI = " & DNI & " AND ID_MATERIA = EXAMEN_RELA_MATERIA AND EXAMEN_RELA_TIPO_EXAMEN = 2 AND ALU_EXA_RELA_EXAMEN = ID_EXAMEN AND ALU_EXA_RELA_ALUMNO = ID_ALUMNO AND ID_ALUMNO_EXAMEN = NOTA_RELA_ALUMNO_EXAMEN AND NOTA_NOTA > 5"
         Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
     End Sub
-    'CURSO
+    'CURSADA
     Public Shared Sub CargarCurso(Combo As ComboBox, Panel As Panel)
         Tabla = "MATERIA, CURSO"
         Columna = "MATERIA_DESCRIPCION"
@@ -97,12 +97,25 @@
         Condicion = "ID_MATERIA = CURSO_RELA_MATERIA"
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
     End Sub
-    Public Shared Sub CargarCurso(Combo As ComboBox, Panel As Panel, ID As Integer, Comision As String)
-        Tabla = "MATERIA, CURSO"
+    Public Shared Sub CargarCursada(Combo As ComboBox, Panel As Panel, ID As Integer, Comision As String)
+        Tabla = "MATERIA, CURSADA"
         Columna = "MATERIA_DESCRIPCION"
-        Valor = "ID_CURSO"
-        Condicion = "MATERIA_RELA_CARRERA = " & ID & " AND ID_MATERIA = CURSO_RELA_MATERIA AND CURSO_N_COMISION = " & Comision
+        Valor = "ID_CURSADA"
+        Condicion = "MATERIA_RELA_CARRERA = " & ID & " AND ID_MATERIA = CURSADA_RELA_MATERIA AND CURSADA_COMISION = " & Comision
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
+    End Sub
+    Public Shared Sub CargarCursada(Combo As ComboBox, Panel As Panel, ID As Integer)
+        Tabla = "MATERIA, CURSADA"
+        Columna = "MATERIA_DESCRIPCION"
+        Valor = "ID_CURSADA"
+        Condicion = "MATERIA_RELA_CARRERA = " & ID & " AND ID_MATERIA = CURSADA_RELA_MATERIA"
+        Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
+    End Sub
+    Public Shared Sub CargarCursadaMaterias(Lista As ListBox, Panel As Panel, Carrera As String)
+        Tabla = "MATERIA, CURSADA"
+        Columna = "MATERIA_DESCRIPCION"
+        Condicion = "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = CURSADA_RELA_MATERIA"
+        Configuracion.EliminarRepetidos(Lista, Panel, Tabla, Columna, Condicion)
     End Sub
     Public Shared Sub CargarCurso1(Combo As ComboBox, Panel As Panel, Carrera As Integer, Comision As Integer)
         Tabla = "MATERIA, CURSO"
@@ -231,6 +244,12 @@
         Condicion = "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = CUR_ALU_RELA_ALUMNO AND CUR_ALU_RELA_CURSO = " & Materia
         Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
     End Sub
+    Public Shared Sub CargarAlumnoCursada(Datos As DataGridView, Panel As Panel, Materia As Integer)
+        Tabla = "PERSONA, ALUMNO, CURSADA_ALUMNO"
+        Columna = "PERSONA_NOMBRE, PERSONA_APELLIDO"
+        Condicion = "ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = CUR_ALU_RELA_ALUMNO AND CUR_ALU_RELA_CURSADA = " & Materia
+        Configuracion.CargarDGV(Datos, Panel, Tabla, Columna, Condicion)
+    End Sub
     'PROFESORES
     Public Shared Sub BuscarProfesor(Combo As ComboBox, Panel As Panel, DNI As String)
         Tabla = "PERSONA, PROFESOR"
@@ -258,6 +277,12 @@
         Columna = "PERSONA_APELLIDO"
         Condicion = "ID_PERSONA = PROFESOR_RELA_PERSONA AND ID_PROFESOR = CURSO_PROFESOR_RELA_PROFESOR AND CURSO_PROFESOR_RELA_CURSO = " & Materia
         Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
+    End Sub
+    Public Shared Sub CargarProfesorCursada(Datos As DataGridView, Panel As Panel, Materia As Integer)
+        Tabla = "PERSONA, PROFESOR, CURSADA_PROFESOR"
+        Columna = "PERSONA_NOMBRE, PERSONA_APELLIDO"
+        Condicion = "ID_PERSONA = PROFESOR_RELA_PERSONA AND ID_PROFESOR = CUR_PROFE_RELA_PROFESOR AND CUR_PROFE_RELA_CURSADA = " & Materia
+        Configuracion.CargarDGV(Datos, Panel, Tabla, Columna, Condicion)
     End Sub
     Public Shared Sub CargarProfeExamenFinal(Lista As ListBox, Panel As Panel, Materia As Integer)
         Tabla = "PERSONA, PROFESOR, EXAMEN_PROFESOR"
@@ -320,10 +345,10 @@
         Columna = "DESCRIPCION"
         Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna)
     End Sub
-    Public Shared Sub CargarComisiones(Combo As ComboBox, Panel As Panel)
-        Tabla = "CURSO"
-        Columna = "CURSO_N_COMISION"
-        Valor = "CURSO_N_COMISION"
+    Public Shared Sub CargarComision(Combo As ComboBox, Panel As Panel)
+        Tabla = "CURSADA"
+        Columna = "CURSADA_COMISION"
+        Valor = "CURSADA_COMISION"
         Configuracion.EliminarRepetidos(Combo, Panel, Tabla, Columna, Valor)
     End Sub
     Public Shared Sub CargarNotas(Datos As DataGridView, Panel As Panel, DNI As String)
@@ -331,5 +356,32 @@
         Columna = "MATERIA_DESCRIPCION, NOTA_NOTA, EXAMEN_FECHA, CONDICION_DESCRIPCION"
         Condicion = "ID_PERSONA = ALUMNO_RELA_PERSONA AND PERSONA_DNI = " & DNI & " AND ID_MATERIA = EXAMEN_RELA_MATERIA AND ID_CONDICION = ALU_EXA_RELA_CONDICION AND EXAMEN_RELA_TIPO_EXAMEN = 2 AND ID_EXAMEN = ALU_EXA_RELA_EXAMEN AND ID_ALUMNO = ALU_EXA_RELA_ALUMNO AND ID_ALUMNO_EXAMEN = NOTA_RELA_ALUMNO_EXAMEN"
         Configuracion.CargarDGV(Datos, Panel, Tabla, Columna, Condicion)
+    End Sub
+    'CURSOS
+    Public Shared Sub CargarComisiones(Combo As ComboBox, Panel As Panel)
+        Tabla = "CURSO"
+        Columna = "CURSO_N_COMISION"
+        Valor = "CURSO_N_COMISION"
+        Configuracion.EliminarRepetidos(Combo, Panel, Tabla, Columna, Valor)
+    End Sub
+    Public Shared Sub CargarCurso(Combo As ComboBox, Panel As Panel, ID As Integer, Comision As String)
+        Tabla = "MATERIA, CURSO"
+        Columna = "MATERIA_DESCRIPCION"
+        Valor = "ID_CURSO"
+        Condicion = "MATERIA_RELA_CARRERA = " & ID & " AND ID_MATERIA = CURSO_RELA_MATERIA AND CURSO_N_COMISION = " & Comision
+        Configuracion.CargarComboBox(Combo, Panel, Tabla, Columna, Valor, Condicion)
+    End Sub
+    Public Shared Sub CargarMateriasCurso2(Lista As ListBox, Panel As Panel, Carrera As String)
+        Tabla = "MATERIA, CURSO"
+        Columna = "MATERIA_DESCRIPCION"
+        Condicion = "MATERIA_RELA_CARRERA = " & Carrera & " AND ID_MATERIA = CURSO_RELA_MATERIA"
+        Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
+    End Sub
+    Public Shared Sub CargarCursadasAlumno(Lista As ListBox, Panel As Panel, DNI As String)
+        Tabla = "PERSONA, ALUMNO, MATERIA, CURSADA, CURSADA_ALUMNO"
+        Columna = "MATERIA_DESCRIPCION"
+        'Condicion = "MATERIA_RELA_CARRERA = " & DNI & " AND ID_MATERIA = CURSO_RELA_MATERIA"
+        Condicion = "PERSONA_DNI = " & DNI & " AND ID_PERSONA = ALUMNO_RELA_PERSONA AND ID_ALUMNO = CUR_ALU_RELA_ALUMNO AND ID_MATERIA = CURSADA_RELA_MATERIA AND ID_CURSADA = CUR_ALU_RELA_CURSADA"
+        Configuracion.CargarListBox(Lista, Panel, Tabla, Columna, Condicion)
     End Sub
 End Class

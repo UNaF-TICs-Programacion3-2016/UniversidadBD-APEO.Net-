@@ -92,7 +92,7 @@ Public Class Configuracion
     Sub EliminarRepetidos(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try
-                CargarLista(Tabla, Columna, Condicion, Lista)
+                CargarListaSinRepetir(Tabla, Columna, Condicion, Lista)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
