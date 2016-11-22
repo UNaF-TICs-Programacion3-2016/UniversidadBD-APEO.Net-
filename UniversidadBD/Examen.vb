@@ -166,6 +166,7 @@ Public Class Examen
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'INSERTAR PROFESOR AL EXAMEN
     Friend Sub InsertarProfesorExamen()
         Dim Tabla As String = "EXAMEN_PROFESOR"
         Try
@@ -184,6 +185,7 @@ Public Class Examen
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'INSERTAR INSCRIPCION DEL ALUMNO AL EXAMEN
     Friend Sub InscripcionExamen()
         Try
             Dim Tabla As String = "ALUMNO_EXAMEN"
@@ -204,6 +206,7 @@ Public Class Examen
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'INSERTAR LA NOTA AL EXAMEN
     Friend Sub NotaExamenFinal()
         Try
             Dim Tabla As String = "NOTA"

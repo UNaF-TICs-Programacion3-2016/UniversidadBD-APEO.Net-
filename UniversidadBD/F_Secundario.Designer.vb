@@ -5028,7 +5028,7 @@ Partial Class F_Secundario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1085, 477)
+        Me.ClientSize = New System.Drawing.Size(612, 477)
         Me.Controls.Add(Me.TabControl1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

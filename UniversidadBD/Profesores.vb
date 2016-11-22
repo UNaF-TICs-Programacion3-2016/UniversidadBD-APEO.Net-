@@ -70,6 +70,7 @@ Public NotInheritable Class Profesores
         End Set
     End Property
     'METODOS HEREDADOS
+    'Insertar Persona
     Protected Overrides Function InsertarPersona() As String
         Return MyBase.InsertarPersona()
     End Function
@@ -79,6 +80,7 @@ Public NotInheritable Class Profesores
     Protected Overrides Sub InsertarCorreo(ID As String)
         MyBase.InsertarCorreo(ID)
     End Sub
+    'Editar Persona
     Protected Overrides Sub EditarPersona(ID As String)
         MyBase.EditarPersona(ID)
     End Sub
@@ -88,6 +90,7 @@ Public NotInheritable Class Profesores
     Protected Overrides Sub EditarCorreo(ID As String)
         MyBase.EditarCorreo(ID)
     End Sub
+    'Eliminar Persona
     Protected Overrides Sub EliminarPersona(ID As String)
         MyBase.EliminarPersona(ID)
     End Sub

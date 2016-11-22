@@ -110,7 +110,7 @@ Public Class Cursos
             pID = value
         End Set
     End Property
-    'INSERTAR CURSO
+    'INSERTAR CURSO Y LOS HORARIOS DEL MISMO
     Friend Sub InsertarCursada()
         Dim Tabla As String = "CURSADA"
         Try
@@ -159,6 +159,7 @@ Public Class Cursos
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'INSERTAR EL PROFESOR AL CURSO
     Friend Sub InsertarProfesorCursada()
         Dim Tabla As String = "CURSADA_PROFESOR"
         Try
@@ -177,6 +178,7 @@ Public Class Cursos
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'INSERTAR EL ALUMNO AL CURSO
     Friend Sub InsertarAlumnoCursada()
         Dim Tabla As String = "CURSADA_ALUMNO"
         Try

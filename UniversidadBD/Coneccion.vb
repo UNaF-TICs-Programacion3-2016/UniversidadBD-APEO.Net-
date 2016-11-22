@@ -3,13 +3,14 @@ Public Class Coneccion
     Protected Conexion As New OracleConnection()
     Protected Comando As New OracleCommand()
     Protected Almacenamiento As New DataSet()
-    Protected Transaccion As OracleTransaction
     Protected Fila As DataRow
+    'CONSTRUCTOR
     Sub New()
         Conexion.ConnectionString = "Data Source=localhost;" + "User Id=TPBD;" + "Password=balditofc42;"
         Almacenamiento.Tables.Clear()
         Comando.Parameters.Clear()
     End Sub
+    'COMPROBAR CONEXIÓN
     Public Sub Conectarse()
         Try
             Conexion.Open()
@@ -20,16 +21,19 @@ Public Class Coneccion
         End Try
     End Sub
     'COMANDOS
+    'Cargar la tabla en el DataSet y crear una nueva fila
     Protected Sub InsertarSQL(Tabla As String)
         Dim Adaptador = New OracleDataAdapter("Select * From " & Tabla, Conexion)
         Almacenamiento.Tables.Clear()
         Adaptador.Fill(Almacenamiento, Tabla)
         Fila = Almacenamiento.Tables(Tabla).NewRow()
     End Sub
+    'Cargar los datos a la fila creada
     Protected Sub Insert(Tabla As String)
         Almacenamiento.Tables(Tabla).Rows.Add(Fila)
         Comando.Connection = Conexion
     End Sub
+    'Actualizar la base de datos con la nueva fila incluida
     Protected Sub ActualizarSQL(Tabla As String)
         Dim Adaptador = New OracleDataAdapter()
         Adaptador.InsertCommand = Comando
@@ -62,6 +66,7 @@ Public Class Coneccion
         Combo.DataSource = Almacenamiento.Tables(Tabla)
         Combo.DisplayMember = Columna
     End Sub
+    'CARGAR EN LOS COMBO, DATOS NO REPETIDOS
     Protected Sub CargarFilaSinRepetir(Combo As ComboBox, Tabla As String, Columna As String, Valor As String)
         Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla, Conexion)
         Almacenamiento.Tables.Clear()
@@ -86,6 +91,7 @@ Public Class Coneccion
         Lista.DisplayMember = Columna
         Lista.DataSource = Almacenamiento.Tables(Tabla)
     End Sub
+    'CARGAR A UNA LISTA, DATOS NO REPETIDOS
     Protected Sub CargarListaSinRepetir(Tabla As String, Columna As String, Condicion As String, Lista As ListBox)
         Dim Adaptador = New OracleDataAdapter("Select Distinct " & Columna & " From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()
@@ -93,7 +99,7 @@ Public Class Coneccion
         Lista.DisplayMember = Columna
         Lista.DataSource = Almacenamiento.Tables(Tabla)
     End Sub
-    'CARGAR A UN DATAGRID CON CONDICION
+    'CARGAR A UN DATAGRID
     Protected Sub CargarColumnas(Tabla As String, Columna As String, Condicion As String, Datos As DataGridView)
         Dim Adaptador = New OracleDataAdapter("Select " & Columna & " From " & Tabla & " Where " & Condicion, Conexion)
         Almacenamiento.Tables.Clear()

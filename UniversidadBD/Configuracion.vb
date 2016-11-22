@@ -61,6 +61,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS AL COMBO, SIN QUE SE REPITAN
     Sub EliminarRepetidos(Combo As ComboBox, Panel As Panel, Tabla As String, Columna As String, Valor As String)
         If Panel.Visible = True Then
             Try
@@ -89,6 +90,7 @@ Public Class Configuracion
             End Try
         End If
     End Sub
+    'CARGAR DATOS A UNA LISTA, SIN QUE SE REPITAN
     Sub EliminarRepetidos(Lista As ListBox, Panel As Panel, Tabla As String, Columna As String, Condicion As String)
         If Panel.Visible = True Then
             Try

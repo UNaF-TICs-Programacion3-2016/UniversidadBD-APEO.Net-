@@ -83,7 +83,8 @@ Public Class Materia
             pHistorial = value
         End Set
     End Property
-    'INSERTAR LOS DATOS
+    'INSERTAR MATERIA
+    'Materias normales
     Friend Sub InsertarMateriaNormal(ID As String)
         Try
             InsertarSQL("MATERIA")
@@ -106,6 +107,7 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'Materias optativas
     Friend Sub InsertarMateriaOptativa()
         Dim Tabla As String = "OPTATIVA"
         Try
@@ -126,6 +128,7 @@ Public Class Materia
         Dim ID As String = (Comando.Parameters(":last_id").Value).ToString
         InsertarMateriaNormal(ID)
     End Sub
+    'Todas las materias
     Friend Sub InsertarMateria()
         Dim ID As String = ""
         Try
@@ -139,6 +142,7 @@ Public Class Materia
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'Correlativa para cada materia
     Friend Sub RelacionarCorrelativa()
         Try
             Dim Tabla As String = "MATERIA_CORRELATIVA"

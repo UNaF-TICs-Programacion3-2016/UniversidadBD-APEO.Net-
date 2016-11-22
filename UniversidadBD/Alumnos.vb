@@ -79,6 +79,7 @@ Public NotInheritable Class Alumnos
         End Set
     End Property
     'METODOS HEREDADOS
+    'Insertar Persona
     Protected Overrides Function InsertarPersona() As String
         Return MyBase.InsertarPersona()
     End Function
@@ -88,6 +89,7 @@ Public NotInheritable Class Alumnos
     Protected Overrides Sub InsertarCorreo(ID As String)
         MyBase.InsertarCorreo(ID)
     End Sub
+    'Editar Persona
     Protected Overrides Sub EditarPersona(ID As String)
         MyBase.EditarPersona(ID)
     End Sub
@@ -97,6 +99,7 @@ Public NotInheritable Class Alumnos
     Protected Overrides Sub EditarTelefono(ID As String)
         MyBase.EditarTelefono(ID)
     End Sub
+    'Eliminar Persona
     Protected Overrides Sub EliminarPersona(ID As String)
         MyBase.EliminarPersona(ID)
     End Sub
@@ -157,7 +160,7 @@ Public NotInheritable Class Alumnos
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    'ELIMINAR ALUMNO
+    'ELIMINAR ALUMNO Y SU INSCRIPCIÓN
     Friend Sub EliminarInscripcion(ID As String)
         Try
             Comando.Connection = Conexion

@@ -56,7 +56,7 @@ Public MustInherit Class Persona
             pCorreo = value
         End Set
     End Property
-    'METODOS INSERTAR
+    'INSERTAR PERSONA
     Protected Overridable Function InsertarPersona() As String
         Try
             Dim Tabla As String = "PERSONA"
@@ -117,7 +117,7 @@ Public MustInherit Class Persona
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    'METODOS EDITAR
+    'EDITAR PERSONA
     Protected Overridable Sub EditarPersona(ID As String)
         Try
             Comando.Connection = Conexion
@@ -149,7 +149,7 @@ Public MustInherit Class Persona
             MessageBox.Show(ex.Message, "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    'METODOS ELIMINAR
+    'ELIMINAR PERSONA
     Protected Overridable Sub EliminarPersona(ID As String)
         Try
             Comando.Connection = Conexion

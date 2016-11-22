@@ -38,6 +38,7 @@ Partial Class F_Principal
         Me.AGREGARToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CuatrimestreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExamenFinalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.NotasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InscripcionesAExamenesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.InscripcionesACursosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,7 +54,10 @@ Partial Class F_Principal
         Me.TSTXT_P_DNIAlumno = New System.Windows.Forms.ToolStripTextBox()
         Me.TSBTN_P_Buscar = New System.Windows.Forms.ToolStripButton()
         Me.PNL_C_Cursos = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.DGV_C_ProfesorCursada = New System.Windows.Forms.DataGridView()
+        Me.DGV_C_AlumnosInscriptosCursos = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGV_C_HyACursos = New System.Windows.Forms.DataGridView()
@@ -76,6 +80,7 @@ Partial Class F_Principal
         Me.CMB_C_SeleccioneCarreraCursos = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PNL_C_ExamenesFinales = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.DGV_C_AluInscrip = New System.Windows.Forms.DataGridView()
         Me.DGV_C_AlumnosInscriptosExamenesFinales = New System.Windows.Forms.DataGridView()
@@ -164,20 +169,20 @@ Partial Class F_Principal
         Me.Label42 = New System.Windows.Forms.Label()
         Me.LBX_P_MateriasAprobadas = New System.Windows.Forms.ListBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.DGV_C_AlumnosInscriptosCursos = New System.Windows.Forms.DataGridView()
-        Me.DGV_C_ProfesorCursada = New System.Windows.Forms.DataGridView()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TSM_UNIVERSIDAD.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.PNL_C_Cursos.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
+        CType(Me.DGV_C_ProfesorCursada, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_C_AlumnosInscriptosCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_C_HyACursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.PNL_C_ExamenesFinales.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         CType(Me.DGV_C_AluInscrip, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_C_AlumnosInscriptosExamenesFinales, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,11 +199,7 @@ Partial Class F_Principal
         CType(Me.DGV_P_Notas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGV_C_AlumnosInscriptosCursos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGV_C_ProfesorCursada, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TSM_UNIVERSIDAD
@@ -291,7 +292,7 @@ Partial Class F_Principal
         '
         'AGREGARToolStripMenuItem2
         '
-        Me.AGREGARToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuatrimestreToolStripMenuItem, Me.ExamenFinalToolStripMenuItem, Me.NotasToolStripMenuItem, Me.InscripcionesAExamenesToolStripMenuItem1, Me.InscripcionesACursosToolStripMenuItem})
+        Me.AGREGARToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CuatrimestreToolStripMenuItem, Me.ExamenFinalToolStripMenuItem, Me.NotasToolStripMenuItem, Me.ToolStripSeparator2, Me.InscripcionesAExamenesToolStripMenuItem1, Me.InscripcionesACursosToolStripMenuItem})
         Me.AGREGARToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AGREGARToolStripMenuItem2.Name = "AGREGARToolStripMenuItem2"
         Me.AGREGARToolStripMenuItem2.Size = New System.Drawing.Size(112, 29)
@@ -310,6 +311,11 @@ Partial Class F_Principal
         Me.ExamenFinalToolStripMenuItem.Name = "ExamenFinalToolStripMenuItem"
         Me.ExamenFinalToolStripMenuItem.Size = New System.Drawing.Size(298, 30)
         Me.ExamenFinalToolStripMenuItem.Text = "Examen"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(295, 6)
         '
         'NotasToolStripMenuItem
         '
@@ -427,6 +433,17 @@ Partial Class F_Principal
         Me.PNL_C_Cursos.TabIndex = 4
         Me.PNL_C_Cursos.Visible = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(63, 60)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 42
+        Me.PictureBox2.TabStop = False
+        '
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.WhiteSmoke
@@ -441,6 +458,24 @@ Partial Class F_Principal
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(455, 413)
         Me.Panel8.TabIndex = 41
+        '
+        'DGV_C_ProfesorCursada
+        '
+        Me.DGV_C_ProfesorCursada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_C_ProfesorCursada.Location = New System.Drawing.Point(230, 40)
+        Me.DGV_C_ProfesorCursada.Name = "DGV_C_ProfesorCursada"
+        Me.DGV_C_ProfesorCursada.RowHeadersWidth = 10
+        Me.DGV_C_ProfesorCursada.Size = New System.Drawing.Size(213, 224)
+        Me.DGV_C_ProfesorCursada.TabIndex = 37
+        '
+        'DGV_C_AlumnosInscriptosCursos
+        '
+        Me.DGV_C_AlumnosInscriptosCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_C_AlumnosInscriptosCursos.Location = New System.Drawing.Point(12, 40)
+        Me.DGV_C_AlumnosInscriptosCursos.Name = "DGV_C_AlumnosInscriptosCursos"
+        Me.DGV_C_AlumnosInscriptosCursos.RowHeadersWidth = 10
+        Me.DGV_C_AlumnosInscriptosCursos.Size = New System.Drawing.Size(212, 224)
+        Me.DGV_C_AlumnosInscriptosCursos.TabIndex = 36
         '
         'Label5
         '
@@ -663,6 +698,17 @@ Partial Class F_Principal
         Me.PNL_C_ExamenesFinales.Size = New System.Drawing.Size(97, 80)
         Me.PNL_C_ExamenesFinales.TabIndex = 5
         Me.PNL_C_ExamenesFinales.Visible = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(12, 3)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(76, 63)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 65
+        Me.PictureBox3.TabStop = False
         '
         'Panel10
         '
@@ -1563,38 +1609,9 @@ Partial Class F_Principal
         Me.PictureBox1.TabIndex = 21
         Me.PictureBox1.TabStop = False
         '
-        'DGV_C_AlumnosInscriptosCursos
-        '
-        Me.DGV_C_AlumnosInscriptosCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_C_AlumnosInscriptosCursos.Location = New System.Drawing.Point(12, 40)
-        Me.DGV_C_AlumnosInscriptosCursos.Name = "DGV_C_AlumnosInscriptosCursos"
-        Me.DGV_C_AlumnosInscriptosCursos.RowHeadersWidth = 10
-        Me.DGV_C_AlumnosInscriptosCursos.Size = New System.Drawing.Size(212, 224)
-        Me.DGV_C_AlumnosInscriptosCursos.TabIndex = 36
-        '
-        'DGV_C_ProfesorCursada
-        '
-        Me.DGV_C_ProfesorCursada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_C_ProfesorCursada.Location = New System.Drawing.Point(230, 40)
-        Me.DGV_C_ProfesorCursada.Name = "DGV_C_ProfesorCursada"
-        Me.DGV_C_ProfesorCursada.RowHeadersWidth = 10
-        Me.DGV_C_ProfesorCursada.Size = New System.Drawing.Size(213, 224)
-        Me.DGV_C_ProfesorCursada.TabIndex = 37
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(63, 60)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 42
-        Me.PictureBox2.TabStop = False
-        '
         'ToolStrip2
         '
-        Me.ToolStrip2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ToolStrip2.BackColor = System.Drawing.Color.Gainsboro
         Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 563)
@@ -1609,17 +1626,6 @@ Partial Class F_Principal
         Me.ToolStripLabel3.Name = "ToolStripLabel3"
         Me.ToolStripLabel3.Size = New System.Drawing.Size(67, 22)
         Me.ToolStripLabel3.Text = "APEO.Net"
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(12, 3)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(76, 63)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 65
-        Me.PictureBox3.TabStop = False
         '
         'F_Principal
         '
@@ -1647,8 +1653,11 @@ Partial Class F_Principal
         Me.ToolStrip1.PerformLayout()
         Me.PNL_C_Cursos.ResumeLayout(False)
         Me.PNL_C_Cursos.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        CType(Me.DGV_C_ProfesorCursada, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_C_AlumnosInscriptosCursos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV_C_HyACursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
@@ -1656,6 +1665,7 @@ Partial Class F_Principal
         Me.Panel6.PerformLayout()
         Me.PNL_C_ExamenesFinales.ResumeLayout(False)
         Me.PNL_C_ExamenesFinales.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         CType(Me.DGV_C_AluInscrip, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1681,12 +1691,8 @@ Partial Class F_Principal
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGV_C_AlumnosInscriptosCursos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGV_C_ProfesorCursada, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1838,6 +1844,7 @@ Partial Class F_Principal
     Friend WithEvents ToolStrip2 As ToolStrip
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     '' Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     ''Private WithEvents LineShape1 As PowerPacks.LineShape
 End Class

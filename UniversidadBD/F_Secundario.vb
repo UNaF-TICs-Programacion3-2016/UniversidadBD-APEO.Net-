@@ -288,7 +288,7 @@ Public Class F_Secundario
         Recarga.BuscarProfesor(CMB_E_SeleccionarProfesorProfesor, PNL_E_Profesor, TXT_E_BuscarProfesor.Text)
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Recarga.BuscarAlumno2(CMB_E_SelecAlumno, PNL_E_Alumno, TXT_E_BuscarAlumno.Text)
+        Recarga.BuscarAlumnoPersona(CMB_E_SelecAlumno, PNL_E_Alumno, TXT_E_BuscarAlumno.Text)
     End Sub
     Private Sub BTN_E_AlumnoSiguiente_Click(sender As Object, e As EventArgs) Handles BTN_E_AlumnoSiguiente.Click
         With Alumno
@@ -327,10 +327,10 @@ Public Class F_Secundario
         Recarga.CargarAlumno(CMB_S_SeleccionarAlumno, PNL_S_Alumno)
     End Sub
     Private Sub PNL_S_Otro_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Otro.VisibleChanged
-        Recarga.CargarOtro2(CMB_S_SeleccionePersonaOtro, PNL_S_Otro)
+        Recarga.CargarOtroPersona(CMB_S_SeleccionePersonaOtro, PNL_S_Otro)
     End Sub
     Private Sub PNL_S_Profesor_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Profesor.VisibleChanged
-        Recarga.CargarProfesor2(CMB_S_SeleccionarProfesorProfesor, PNL_S_Profesor)
+        Recarga.CargarProfesorPersona(CMB_S_SeleccionarProfesorProfesor, PNL_S_Profesor)
     End Sub
     Private Sub PNL_S_Curso_VisibleChanged(sender As Object, e As EventArgs) Handles PNL_S_Curso.VisibleChanged
         Recarga.CargarFacultad(CMB_S_SeleccionarFacultadCurso, PNL_S_Curso)
@@ -418,10 +418,10 @@ Public Class F_Secundario
         Recarga.CargarExamen(CMB_S_SeleccionarFinalExamenFinal, PNL_S_ExamenFinal, CMB_S_CarreraExamenFinal.SelectedValue)
     End Sub
     Private Sub CMB_S_SeleccionarMateriaCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarMateriaCurso.SelectedIndexChanged
-        Recarga.CargarComisiones(CMB_S_ComisionCurso, PNL_S_Curso)
+        Recarga.CargarComision(CMB_S_ComisionCurso, PNL_S_Curso)
     End Sub
     Private Sub CMB_S_SeleccionarCarreraCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarCarreraCurso.SelectedIndexChanged
-        Recarga.CargarCurso(CMB_S_SeleccionarMateriaCurso, PNL_S_Curso)
+        Recarga.CargarCursada(CMB_S_SeleccionarMateriaCurso, PNL_S_Curso)
     End Sub
     Private Sub CMB_S_SeleccionarFacultadCurso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_S_SeleccionarFacultadCurso.SelectedIndexChanged
         Recarga.CargarCarrera(CMB_S_SeleccionarCarreraCurso, PNL_S_Curso, CMB_S_SeleccionarFacultadCurso)
@@ -464,10 +464,10 @@ Public Class F_Secundario
         Recarga.CargarMateria(CMB_A_MateriaCurso, PNL_A_Curso, CMB_A_CarreraCurso)
     End Sub
     Private Sub CMB_A_CarreraExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_CarreraExamen.SelectedIndexChanged
-        Recarga.CargarMateria(CMB_A_ExamenExamen, PNL_A_Inscripcion, CMB_A_CarreraExamen.SelectedValue)
+        Recarga.CargarMateriaExamen(CMB_A_ExamenExamen, PNL_A_Inscripcion, CMB_A_CarreraExamen.SelectedValue)
     End Sub
     Private Sub CMB_A_ExamenExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_ExamenExamen.SelectedIndexChanged
-        Recarga.CargarExamenLlamado(CMB_A_LlamadoExamen, PNL_A_Inscripcion, CMB_A_ExamenExamen.SelectedValue)
+        Recarga.CargarLlamado(CMB_A_LlamadoExamen, PNL_A_Inscripcion, CMB_A_ExamenExamen.SelectedValue)
     End Sub
     Private Sub CMB_A_FacultadExamen_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_A_FacultadExamen.SelectedIndexChanged
         Recarga.CargarCarrera(CMB_A_CarreraExamen, PNL_A_Inscripcion, CMB_A_FacultadExamen)
